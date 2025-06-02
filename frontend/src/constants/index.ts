@@ -60,3 +60,30 @@ export const HOW_IT_WORKS_STEPS = [
   }
 ];
 
+export const BENEFITS = [
+  {
+    id: "personalized",
+    title: "Truly Personalized Learning",
+    description: "Unlike traditional educational games with fixed content, every experience is tailored to your needs.",
+    icon: "UserCog"
+  },
+  {
+    id: "engagement",
+    title: "Increased Engagement",
+    description: "Multiple interaction methods keep learning fresh and maintain attention for longer periods.",
+    icon: "Heart"
+  },
+  {
+    id: "accessibility",
+    title: "Enhanced Accessibility",
+    description: "Different input methods make learning accessible to students with various preferences and needs.",
+    icon: "Accessibility"
+  },
+  {
+    id: "retention",
+    title: "Improved Retention",
+    description: "Multi-sensory engagement helps information stick, leading to better long-term learning outcomes.",
+    icon: "Brain"
+  }
+];
+
