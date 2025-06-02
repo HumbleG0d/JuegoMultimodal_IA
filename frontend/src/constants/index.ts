@@ -87,3 +87,25 @@ export const BENEFITS = [
   }
 ];
 
+export const FAQ_ITEMS = [
+  {
+    question: "How does the AI customize content for each learner?",
+    answer: "Our AI analyzes interaction patterns, including response time, error types, and engagement levels. It then generates content that addresses specific learning needs while maintaining educational objectives."
+  },
+  {
+    question: "Is internet connectivity required to use the game?",
+    answer: "Initial content packages can be downloaded for offline use, but continuous AI adaptation and fresh content generation requires an internet connection."
+  },
+  {
+    question: "What subjects and age groups is the game suitable for?",
+    answer: "The platform is designed to be adaptable across subjects from elementary to higher education. Content difficulty and presentation automatically adjust based on user interactions."
+  },
+  {
+    question: "How is user privacy protected when the AI is learning from interactions?",
+    answer: "All learning data is anonymized and processed with strict privacy controls. Personal information is never shared, and parents/educators can control data collection settings."
+  },
+  {
+    question: "Can educators customize the learning objectives?",
+    answer: "Yes, educators can set specific learning goals, and the AI will generate content to meet these objectives while maintaining its adaptive approach to each student's needs."
+  }
+];
