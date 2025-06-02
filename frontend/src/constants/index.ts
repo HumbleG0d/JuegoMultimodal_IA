@@ -33,3 +33,30 @@ export const FEATURES = [
   }
 ];
 
+export const HOW_IT_WORKS_STEPS = [
+  {
+    id: "analyze",
+    title: "Analyze Learning Style",
+    description: "The AI observes how you interact with challenges and identifies your unique learning preferences.",
+    icon: "Search"
+  },
+  {
+    id: "generate",
+    title: "Generate Custom Content",
+    description: "Based on your style, the AI creates personalized challenges, characters, and narratives.",
+    icon: "Sparkles"
+  },
+  {
+    id: "interact",
+    title: "Multimodal Interaction",
+    description: "Engage with content using voice commands, touch gestures, and receive haptic feedback.",
+    icon: "Layers"
+  },
+  {
+    id: "adapt",
+    title: "Continuous Adaptation",
+    description: "As you progress, the game evolves, adjusting difficulty and approach to optimize your learning.",
+    icon: "RefreshCw"
+  }
+];
+
