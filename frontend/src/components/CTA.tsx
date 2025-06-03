@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from './ui/Button';
 import { ArrowRight } from 'lucide-react';
 
 const CTA: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -17,39 +20,40 @@ const CTA: React.FC = () => {
             <div className="relative z-10 flex flex-col md:flex-row items-center">
               <div className="md:w-2/3 mb-8 md:mb-0 md:pr-8">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                  Ready to Transform Learning Through Play?
+                  {t('cta.title')}
                 </h2>
                 <p className="text-xl text-white/90 mb-6 max-w-2xl">
-                  Get early access to our AI-powered multimodal educational game and 
-                  be among the first to experience the future of personalized learning.
+                  {t('cta.description')}
                 </p>
                 
                 <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto md:mx-0">
                   <input 
                     type="email" 
-                    placeholder="Enter your email" 
+                    placeholder={t('cta.emailPlaceholder')}
                     className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
                   />
-                  <Button className="bg-white text-blue-600 hover:bg-blue-50">
-                    Get Early Access <ArrowRight size={18} className="ml-2" />
+                  <Button className="bg-opacity-10 text-blue-600 hover:bg-blue-50">
+                    {t('cta.buttonText')} <ArrowRight size={18} className="ml-2" />
                   </Button>
                 </form>
                 
                 <p className="mt-4 text-white/80 text-sm">
-                  Join 2,500+ educators and parents already on the waitlist.
+                  {t('cta.waitlistText')}
                 </p>
               </div>
               
               <div className="md:w-1/3">
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transform rotate-3 hover:rotate-0 transition-transform">
                   <div className="text-white mb-4">
-                    <h3 className="text-xl font-semibold mb-2">Early Access Benefits</h3>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {t('cta.benefitsTitle')}
+                    </h3>
                     <ul className="space-y-2 text-white/90">
                       {[
-                        "First to experience new features",
-                        "Dedicated support team",
-                        "Help shape the product roadmap",
-                        "Special founding member pricing"
+                        t('cta.benefitsList.item1'),
+                        t('cta.benefitsList.item2'),
+                        t('cta.benefitsList.item3'),
+                        t('cta.benefitsList.item4')
                       ].map((item, i) => (
                         <li key={i} className="flex items-start">
                           <span className="text-green-300 mr-2">✓</span>
@@ -61,10 +65,10 @@ const CTA: React.FC = () => {
                   
                   <div className="p-3 bg-white/20 rounded-lg">
                     <p className="text-white text-sm italic">
-                      "The AI adaptation is incredible. My students are more engaged than ever before."
+                      {t('cta.testimonial')}
                     </p>
                     <p className="text-white/80 text-xs mt-2">
-                      — Maria L., Elementary Teacher
+                      {t('cta.testimonialAuthor')}
                     </p>
                   </div>
                 </div>

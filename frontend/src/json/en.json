@@ -1,0 +1,230 @@
+{
+  "benefits": {
+    "title": "Benefits of AI-Powered Multimodal Learning",
+    "description": "Our approach transforms traditional educational gaming into a personalized experience that adapts to each learner's unique needs.",
+    "impactTitle": "See the Impact on Learning Outcomes",
+    "impactDescription": "Studies show that multimodal learning experiences combined with AI-personalization can significantly improve engagement, retention, and knowledge transfer.",
+    "stats": {
+      "engagement": "Engagement",
+      "retention": "Retention",
+      "completion": "Completion"
+    },
+    "chart": {
+      "improvementLabel": "Improvement Over Traditional Methods",
+      "standard": "Standard",
+      "digital": "Digital",
+      "aiMultimodal": "AI Multimodal"
+    },
+    "items": {
+      "benefit1": {
+        "title": "Personalized Learning",
+        "description": "Adapts to individual pace and style for optimal growth."
+      },
+      "benefit2": {
+        "title": "Enhanced Engagement",
+        "description": "Interactive multimodal content keeps learners motivated."
+      },
+      "benefit3": {
+        "title": "Better Retention",
+        "description": "Combines visual, auditory, and kinesthetic methods for deeper understanding."
+      },
+      "benefit4": {
+        "title": "Scalable Solution",
+        "description": "Easily adapts to diverse educational needs and contexts."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Learning Through Play?",
+    "description": "Get early access to our AI-powered multimodal educational game and be among the first to experience the future of personalized learning.",
+    "emailPlaceholder": "Enter your email",
+    "buttonText": "Get Early Access",
+    "waitlistText": "Join 2,500+ educators and parents already on the waitlist.",
+    "benefitsTitle": "Early Access Benefits",
+    "benefitsList": {
+      "item1": "First to experience new features",
+      "item2": "Dedicated support team",
+      "item3": "Help shape the product roadmap",
+      "item4": "Special founding member pricing"
+    },
+    "testimonial": "The AI adaptation is incredible. My students are more engaged than ever before.",
+    "testimonialAuthor": "— Maria L., Elementary Teacher"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Learn more about how our AI-powered multimodal educational game works.",
+    "stillHaveQuestions": "Still have questions? We're here to help.",
+    "contactLink": "Contact our support team",
+    "items": {
+      "item1": {
+        "question": "How does the AI customize content for each learner?",
+        "answer": "Our AI analyzes interaction patterns, including response time, error types, and engagement levels. It then generates content that addresses specific learning needs while maintaining educational objectives."
+      },
+      "item2": {
+        "question":  "Is internet connectivity required to use the game?",
+        "answer": "Initial content packages can be downloaded for offline use, but continuous AI adaptation and fresh content generation requires an internet connection."
+      },
+      "item3": {
+        "question": "What subjects and age groups is the game suitable for?",
+        "answer": "The platform is designed to be adaptable across subjects from elementary to higher education. Content difficulty and presentation automatically adjust based on user interactions."
+      },
+      "item4": {
+        "question": "How is user privacy protected when the AI is learning from interactions?",
+        "answer": "All learning data is anonymized and processed with strict privacy controls. Personal information is never shared, and parents/educators can control data collection settings."
+      },
+      "item5": {
+        "question": "Can educators customize the learning objectives?",
+        "answer": "Yes, educators can set specific learning goals, and the AI will generate content to meet these objectives while maintaining its adaptive approach to each student's needs."
+      }
+    }
+  },
+  "features": {
+    "title": "Multimodal Learning Experience",
+    "description": "Our educational game combines different interaction modalities powered by AI to create a truly immersive and personalized learning journey.",
+    "integratedTitle": "All Seamlessly Integrated",
+    "integratedDescription": "Unlike traditional educational games that rely on a single mode of interaction, our multimodal approach creates a rich, engaging experience that adapts to different learning styles and preferences.",
+    "items": {
+      "feature1": {
+        "title": "Visual Learning",
+        "description": "Engaging graphics and animations to illustrate concepts vividly."
+      },
+      "feature2": {
+        "title": "Auditory Cues",
+        "description": "Voice narration and sound effects to reinforce understanding."
+      },
+      "feature3": {
+        "title": "Interactive Touch",
+        "description": "Hands-on activities and touch-based interactions for active learning."
+      },
+      "feature4": {
+        "title": "AI Adaptation",
+        "description": "Real-time adjustments to match the learner's pace and style."
+      }
+    }
+  },
+  "home": {
+    "title": "AI Multimodal Learning Game",
+    "welcome": "Welcome to the Future of Learning",
+    "description": "Discover an AI-powered, multimodal educational game that transforms how you learn through personalized, engaging experiences.",
+    "footer": "© 2025 AI Multimodal Learning. All rights reserved."
+  },
+  "header": {
+    "brand": "EduGame AI",
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "how-it-works": "How It Works",
+      "benefits": "Benefits",
+      "faq": "FAQ",
+      "cta": "Get Started"
+    },
+    "language": {
+      "en": "EN",
+      "es": "ES"
+    }
+  },
+  "footer": {
+    "brand": "EduGame AI",
+    "description": "Revolutionizing educational gaming through AI-powered multimodal learning experiences.",
+    "sections": {
+      "navigation": "Navigation",
+      "resources": "Resources",
+      "contact": "Contact Us"
+    },
+    "navLinks": {
+      "home": "Home",
+      "features": "Features",
+      "benefits": "Benefits",
+      "how-it-works": "How It Works",
+      "faq": "FAQ",
+      "cta": "Get Started"
+    },
+    "resources": {
+      "documentation": "Documentation",
+      "api": "API",
+      "tutorials": "Tutorials",
+      "blog": "Blog",
+      "caseStudies": "Case Studies"
+    },
+    "contact": {
+      "email": "info@edugame-ai.example.com",
+      "address": {
+        "line1": "123 Education Lane",
+        "line2": "San Francisco, CA 94103"
+      }
+    },
+    "copyright": "© {year} EduGame AI. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "github": "GitHub"
+    }
+  },
+  "hero": {
+    "badge": {
+      "text": "Revolutionizing Educational Games"
+    },
+    "title": {
+      "main": "AI-Powered",
+      "highlight": "Multimodal",
+      "sub": "Educational Gaming"
+    },
+    "description": "Engage with a learning experience that adapts to your needs through voice, touch, and haptic feedback. Our AI creates dynamic challenges tailored to your unique learning style.",
+    "buttons": {
+      "watchDemo": "Watch Demo",
+      "getStarted": "Get Started"
+    },
+    "visualization": {
+      "progressLabel": "Learning Progress",
+      "adaptingLabel": "AI Adapting",
+      "challengeText": "Generating new challenge...",
+      "styleText": "Adapting to learning style"
+    },
+    "scrollIndicator": "Scroll to explore"
+  },
+  "howItWorks": {
+    "title": "How AI Powers Your Learning",
+    "description": "Our advanced AI engine creates a truly personalized experience by analyzing your interactions and generating custom content in real-time.",
+    "steps": {
+      "step1": {
+        "title": "Analyze Learning Style",
+        "description": "The AI observes how you interact with the game to identify your preferred learning modalities."
+      },
+      "step2": {
+        "title": "Generate Content",
+        "description": "Custom challenges and narratives are created to match your interests and skill level."
+      },
+      "step3": {
+        "title": "Adapt in Real-Time",
+        "description": "The AI adjusts difficulty and content based on your progress and engagement."
+      },
+      "step4": {
+        "title": "Provide Feedback",
+        "description": "Receive personalized guidance and support to enhance your learning experience."
+      }
+    },
+    "example": {
+      "title": "AI Response Example",
+      "playerMessage": "<strong>Player:</strong> I'm having trouble understanding fractions.",
+      "aiResponse": "<strong>AI:</strong> I notice you're a visual-tactile learner. Let's create a pizza fraction game where you can slice and combine pieces...",
+      "analyzingText": "Analyzing learning style...",
+      "generatingText": "Generating personalized content"
+    },
+    "adaptation": {
+      "title": "Real-Time AI Adaptation",
+      "description": "As you interact with the game, our AI constantly analyzes your responses, engagement patterns, and learning progress to create a truly personalized experience.",
+      "features": [
+        "Identifies your preferred learning modalities",
+        "Adjusts difficulty based on your progress",
+        "Creates custom narratives that resonate with your interests",
+        "Provides targeted support where you need it most"
+      ]
+    }
+  }
+}

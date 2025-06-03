@@ -1,18 +1,20 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FEATURES } from '../constants';
 import Icon from './ui/Icon';
 
 const Features: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="features" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            Multimodal Learning Experience
+            {t('features.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our educational game combines different interaction modalities powered by AI
-            to create a truly immersive and personalized learning journey.
+            {t('features.description')}
           </p>
         </div>
         
@@ -34,22 +36,22 @@ const Features: React.FC = () => {
               </div>
               
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                {feature.title}
+                {t(`features.items.feature${index + 1}.title`)}
               </h3>
               
               <p className="text-gray-600">
-                {feature.description}
+                {t(`features.items.feature${index + 1}.description`)}
               </p>
             </div>
           ))}
         </div>
         
         <div className="mt-16 p-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">All Seamlessly Integrated</h3>
+          <h3 className="text-2xl font-bold mb-4">
+            {t('features.integratedTitle')}
+          </h3>
           <p className="max-w-2xl mx-auto">
-            Unlike traditional educational games that rely on a single mode of interaction,
-            our multimodal approach creates a rich, engaging experience that adapts to different
-            learning styles and preferences.
+            {t('features.integratedDescription')}
           </p>
         </div>
       </div>

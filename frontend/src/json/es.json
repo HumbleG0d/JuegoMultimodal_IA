@@ -1,0 +1,230 @@
+{
+  "benefits": {
+    "title": "Beneficios del aprendizaje multimodal con IA",
+    "description": "Nuestra solución convierte los juegos educativos tradicionales en experiencias personalizadas que se adaptan a las necesidades únicas de cada estudiante.",
+    "impactTitle": "Observa el impacto en los resultados de aprendizaje",
+    "impactDescription": "Estudios demuestran que las experiencias de aprendizaje multimodal combinadas con personalización por IA mejoran significativamente el compromiso, la retención y la transferencia de conocimiento.",
+    "stats": {
+      "engagement": "Compromiso",
+      "retention": "Retención",
+      "completion": "Finalización"
+    },
+    "chart": {
+      "improvementLabel": "Mejora sobre métodos tradicionales",
+      "standard": "Estándar",
+      "digital": "Digital",
+      "aiMultimodal": "IA multimodal"
+    },
+    "items": {
+      "benefit1": {
+        "title": "Aprendizaje personalizado",
+        "description": "Se adapta al ritmo y estilo individual para un crecimiento óptimo."
+      },
+      "benefit2": {
+        "title": "Mayor compromiso",
+        "description": "Contenido multimodal interactivo que mantiene a los estudiantes motivados."
+      },
+      "benefit3": {
+        "title": "Mejor retención",
+        "description": "Combina métodos visuales, auditivos y kinestésicos para una comprensión más profunda."
+      },
+      "benefit4": {
+        "title": "Solución escalable",
+        "description": "Se adapta fácilmente a diversas necesidades y contextos educativos."
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para transformar el aprendizaje a través del juego?",
+    "description": "Obtén acceso anticipado a nuestro juego educativo multimodal con IA y sé de los primeros en experimentar el futuro del aprendizaje personalizado.",
+    "emailPlaceholder": "Ingresa tu correo electrónico",
+    "buttonText": "Obtener acceso anticipado",
+    "waitlistText": "Únete a más de 2,500 educadores y padres en la lista de espera.",
+    "benefitsTitle": "Beneficios del acceso anticipado",
+    "benefitsList": {
+      "item1": "Primero en probar nuevas funciones",
+      "item2": "Equipo de soporte dedicado",
+      "item3": "Contribuye a definir el roadmap del producto",
+      "item4": "Precios especiales para miembros fundadores"
+    },
+    "testimonial": "La adaptación de la IA es increíble. Mis estudiantes están más comprometidos que nunca.",
+    "testimonialAuthor": "— María L., maestra de primaria"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "description": "Conoce más sobre cómo funciona nuestro juego educativo multimodal con IA.",
+    "stillHaveQuestions": "¿Aún tienes preguntas? Estamos aquí para ayudarte.",
+    "contactLink": "Contacta a nuestro equipo de soporte",
+    "items": {
+      "item1": {
+        "question": "¿Cómo personaliza la IA el contenido para cada estudiante?",
+        "answer": "Nuestra IA analiza patrones de interacción, incluyendo el tiempo de respuesta, tipos de errores y niveles de compromiso. Luego genera contenido que aborda necesidades específicas de aprendizaje mientras mantiene los objetivos educativos."
+      },
+      "item2": {
+        "question": "¿Se necesita conexión a internet para usar el juego?",
+        "answer": "Los paquetes de contenido inicial pueden descargarse para uso sin conexión, pero la adaptación continua de la IA y la generación de contenido nuevo requieren conexión a internet."
+      },
+      "item3": {
+        "question": "¿Para qué materias y grupos de edad es adecuado el juego?",
+        "answer": "La plataforma está diseñada para adaptarse a diversas materias, desde educación primaria hasta educación superior. La dificultad y presentación del contenido se ajustan automáticamente según las interacciones del usuario."
+      },
+      "item4": {
+        "question": "¿Cómo se protege la privacidad del usuario cuando la IA aprende de las interacciones?",
+        "answer": "Todos los datos de aprendizaje se anonimizan y se procesan con estrictos controles de privacidad. La información personal nunca se comparte, y los padres o educadores pueden controlar la configuración de recopilación de datos."
+      },
+      "item5": {
+        "question": "¿Pueden los educadores personalizar los objetivos de aprendizaje?",
+        "answer": "Sí, los educadores pueden establecer objetivos de aprendizaje específicos, y la IA generará contenido para cumplir con estos objetivos mientras mantiene su enfoque adaptativo a las necesidades de cada estudiante."
+      }
+    }
+  },
+  "features": {
+    "title": "Experiencia de aprendizaje multimodal",
+    "description": "Nuestro juego educativo combina diversas modalidades de interacción impulsadas por IA para crear un viaje de aprendizaje inmersivo y personalizado.",
+    "integratedTitle": "Todo integrado perfectamente",
+    "integratedDescription": "A diferencia de los juegos educativos tradicionales que usan un solo modo de interacción, nuestro enfoque multimodal ofrece una experiencia rica y atractiva que se adapta a diferentes estilos y preferencias de aprendizaje.",
+    "items": {
+      "feature1": {
+        "title": "Aprendizaje visual",
+        "description": "Gráficos y animaciones atractivos para ilustrar conceptos de forma vívida."
+      },
+      "feature2": {
+        "title": "Señales auditivas",
+        "description": "Narración de voz y efectos de sonido para reforzar la comprensión."
+      },
+      "feature3": {
+        "title": "Interacción táctica",
+        "description": "Actividades prácticas e interacciones táctiles para un aprendizaje activo."
+      },
+      "feature4": {
+        "title": "Adaptación por IA",
+        "description": "Ajustes en tiempo real para adaptarse al ritmo y estilo del estudiante."
+      }
+    }
+  },
+  "home": {
+    "title": "Juego de aprendizaje multimodal con IA",
+    "welcome": "Bienvenido al futuro del aprendizaje",
+    "description": "Descubre un juego educativo multimodal con IA que transforma la forma de aprender mediante experiencias personalizadas y atractivas.",
+    "footer": "© 2025 Aprendizaje Multimodal con IA. Todos los derechos reservados."
+  },
+  "header": {
+    "brand": "EduGame AI",
+    "nav": {
+      "home": "Inicio",
+      "features": "Características",
+      "how-it-works": "Cómo funciona",
+      "benefits": "Beneficios",
+      "faq": "Preguntas frecuentes",
+      "cta": "Comenzar"
+    },
+    "language": {
+      "en": "EN",
+      "es": "ES"
+    }
+  },
+  "footer": {
+    "brand": "EduGame AI",
+    "description": "Transformando los juegos educativos con experiencias de aprendizaje multimodal impulsadas por IA.",
+    "sections": {
+      "navigation": "Navegación",
+      "resources": "Recursos",
+      "contact": "Contáctanos"
+    },
+    "navLinks": {
+      "home": "Inicio",
+      "features": "Características",
+      "how-it-works": "Cómo funciona",
+      "benefits": "Beneficios",
+      "faq": "Preguntas frecuentes",
+      "cta": "Comenzar"
+    },
+    "resources": {
+      "documentation": "Documentación",
+      "api": "API",
+      "tutorials": "Tutoriales",
+      "blog": "Blog",
+      "caseStudies": "Estudios de caso"
+    },
+    "contact": {
+      "email": "info@edugame-ai.example.com",
+      "address": {
+        "line1": "123 Education Lane",
+        "line2": "San Francisco, CA 94103"
+      }
+    },
+    "copyright": "© {year} EduGame AI. Todos los derechos reservados.",
+    "links": {
+      "privacy": "Política de privacidad",
+      "terms": "Términos de servicio",
+      "cookies": "Política de cookies"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "github": "GitHub"
+    }
+  },
+  "hero": {
+    "badge": {
+      "text": "Revolucionando los juegos educativos"
+    },
+    "title": {
+      "main": "Juegos educativos",
+      "highlight": "multimodales",
+      "sub":"impulsados por IA"
+    },
+    "description": "Participa en una experiencia de aprendizaje que se adapta a tus necesidades mediante voz, tacto y retroalimentación háptica. Nuestra IA crea desafíos dinámicos adaptados a tu estilo de aprendizaje único.",
+    "buttons": {
+      "watchDemo": "Ver demostración",
+      "getStarted": "Comenzar"
+    },
+    "visualization": {
+      "progressLabel": "Progreso de aprendizaje",
+      "adaptingLabel": "IA adaptándose",
+      "challengeText": "Generando nuevo desafío...",
+      "styleText": "Adaptándose al estilo de aprendizaje"
+    },
+    "scrollIndicator": "Desplázate para explorar"
+  },
+  "howItWorks": {
+    "title": "Cómo la IA impulsa tu aprendizaje",
+    "description": "Nuestro motor de IA avanzado crea una experiencia verdaderamente personalizada al analizar tus interacciones y generar contenido personalizado en tiempo real.",
+    "steps": {
+      "step1": {
+        "title": "Analizar el estilo de aprendizaje",
+        "description": "La IA observa cómo interactúas con el juego para identificar tus modalidades de aprendizaje preferidas."
+      },
+      "step2": {
+        "title": "Generar contenido",
+        "description": "Se crean desafíos y narrativas personalizadas que coinciden con tus intereses y nivel de habilidad."
+      },
+      "step3": {
+        "title": "Adaptarse en tiempo real",
+        "description": "La IA ajusta la dificultad y el contenido según tu progreso y compromiso."
+      },
+      "step4": {
+        "title": "Proporcionar retroalimentación",
+        "description": "Recibe orientación y apoyo personalizados para mejorar tu experiencia de aprendizaje."
+      }
+    },
+    "example": {
+      "title": "Ejemplo de respuesta de la IA",
+      "playerMessage": "<strong>Jugador:</strong> Tengo problemas para entender fracciones.",
+      "aiResponse": "<strong>IA:</strong> Noto que eres un aprendiz visual-táctil. Vamos a crear un juego de fracciones con pizzas donde puedas cortar y combinar piezas...",
+      "analyzingText": "Analizando el estilo de aprendizaje...",
+      "generatingText": "Generando contenido personalizado"
+    },
+    "adaptation": {
+      "title": "Adaptación de IA en tiempo real",
+      "description": "Mientras interactúas con el juego, nuestra IA analiza constantemente tus respuestas, patrones de compromiso y progreso de aprendizaje para crear una experiencia verdaderamente personalizada.",
+      "features": [
+        "Identifica tus modalidades de aprendizaje preferidas",
+        "Ajusta la dificultad según tu progreso",
+        "Crea narrativas personalizadas que resuenan con tus intereses",
+        "Proporciona apoyo específico donde más lo necesitas"
+      ]
+    }
+  }
+}

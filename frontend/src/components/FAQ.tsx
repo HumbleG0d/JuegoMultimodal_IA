@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FAQ_ITEMS } from '../constants';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const FAQ: React.FC = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   
   const toggleItem = (index: number) => {
@@ -14,10 +16,10 @@ const FAQ: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            Frequently Asked Questions
+            {t('faq.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Learn more about how our AI-powered multimodal educational game works.
+            {t('faq.description')}
           </p>
         </div>
         
@@ -32,7 +34,9 @@ const FAQ: React.FC = () => {
                   className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
                   onClick={() => toggleItem(index)}
                 >
-                  <span className="text-lg font-medium text-gray-800">{item.question}</span>
+                  <span className="text-lg font-medium text-gray-800">
+                    {t(`faq.items.item${index + 1}.question`)}
+                  </span>
                   {openIndex === index ? (
                     <ChevronUp className="flex-shrink-0 text-blue-500" size={20} />
                   ) : (
@@ -42,7 +46,9 @@ const FAQ: React.FC = () => {
                 
                 {openIndex === index && (
                   <div className="px-6 pb-4">
-                    <p className="text-gray-600">{item.answer}</p>
+                    <p className="text-gray-600">
+                      {t(`faq.items.item${index + 1}.answer`)}
+                    </p>
                   </div>
                 )}
               </div>
@@ -51,13 +57,13 @@ const FAQ: React.FC = () => {
           
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">
-              Still have questions? We're here to help.
+              {t('faq.stillHaveQuestions')}
             </p>
             <a 
               href="#" 
               className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800"
             >
-              Contact our support team
+              {t('faq.contactLink')}
               <ChevronDown size={16} className="ml-1 transform rotate-270" />
             </a>
           </div>
