@@ -226,5 +226,34 @@
         "Provides targeted support where you need it most"
       ]
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Log In",
+      "emailLabel": "Email or Username",
+      "emailPlaceholder": "user@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Log In",
+      "or": "or",
+      "continueWithGmail": "Continue with Gmail",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Sign Up"
+    },
+    "register": {
+      "title": "Sign Up",
+      "emailLabel": "Email",
+      "emailPlaceholder": "user@example.com",
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "yourusername",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "confirmPasswordLabel": "Confirm Password",
+      "submit": "Sign Up",
+      "or": "or",
+      "continueWithGmail": "Continue with Gmail",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Log In"
+    }
   }
 }

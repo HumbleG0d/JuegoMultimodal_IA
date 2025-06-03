@@ -226,5 +226,34 @@
         "Proporciona apoyo específico donde más lo necesitas"
       ]
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "emailLabel": "Correo Electrónico o Nombre de Usuario",
+      "emailPlaceholder": "usuario@ejemplo.com",
+      "passwordLabel": "Contraseña",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Iniciar Sesión",
+      "or": "o",
+      "continueWithGmail": "Continuar con Gmail",
+      "noAccount": "¿No tienes una cuenta?",
+      "registerLink": "Registrarse"
+    },
+    "register": {
+      "title": "Registrarse",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "usuario@ejemplo.com",
+      "usernameLabel": "Nombre de Usuario",
+      "usernamePlaceholder": "tuusuario",
+      "passwordLabel": "Contraseña",
+      "passwordPlaceholder": "••••••••",
+      "confirmPasswordLabel": "Confirmar Contraseña",
+      "submit": "Registrarse",
+      "or": "o",
+      "continueWithGmail": "Continuar con Gmail",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Iniciar Sesión"
+    }
   }
 }

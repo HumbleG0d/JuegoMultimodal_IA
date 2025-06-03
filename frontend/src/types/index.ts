@@ -41,6 +41,23 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
+export interface ModalProps {
+  isOpen: boolean,
+  onClose: () => void;
+  children: React.ReactNode;
+  title: string;
+};
+
+export interface InputProps{
+  label: string;
+  type: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+  placeholder?: string;
+};
+
 export interface IconProps extends LucideProps {
   name: string;
 }
