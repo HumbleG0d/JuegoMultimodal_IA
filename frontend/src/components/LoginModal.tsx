@@ -1,9 +1,10 @@
-import Modal from "./ui/Modal";
-import Input from "./ui/Input";
-import { useState } from "react";
-import Button from "./ui/Button";
-import { Mail } from "lucide-react";
+import Modal from './ui/Modal';
+import Input from './ui/Input';
+import { useState } from 'react';
+import Button from './ui/Button';
+import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToRegister: () => void }> = ({
   isOpen,
@@ -11,6 +12,7 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToReg
   onSwitchToRegister,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -37,15 +39,34 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToReg
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      console.log('Estado HTTP:', response.status); // Depuración
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error('Error parseando JSON:', jsonError);
+        throw new Error(t('auth.login.error.invalidResponse'));
+      }
+
+
       if (!response.ok) {
         throw new Error(data.message || t('auth.login.error.generic'));
       }
 
+      if (!data || !data.token || !data.user_type) {
+        throw new Error(t('auth.login.error.invalidResponse'));
+      }
+
       // Store token in localStorage
-      localStorage.setItem('token', data.user.token);
-      console.log('Login successful:', data.user);
-      onClose(); // Close modal on success
+      localStorage.setItem('token', data.token);
+
+      // Redirect based on user_type
+      if (data.user_type === 'profesor') {
+        navigate('/teacher/dashboard');
+      } else {
+        navigate('/student/dashboard'); // O redirige a un dashboard de estudiante si existe
+      }
+      onClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : t('auth.login.error.generic'));
     } finally {
@@ -85,7 +106,7 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToReg
             name="user_type"
             value={formData.user_type}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-white/10 border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 text-black bg-white border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           >
             <option value="estudiante">{t('auth.login.userType.student')}</option>
@@ -95,7 +116,7 @@ const LoginModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToReg
         
         <div className="mt-6 space-y-4">
           <Button
-            className=" text-blue-600 hover:bg-blue-530 w-full"
+            className="text-blue-600 hover:bg-blue-500 w-full"
             type="submit"
             disabled={isLoading}
           >
