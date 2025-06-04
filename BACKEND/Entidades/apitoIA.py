@@ -1,7 +1,7 @@
 from groq import Groq
 import json
 
-GROQ_API_KEY = "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"  # Configura tu API key de Groq
+GROQ_API_KEY = ""  # Configura tu API key de Groq
 QUIZ_STORAGE_PATH = "generated_quizzes"
 groq_client = Groq(api_key=GROQ_API_KEY)
 
@@ -27,9 +27,13 @@ def call_groq_api(system_prompt, user_prompt):
         print(type(content))
         print("gaa")
         # Parsear el JSON de respuesta
-        quiz_json = json.loads(content)
-        print(quiz_json)
-        return quiz_json
+        if content is not None:
+            quiz_json = json.loads(content)
+            print(quiz_json)
+            return quiz_json
+        else:
+            print("Error: El contenido recibido es None.")
+            return None
 
     except json.JSONDecodeError as e:
         print(f"Error: La IA no devolvió un JSON válido: {e}")
