@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Button from './ui/Button';
-import { Mic, Send, Save} from 'lucide-react';
-import type { Question , QuizResponse} from '../types';
+import { Mic, Send, Save, MicOff } from 'lucide-react';
+import type { Question , QuizResponse , SpeechRecognition , SpeechRecognitionErrorEvent , SpeechRecognitionEvent} from '../types';
 import { useTranslation } from 'react-i18next';
 
+// Extend the Window interface to include SpeechRecognition and webkitSpeechRecognition
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    SpeechRecognition: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    webkitSpeechRecognition: any;
+  }
+}
 
 const Dashboard: React.FC = () => {
   const { t } = useTranslation();
@@ -12,10 +21,29 @@ const Dashboard: React.FC = () => {
   const [generatedQuestions, setGeneratedQuestions] = useState<Question[]>([]);
   const [examTitle, setExamTitle] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [voiceSupported, setVoiceSupported] = useState(false);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
   const [prompt, setPrompt] = useState({
     description: '',
     age_group: '3-5 años',
   });
+
+  // Verificar soporte para reconocimiento de voz al montar el componente
+  useEffect(() => {
+    const checkVoiceSupport = () => {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      setVoiceSupported(!!SpeechRecognition);
+    };
+
+    checkVoiceSupport();
+
+    // Cleanup al desmontar
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -27,7 +55,102 @@ const Dashboard: React.FC = () => {
   };
 
   const handleVoiceInput = () => {
-    setIsListening(!isListening);
+    if (!voiceSupported) {
+      setError(t('dashboard.errors.voiceNotSupported') || 'El reconocimiento de voz no está soportado en este navegador');
+      return;
+    }
+
+    if (isListening) {
+      // Detener el reconocimiento
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+      setIsListening(false);
+    } else {
+      // Iniciar el reconocimiento
+      startVoiceRecognition();
+    }
+  };
+
+  const startVoiceRecognition = () => {
+    try {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        throw new Error('Speech recognition not supported');
+      }
+      
+      const recognition = new SpeechRecognition();
+      
+      // Configuración del reconocimiento
+      recognition.lang = 'es-ES';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+
+      // Eventos del reconocimiento
+      recognition.onstart = () => {
+        setIsListening(true);
+        setError(null);
+        console.log('Reconocimiento de voz iniciado');
+      };
+
+      recognition.onresult = (event: SpeechRecognitionEvent) => {
+        let finalTranscript = '';
+
+        // Procesar todos los resultados
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const transcript = event.results[i][0].transcript;
+          
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+          }
+        }
+
+        // Actualizar el prompt con el texto reconocido
+        if (finalTranscript) {
+          setPrompt(prev => ({
+            ...prev,
+            description: prev.description + (prev.description ? ' ' : '') + finalTranscript
+          }));
+        }
+      };
+
+      recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+        console.error('Error en reconocimiento de voz:', event.error);
+        setIsListening(false);
+        
+        switch (event.error) {
+          case 'no-speech':
+            setError(t('dashboard.errors.noSpeech') || 'No se detectó habla. Intenta hablar más claro.');
+            break;
+          case 'audio-capture':
+            setError(t('dashboard.errors.audioCapture') || 'No se pudo acceder al micrófono. Verifica los permisos.');
+            break;
+          case 'not-allowed':
+            setError(t('dashboard.errors.microphonePermission') || 'Permisos de micrófono denegados. Habilita el acceso al micrófono.');
+            break;
+          case 'network':
+            setError(t('dashboard.errors.networkError') || 'Error de red. Verifica tu conexión a internet.');
+            break;
+          default:
+            setError(t('dashboard.errors.voiceRecognition') || 'Error en el reconocimiento de voz. Intenta nuevamente.');
+        }
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+        console.log('Reconocimiento de voz terminado');
+      };
+
+      // Guardar referencia y iniciar
+      recognitionRef.current = recognition;
+      recognition.start();
+
+    } catch (error) {
+      console.error('Error iniciando reconocimiento de voz:', error);
+      setError(t('dashboard.errors.voiceInitError') || 'Error al inicializar el reconocimiento de voz');
+      setIsListening(false);
+    }
   };
 
   const generateQuestions = async () => {
@@ -93,6 +216,10 @@ const Dashboard: React.FC = () => {
     console.log('Saving exam:', { title: examTitle, questions: generatedQuestions });
   };
 
+  const clearDescription = () => {
+    setPrompt(prev => ({ ...prev, description: '' }));
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
@@ -134,23 +261,47 @@ const Dashboard: React.FC = () => {
             
             <div className="flex gap-4 mb-6">
               <div className="flex-1">
-                <textarea
-                  id="description"
-                  name="description"
-                  value={prompt.description}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  rows={4}
-                  placeholder={t('dashboard.placeholders.description')}
-                />
+                <div className="relative">
+                  <textarea
+                    id="description"
+                    name="description"
+                    value={prompt.description}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                      isListening ? 'border-red-500 bg-red-50' : ''
+                    }`}
+                    rows={4}
+                    placeholder={t('dashboard.placeholders.description')}
+                  />
+                  {isListening && (
+                    <div className="absolute top-2 right-2 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-red-600 font-medium">
+                        {t('dashboard.listening') || 'Escuchando...'}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                {prompt.description && (
+                  <button
+                    onClick={clearDescription}
+                    className="mt-2 text-sm text-gray-500 hover:text-gray-700 underline"
+                  >
+                    {t('dashboard.buttons.clearText') || 'Limpiar texto'}
+                  </button>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <Button
                   onClick={handleVoiceInput}
                   variant={isListening ? 'secondary' : 'outline'}
-                  className="flex items-center gap-2"
+                  className={`flex items-center gap-2 ${
+                    !voiceSupported ? 'opacity-50 cursor-not-allowed' : ''
+                  } ${isListening ? 'bg-red-100 border-red-300 text-red-700' : ''}`}
+                  disabled={!voiceSupported}
+                  title={!voiceSupported ? 'Reconocimiento de voz no soportado' : ''}
                 >
-                  <Mic size={20} />
+                  {isListening ? <MicOff size={20} /> : <Mic size={20} />}
                   {isListening ? t('dashboard.buttons.stop') : t('dashboard.buttons.voice')}
                 </Button>
                 <Button
@@ -166,7 +317,15 @@ const Dashboard: React.FC = () => {
             </div>
 
             {error && (
-              <div className="text-red-500 text-sm text-center mb-4">{error}</div>
+              <div className="text-red-500 text-sm text-center mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                {error}
+              </div>
+            )}
+
+            {!voiceSupported && (
+              <div className="text-amber-600 text-sm text-center mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                {t('dashboard.warnings.voiceNotSupported') || 'El reconocimiento de voz no está disponible en este navegador. Usa Chrome, Edge o Safari para obtener mejor compatibilidad.'}
+              </div>
             )}
           </div>
           
