@@ -1,44 +1,96 @@
 import React, { useState } from 'react';
 import Button from './ui/Button';
-import { Mic, Send, Save, Plus, Trash2 } from 'lucide-react';
-import type { Question } from '../types';
+import { Mic, Send, Save} from 'lucide-react';
+import type { Question , QuizResponse} from '../types';
 
-const DashBoard: React.FC = () => {
-
-  const [prompt, setPrompt] = useState('');
+const Dashboard: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [generatedQuestions, setGeneratedQuestions] = useState<Question[]>([]);
   const [examTitle, setExamTitle] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [prompt, setPrompt] = useState({
+    description: '',
+    age_group: '3-5 años', // Valor por defecto
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    if (name === 'examTitle') {
+      setExamTitle(value);
+    } else {
+      setPrompt((prev) => ({ ...prev, [name]: value }));
+    }
+  };
 
   const handleVoiceInput = () => {
     setIsListening(!isListening);
-    // Voice recognition logic would go here
+    // Implementar lógica de reconocimiento de voz si es necesario
   };
 
   const generateQuestions = async () => {
-    // This would connect to your AI service
-    const mockQuestions: Question[] = [
-      {
-        id: '1',
-        text: 'What is the capital of France?',
-        type: 'multiple_choice',
-        options: ['London', 'Berlin', 'Paris', 'Madrid'],
-        correctAnswer: 'Paris'
-      },
-      {
-        id: '2',
-        text: 'Explain the process of photosynthesis.',
-        type: 'open_ended',
-        correctAnswer: 'Photosynthesis is the process by which plants convert light energy into chemical energy.'
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('No authentication token found. Please log in.');
       }
-    ];
-    
-    setGeneratedQuestions(mockQuestions);
+
+      const response = await fetch('http://localhost:5000/api/teacher/dashboard/chat/generate-quiz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          prompt: prompt.description,
+          age_group: prompt.age_group,
+        }),
+      });
+
+      let data: QuizResponse;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error('Error parsing JSON:', jsonError);
+        throw new Error('Invalid response from server.');
+      }
+
+      console.log('Respuesta de la API:', data); // Depuración
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to generate questions.');
+      }
+
+      if (!data.success || !data.quiz_data?.questions) {
+        throw new Error('Invalid quiz data received.');
+      }
+
+      // Mapear preguntas a la interfaz Question
+      const questions: Question[] = data.quiz_data.questions.map((q, index) => ({
+        id: `${data.quiz_data.quiz_id}-${index}`,
+        question: q.question,
+        options: q.options,
+        correct_answer: q.options[q.correct_answer],
+        explanation: q.explanation,
+        type: 'multiple_choice',
+      }));
+
+      setGeneratedQuestions(questions);
+      setExamTitle(data.quiz_data.title); // Usar el título generado
+    } catch (err) {
+      console.error('Error generando preguntas:', err);
+      setError(err instanceof Error ? err.message : 'An error occurred while generating questions.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const saveExam = () => {
-    // Save exam to database logic would go here
     console.log('Saving exam:', { title: examTitle, questions: generatedQuestions });
+    // Implementar lógica para guardar en la base de datos
   };
 
   return (
@@ -55,21 +107,41 @@ const DashBoard: React.FC = () => {
               <input
                 type="text"
                 id="examTitle"
+                name="examTitle"
                 value={examTitle}
-                onChange={(e) => setExamTitle(e.target.value)}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter exam title"
               />
             </div>
             
+            <div className="mb-6">
+              <label htmlFor="age_group" className="block text-sm font-medium text-gray-700 mb-2">
+                Age Group
+              </label>
+              <select
+                id="age_group"
+                name="age_group"
+                value={prompt.age_group}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="3-5 años">3-5 years</option>
+                <option value="6-8 años">6-8 years</option>
+                <option value="9-11 años">9-11 years</option>
+              </select>
+            </div>
+            
             <div className="flex gap-4 mb-6">
               <div className="flex-1">
                 <textarea
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
+                  id="description"
+                  name="description"
+                  value={prompt.description}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={4}
-                  placeholder="Describe the topic and type of questions you want to generate..."
+                  placeholder="Describe the topic and type of questions you want to generate (e.g., 'One Piece characters')..."
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -85,12 +157,17 @@ const DashBoard: React.FC = () => {
                   onClick={generateQuestions}
                   variant="primary"
                   className="flex items-center gap-2"
+                  disabled={isLoading || !prompt.description}
                 >
                   <Send size={20} />
-                  Generate
+                  {isLoading ? 'Generating...' : 'Generate'}
                 </Button>
               </div>
             </div>
+
+            {error && (
+              <div className="text-red-500 text-sm text-center mb-4">{error}</div>
+            )}
           </div>
           
           {generatedQuestions.length > 0 && (
@@ -108,50 +185,34 @@ const DashBoard: React.FC = () => {
               </div>
               
               <div className="space-y-6">
-                {generatedQuestions.map((question, index) => (
+                {generatedQuestions.map((question) => (
                   <div
                     key={question.id}
                     className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
                   >
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-lg font-medium text-gray-800">
-                        Question {index + 1}
-                      </h3>
-                      <div className="flex gap-2">
-                        <button className="text-gray-400 hover:text-blue-500">
-                          <Plus size={20} />
-                        </button>
-                        <button className="text-gray-400 hover:text-red-500">
-                          <Trash2 size={20} />
-                        </button>
-                      </div>
+                    <div className="mb-3">
+                      <h3 className="text-lg font-medium text-gray-800">{question.question}</h3>
                     </div>
                     
-                    <p className="text-gray-700 mb-3">{question.text}</p>
+                    <div className="space-y-2">
+                      {question.options.map((option, index) => (
+                        <div
+                          key={index}
+                          className={`p-2 text-black rounded-lg border ${
+                            option === question.correct_answer
+                              ? 'border-green-500 bg-green-50'
+                              : 'border-gray-200'
+                          }`}
+                        >
+                          {option}
+                        </div>
+                      ))}
+                    </div>
                     
-                    {question.type === 'multiple_choice' && question.options && (
-                      <div className="space-y-2">
-                        {question.options.map((option, optionIndex) => (
-                          <div
-                            key={optionIndex}
-                            className={`p-2 text-black rounded-lg border ${
-                              option === question.correctAnswer
-                                ? 'border-green-500 bg-green-50'
-                                : 'border-gray-200'
-                            }`}
-                          >
-                            {option}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    
-                    {question.type === 'open_ended' && (
-                      <div className="mt-2">
-                        <p className="text-sm font-medium text-gray-500">Sample Answer:</p>
-                        <p className="text-gray-700 mt-1">{question.correctAnswer}</p>
-                      </div>
-                    )}
+                    <div className="mt-2">
+                      <p className="text-sm font-medium text-gray-500">Explanation:</p>
+                      <p className="text-gray-700 mt-1">{question.explanation}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -163,4 +224,4 @@ const DashBoard: React.FC = () => {
   );
 };
 
-export default DashBoard;
+export default Dashboard;
