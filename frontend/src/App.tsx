@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Benefits from './components/Benefits';
-import FAQ from './components/FAQ';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
-
+import Home from './components/Home';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import DashBoard from './components/DashBoard';
+import StudenDashBoard from './components/StudentDashBoard';
 function App() {
   useEffect(() => {
     // Update the page title
@@ -40,16 +36,17 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <Header />
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <Benefits />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gray-900 text-white">
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/teacher/dashboard" element={<DashBoard />} />
+          <Route path="/student/dashboard" element={<StudenDashBoard />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
