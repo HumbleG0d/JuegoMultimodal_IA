@@ -6,12 +6,14 @@ import FAQ from "./FAQ"
 import CTA from "./CTA"
 import Footer from "./Footer"
 import React from "react"
+import HelpBot from "./HelpBot"
 
 const Home: React.FC = () => {
 
     return (
         <>
             <Hero />
+            <HelpBot/>
             <Features />
             <HowItWorks />
             <Benefits />
