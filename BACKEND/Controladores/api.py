@@ -89,7 +89,15 @@ def login():
     auth_service = AuthService(Database())
     user = auth_service.login_user(email, password, user_type)
     if user:
-        return jsonify({"message": "¡Inicio de sesión exitoso!", "user": user}), 200
+        # Asegúrate de que user incluya user_type
+        response_data = {
+            "message": "¡Inicio de sesión exitoso!",
+            "email": user.get("email", email),
+            "id": user.get("user_id", user.get("id")),
+            "token": user.get("token"),
+            "user_type": user.get("user_type", user_type)  # Añadir user_type
+        }
+        return jsonify(response_data), 200
     return jsonify({"message": "¡Credenciales o tipo de usuario inválidos!"}), 401
 
 @app.route("/api/teacher/listare", methods=["GET"])
