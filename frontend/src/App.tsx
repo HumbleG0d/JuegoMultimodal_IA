@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import DashBoard from './components/DashBoard';
+import DashBoard from './components/GenerateQuiz';
 import StudenDashBoard from './components/StudentDashBoard';
 function App() {
   useEffect(() => {
