@@ -1,68 +1,80 @@
+
 from functools import wraps
+from flask import Flask, request, jsonify, make_response
+from flask_cors import CORS
+from BACKEND.Entidades.User import Database, AuthService
 
-from flask import Flask, request, jsonify
-
-from JuegoMultimodal_IA.BACKEND.Entidades.User import Database, AuthService
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {
+    "origins": ["http://localhost:5173"],
+    "methods": ["GET", "POST", "OPTIONS"],
+    "allow_headers": ["Content-Type", "Authorization"]
+    # Configuración explícita de CORS
+}})  # Permitir solicitudes desde el frontend React
 
+
+@app.route("/api/<path:path>", methods=["OPTIONS"])
+def handle_options(path):
+    response = make_response()
+    response.headers["Access-Control-Allow-Origin"] = "http://localhost:5173"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
 
 def token_required(f):
-    @wraps(f)#mantener la identidad de la función original cuando se usa un decorador
-    def decorated(*args, **kwargs):
-        token = None
-        # Obtener el token del encabezado Authorization
-        if "Authorization" in request.headers:
-            token = request.headers["Authorization"].replace("Bearer ", "")
-        if not token:
-            return jsonify({"message": "Token is missing!"}), 401
+       @wraps(f)
+       def decorated(*args, **kwargs):
+           token = None
+           if "Authorization" in request.headers:
+               token = request.headers["Authorization"].replace("Bearer ", "")
+           if not token:
+               return jsonify({"message": "¡Falta el token!"}), 401
 
-        auth_service = AuthService(Database())
-        token_info = auth_service.verify_token(token)
-        if not token_info:
-            return jsonify({"message": "Invalid or expired token!"}), 401
+           auth_service = AuthService(Database())
+           token_info = auth_service.verify_token(token)
+           if not token_info:
+               return jsonify({"message": "¡Token inválido o expirado!"}), 401
 
-        # Pasar la información del usuario a la ruta
-        return f(token_info, *args, **kwargs)
+           return f(token_info, *args, **kwargs)
 
-    return decorated
-
+       return decorated
 
 @app.route("/api/student/dashboard", methods=["GET"])
 @token_required
 def student_dashboard(token_info):
     if token_info["user_type"] != "student":
-        return jsonify({"message": "Access denied! Student only."}), 403
-    return jsonify({"message": f"Welcome student {token_info['user_id']}!", "user": token_info})
-
+        return jsonify({"message": "¡Acceso denegado! Solo para estudiantes."}), 403
+    return jsonify({"message": f"¡Bienvenido estudiante {token_info['user_id']}!", "user": token_info})
 
 @app.route("/api/teacher/dashboard", methods=["GET"])
 @token_required
 def teacher_dashboard(token_info):
     if token_info["user_type"] != "teacher":
-        return jsonify({"message": "Access denied! Teacher only."}), 403
-    return jsonify({"message": f"Welcome teacher {token_info['user_id']}!", "user": token_info})
+        return jsonify({"message": "¡Acceso denegado! Solo para profesores."}), 403
+    return jsonify({"message": f"¡Bienvenido profesor {token_info['user_id']}!", "user": token_info})
 
 
-# Rutas de autenticación
 @app.route("/api/register", methods=["POST"])
 def register():
     data = request.get_json()
     email = data.get("email")
-    nombre=data.get("nombre")
+    username = data.get("username")
     password = data.get("password")
+    confirm_password = data.get("confirm_password")
+    if password != confirm_password:
+        return jsonify({"message": "Passwords do not match!"}), 400
     user_type = data.get("user_type")
 
-    if not email or not password or not user_type :
-        return jsonify({"message": "Missing required fields!"}), 400
+    if not email or not password or not user_type:
+        return jsonify({"message": "¡Faltan campos requeridos!"}), 400
 
-    if user_type!="estudiante" and user_type!="profesor":
-        return jsonify(({"message": "Solo existen dos tipos de usuarios, estudiante o profesores"}))
+    if user_type not in ["estudiante", "profesor"]:
+        return jsonify({"message": "Solo se permiten tipos de usuario estudiante o profesor."}), 400
 
     auth_service = AuthService(Database())
-    if auth_service.register_user(email,nombre, password, user_type):
-        return jsonify({"message": "User registered successfully!"}), 201
-    return jsonify({"message": "Email already exists!"}), 400
-
+    if auth_service.register_user(email, username, password, user_type):
+        return jsonify({"message": "¡Usuario registrado exitosamente!"}), 201
+    return jsonify({"message": "¡El correo ya existe o las contraseñas no coinciden!"}), 400
 
 @app.route("/api/login", methods=["POST"])
 def login():
@@ -72,52 +84,35 @@ def login():
     user_type = data.get("user_type")
 
     if not email or not password or not user_type:
-        return jsonify({"message": "Missing required fields!"}), 400
+        return jsonify({"message": "¡Faltan campos requeridos!"}), 400
 
     auth_service = AuthService(Database())
     user = auth_service.login_user(email, password, user_type)
     if user:
-        return jsonify({"message": "Login successful!", "user": user}), 200
-    return jsonify({"message": "Invalid credentials or user type!"}), 401
-
-
-# --- NUEVAS RUTAS PARA LISTAR USUARIOS (SOLO PROFESORES) ---
-
+        return jsonify({"message": "¡Inicio de sesión exitoso!", "user": user}), 200
+    return jsonify({"message": "¡Credenciales o tipo de usuario inválidos!"}), 401
 
 @app.route("/api/teacher/listare", methods=["GET"])
 @token_required
 def list_students(token_info):
-    """
-    Permite a un profesor listar todos los estudiantes registrados.
-    Requiere autenticación de profesor.
-    """
     if token_info["user_type"] != "profesor":
-        return jsonify({"message": "Access denied! Teacher only."}), 403
+        return jsonify({"message": "¡Acceso denegado! Solo para profesores."}), 403
 
     auth_service = AuthService(Database())
     students = auth_service.get_all_students()
     return jsonify({"students": students}), 200
 
-
 @app.route("/api/teacher/listarp", methods=["GET"])
 @token_required
 def list_teachers(token_info):
-    """
-    Permite a un profesor listar todos los profesores registrados.
-    Requiere autenticación de profesor.
-    """
     if token_info["user_type"] != "profesor":
-        return jsonify({"message": "Access denied! Teacher only."}), 403
+        return jsonify({"message": "¡Acceso denegado! Solo para profesores."}), 403
 
     auth_service = AuthService(Database())
     teachers = auth_service.get_all_teachers()
     return jsonify({"teachers": teachers}), 200
 
-
-# Ejemplo de uso
 if __name__ == "__main__":
     db = Database()
     auth = AuthService(db)
-    # Registro de usuarios
-    # Ejecutar la aplicación Flask
     app.run(debug=True)
