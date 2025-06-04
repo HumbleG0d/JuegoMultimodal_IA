@@ -57,7 +57,7 @@ const DashBoard: React.FC = () => {
                 id="examTitle"
                 value={examTitle}
                 onChange={(e) => setExamTitle(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter exam title"
               />
             </div>
@@ -67,7 +67,7 @@ const DashBoard: React.FC = () => {
                 <textarea
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={4}
                   placeholder="Describe the topic and type of questions you want to generate..."
                 />
@@ -134,7 +134,7 @@ const DashBoard: React.FC = () => {
                         {question.options.map((option, optionIndex) => (
                           <div
                             key={optionIndex}
-                            className={`p-2 rounded-lg border ${
+                            className={`p-2 text-black rounded-lg border ${
                               option === question.correctAnswer
                                 ? 'border-green-500 bg-green-50'
                                 : 'border-gray-200'
