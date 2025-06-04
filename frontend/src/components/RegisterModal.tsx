@@ -115,7 +115,7 @@ const RegisterModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchTo
             name="user_type"
             value={formData.user_type}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-white/10 border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 text-black bg-white  border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           >
             <option value="estudiante">{t('auth.register.userType.student')}</option>
