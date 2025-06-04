@@ -234,6 +234,11 @@
       "emailPlaceholder": "user@example.com",
       "passwordLabel": "Password",
       "passwordPlaceholder": "••••••••",
+      "userTypeLabel": "User Type",
+      "userType": {
+        "student": "Student",
+        "teacher": "Teacher"
+      },
       "submit": "Log In",
       "or": "or",
       "continueWithGmail": "Continue with Gmail",
@@ -249,6 +254,11 @@
       "passwordLabel": "Password",
       "passwordPlaceholder": "••••••••",
       "confirmPasswordLabel": "Confirm Password",
+      "userTypeLabel": "User Type",
+      "userType": {
+        "student": "Student",
+        "teacher": "Teacher"
+      },
       "submit": "Sign Up",
       "or": "or",
       "continueWithGmail": "Continue with Gmail",

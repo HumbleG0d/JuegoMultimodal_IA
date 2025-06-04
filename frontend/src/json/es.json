@@ -234,6 +234,10 @@
       "emailPlaceholder": "usuario@ejemplo.com",
       "passwordLabel": "Contraseña",
       "passwordPlaceholder": "••••••••",
+       "userType": {
+        "student": "Estudiante",
+        "teacher": "Profesor"
+      },
       "submit": "Iniciar Sesión",
       "or": "o",
       "continueWithGmail": "Continuar con Gmail",
@@ -249,6 +253,11 @@
       "passwordLabel": "Contraseña",
       "passwordPlaceholder": "••••••••",
       "confirmPasswordLabel": "Confirmar Contraseña",
+      "userTypeLabel": "Tipo de Usuario",
+      "userType": {
+        "student": "Estudiante",
+        "teacher": "Profesor"
+      },
       "submit": "Registrarse",
       "or": "o",
       "continueWithGmail": "Continuar con Gmail",
