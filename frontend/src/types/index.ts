@@ -58,6 +58,15 @@ export interface InputProps{
   placeholder?: string;
 };
 
+export interface Question {
+  id: string;
+  text: string;
+  type: 'multiple_choice' | 'open_ended';
+  options?: string[];
+  correctAnswer?: string;
+}
+
+
 export interface IconProps extends LucideProps {
   name: string;
 }
