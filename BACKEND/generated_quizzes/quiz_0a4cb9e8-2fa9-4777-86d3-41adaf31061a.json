@@ -1,0 +1,66 @@
+{
+  "quiz_id": "0a4cb9e8-2fa9-4777-86d3-41adaf31061a",
+  "created_by": 1,
+  "created_at": "2025-06-03T22:37:08.910064",
+  "original_prompt": "Juego de animales",
+  "title": "¡Vamos a explorar los animales!",
+  "topic": "Juego de animales",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Qué animal hace 'miau'?",
+      "options": [
+        "Perro",
+        "Gato",
+        "Pájaro",
+        "Vaca"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Genial! Los gatos hacen 'miau' para comunicarse con nosotros. ¿Tienes un gato en casa?"
+    },
+    {
+      "question": "¿Cuántas patas tiene un perro?",
+      "options": [
+        "2 patas",
+        "4 patas",
+        "6 patas",
+        "8 patas"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Excelente! Los perros tienen 4 patas para correr y jugar. ¿Has visto un perro correr?"
+    },
+    {
+      "question": "¿Qué come un conejo?",
+      "options": [
+        "Frutas",
+        "Verduras",
+        "Carne",
+        "Pescado"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Los conejos comen verduras como lechugas y zanahorias. ¿Te gustan las verduras?"
+    },
+    {
+      "question": "¿Dónde viven las abejas?",
+      "options": [
+        "En el mar",
+        "En el cielo",
+        "En un nido",
+        "En un árbol"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Bien hecho! Las abejas viven en un nido y trabajan juntas para hacer miel. ¿Has visto un nido de abejas?"
+    },
+    {
+      "question": "¿Qué animal es grande y gris y tiene una trompa?",
+      "options": [
+        "Elefante",
+        "León",
+        "Tigre",
+        "Oso"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Genial! Los elefantes son grandes y grises y tienen una trompa larga. ¿Te gustan los elefantes?"
+    }
+  ]
+}
