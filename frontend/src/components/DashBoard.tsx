@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import Button from './ui/Button';
 import { Mic, Send, Save} from 'lucide-react';
 import type { Question , QuizResponse} from '../types';
+import { useTranslation } from 'react-i18next';
+
 
 const Dashboard: React.FC = () => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [generatedQuestions, setGeneratedQuestions] = useState<Question[]>([]);
@@ -11,7 +14,7 @@ const Dashboard: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [prompt, setPrompt] = useState({
     description: '',
-    age_group: '3-5 años', // Valor por defecto
+    age_group: '3-5 años',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -25,7 +28,6 @@ const Dashboard: React.FC = () => {
 
   const handleVoiceInput = () => {
     setIsListening(!isListening);
-    // Implementar lógica de reconocimiento de voz si es necesario
   };
 
   const generateQuestions = async () => {
@@ -35,7 +37,7 @@ const Dashboard: React.FC = () => {
     try {
       const token = localStorage.getItem('token');
       if (!token) {
-        throw new Error('No authentication token found. Please log in.');
+        throw new Error(t('dashboard.errors.noToken'));
       }
 
       const response = await fetch('http://localhost:5000/api/teacher/dashboard/chat/generate-quiz', {
@@ -55,20 +57,19 @@ const Dashboard: React.FC = () => {
         data = await response.json();
       } catch (jsonError) {
         console.error('Error parsing JSON:', jsonError);
-        throw new Error('Invalid response from server.');
+        throw new Error(t('dashboard.errors.invalidResponse'));
       }
 
-      console.log('Respuesta de la API:', data); // Depuración
+      console.log('Respuesta de la API:', data);
 
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to generate questions.');
+        throw new Error(data.message || t('dashboard.errors.failedToGenerate'));
       }
 
       if (!data.success || !data.quiz_data?.questions) {
-        throw new Error('Invalid quiz data received.');
+        throw new Error(t('dashboard.errors.invalidQuizData'));
       }
 
-      // Mapear preguntas a la interfaz Question
       const questions: Question[] = data.quiz_data.questions.map((q, index) => ({
         id: `${data.quiz_data.quiz_id}-${index}`,
         question: q.question,
@@ -79,10 +80,10 @@ const Dashboard: React.FC = () => {
       }));
 
       setGeneratedQuestions(questions);
-      setExamTitle(data.quiz_data.title); // Usar el título generado
+      setExamTitle(data.quiz_data.title);
     } catch (err) {
       console.error('Error generando preguntas:', err);
-      setError(err instanceof Error ? err.message : 'An error occurred while generating questions.');
+      setError(err instanceof Error ? err.message : t('dashboard.errors.generic'));
     } finally {
       setIsLoading(false);
     }
@@ -90,19 +91,18 @@ const Dashboard: React.FC = () => {
 
   const saveExam = () => {
     console.log('Saving exam:', { title: examTitle, questions: generatedQuestions });
-    // Implementar lógica para guardar en la base de datos
   };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Generate Exam Questions</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">{t('dashboard.title')}</h1>
           
           <div className="bg-white rounded-xl shadow-md p-6 mb-8">
             <div className="mb-6">
               <label htmlFor="examTitle" className="block text-sm font-medium text-gray-700 mb-2">
-                Exam Title
+                {t('dashboard.labels.examTitle')}
               </label>
               <input
                 type="text"
@@ -111,13 +111,13 @@ const Dashboard: React.FC = () => {
                 value={examTitle}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Enter exam title"
+                placeholder={t('dashboard.placeholders.examTitle')}
               />
             </div>
             
             <div className="mb-6">
               <label htmlFor="age_group" className="block text-sm font-medium text-gray-700 mb-2">
-                Age Group
+                {t('dashboard.labels.ageGroup')}
               </label>
               <select
                 id="age_group"
@@ -126,9 +126,9 @@ const Dashboard: React.FC = () => {
                 onChange={handleChange}
                 className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
-                <option value="3-5 años">3-5 years</option>
-                <option value="6-8 años">6-8 years</option>
-                <option value="9-11 años">9-11 years</option>
+                <option value="3-5 años">{t('dashboard.ageGroups.3_5_years')}</option>
+                <option value="6-8 años">{t('dashboard.ageGroups.6_8_years')}</option>
+                <option value="9-11 años">{t('dashboard.ageGroups.9_11_years')}</option>
               </select>
             </div>
             
@@ -141,7 +141,7 @@ const Dashboard: React.FC = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={4}
-                  placeholder="Describe the topic and type of questions you want to generate (e.g., 'One Piece characters')..."
+                  placeholder={t('dashboard.placeholders.description')}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -151,7 +151,7 @@ const Dashboard: React.FC = () => {
                   className="flex items-center gap-2"
                 >
                   <Mic size={20} />
-                  {isListening ? 'Stop' : 'Voice'}
+                  {isListening ? t('dashboard.buttons.stop') : t('dashboard.buttons.voice')}
                 </Button>
                 <Button
                   onClick={generateQuestions}
@@ -160,7 +160,7 @@ const Dashboard: React.FC = () => {
                   disabled={isLoading || !prompt.description}
                 >
                   <Send size={20} />
-                  {isLoading ? 'Generating...' : 'Generate'}
+                  {isLoading ? t('dashboard.buttons.generating') : t('dashboard.buttons.generate')}
                 </Button>
               </div>
             </div>
@@ -173,14 +173,14 @@ const Dashboard: React.FC = () => {
           {generatedQuestions.length > 0 && (
             <div className="bg-white rounded-xl shadow-md p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-gray-900">Generated Questions</h2>
+                <h2 className="text-xl font-semibold text-gray-900">{t('dashboard.generatedQuestions')}</h2>
                 <Button
                   onClick={saveExam}
                   variant="primary"
                   className="flex items-center gap-2"
                 >
                   <Save size={20} />
-                  Save Exam
+                  {t('dashboard.buttons.saveExam')}
                 </Button>
               </div>
               
@@ -210,7 +210,7 @@ const Dashboard: React.FC = () => {
                     </div>
                     
                     <div className="mt-2">
-                      <p className="text-sm font-medium text-gray-500">Explanation:</p>
+                      <p className="text-sm font-medium text-gray-500">{t('dashboard.question.explanation')}</p>
                       <p className="text-gray-700 mt-1">{question.explanation}</p>
                     </div>
                   </div>

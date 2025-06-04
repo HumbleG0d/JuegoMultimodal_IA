@@ -264,5 +264,40 @@
       "haveAccount": "¿Ya tienes una cuenta?",
       "loginLink": "Iniciar Sesión"
     }
+  },
+  "dashboard": {
+    "title": "Generar Preguntas de Examen",
+    "generatedQuestions": "Preguntas Generadas",
+    "labels": {
+      "examTitle": "Título del Examen",
+      "ageGroup": "Grupo de Edad",
+      "description": "Descripción"
+    },
+    "placeholders": {
+      "examTitle": "Ingresa el título del examen",
+      "description": "Describe el tema y el tipo de preguntas que deseas generar..."
+    },
+    "buttons": {
+      "voice": "Voz",
+      "stop": "Detener",
+      "generate": "Generar",
+      "generating": "Generando...",
+      "saveExam": "Guardar Examen"
+    },
+    "question": {
+      "explanation": "Explicación:"
+    },
+    "errors": {
+      "noToken": "No se encontró un token de autenticación. Por favor, inicia sesión.",
+      "invalidResponse": "Respuesta inválida del servidor.",
+      "failedToGenerate": "No se pudieron generar las preguntas.",
+      "invalidQuizData": "Datos del quiz inválidos recibidos.",
+      "generic": "Ocurrió un error al generar las preguntas."
+    },
+    "ageGroups": {
+      "3_5_years": "3-5 años",
+      "6_8_years": "6-8 años",
+      "9_11_years": "9-11 años"
+    }
   }
 }
