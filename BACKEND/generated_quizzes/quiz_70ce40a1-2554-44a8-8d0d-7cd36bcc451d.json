@@ -1,0 +1,66 @@
+{
+  "quiz_id": "70ce40a1-2554-44a8-8d0d-7cd36bcc451d",
+  "created_by": 1,
+  "created_at": "2025-06-04T10:16:26.378457",
+  "original_prompt": "Juego de animales",
+  "title": "¡Vamos a descubrir los animales!",
+  "topic": "Juego de animales",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Qué animal hace 'miau'?",
+      "options": [
+        "Perro",
+        "Gato",
+        "Pájaro",
+        "Vaca"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! El gato es un animal muy suave y hace 'miau' para hablar con nosotros."
+    },
+    {
+      "question": "¿Qué animal vive en el agua y tiene aletas?",
+      "options": [
+        "Perro",
+        "Gato",
+        "Pez",
+        "Pájaro"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Excelente! El pez es un animal que vive en el agua y tiene aletas para nadar."
+    },
+    {
+      "question": "¿Qué animal es grande y tiene un cuerno en la cabeza?",
+      "options": [
+        "Vaca",
+        "Cerdo",
+        "Rinoceronte",
+        "Oveja"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! El rinoceronte es un animal grande y fuerte que tiene un cuerno en la cabeza."
+    },
+    {
+      "question": "¿Qué animal es pequeño y vuela por el aire?",
+      "options": [
+        "Perro",
+        "Gato",
+        "Pájaro",
+        "Vaca"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! El pájaro es un animal pequeño que puede volar por el aire y cantar canciones bonitas."
+    },
+    {
+      "question": "¿Qué animal es amigo del hombre y lo acompaña en su hogar?",
+      "options": [
+        "Vaca",
+        "Cerdo",
+        "Perro",
+        "Pájaro"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! El perro es un animal que es amigo del hombre y lo acompaña en su hogar, es muy leal y cariñoso."
+    }
+  ]
+}

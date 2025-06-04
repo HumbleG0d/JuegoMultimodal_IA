@@ -1,9 +1,15 @@
+import sqlite3
+import uuid
+from contextlib import contextmanager
+
 from groq import Groq
 import json
 
 GROQ_API_KEY = "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"  # Configura tu API key de Groq
 QUIZ_STORAGE_PATH = "generated_quizzes"
 groq_client = Groq(api_key=GROQ_API_KEY)
+DATABASE_PATH = "quiz_database.db"
+
 
 
 def call_groq_api(system_prompt, user_prompt):
@@ -37,3 +43,15 @@ def call_groq_api(system_prompt, user_prompt):
     except Exception as e:
         print(f"Error en la API de Groq: {e}")
         return None
+
+
+@contextmanager
+def get_db_connection():
+    """Context manager para conexiones de base de datos"""
+    conn = sqlite3.connect(DATABASE_PATH)
+    conn.row_factory = sqlite3.Row  # Para acceder a columnas por nombre
+    try:
+        yield conn
+    finally:
+        conn.close()
+
