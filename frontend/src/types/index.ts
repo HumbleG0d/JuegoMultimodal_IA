@@ -33,11 +33,12 @@ export interface FAQItem {
   answer: string;
 }
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline' | 'text';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
 }
 
@@ -59,11 +60,34 @@ export interface InputProps{
 };
 
 export interface Question {
-  id: string;
-  text: string;
-  type: 'multiple_choice' | 'open_ended';
-  options?: string[];
-  correctAnswer?: string;
+  id: string; // Generaremos un ID único en el frontend
+  question: string;
+  options: string[];
+  correct_answer: string; // Convertimos el índice a la opción correcta
+  explanation: string;
+  type: 'multiple_choice';
+}
+
+export interface QuizResponse {
+  success: boolean;
+  quiz_id: string;
+  filename: string;
+  message: string;
+  quiz_data: {
+    quiz_id: string;
+    created_by: number;
+    created_at: string;
+    original_prompt: string;
+    title: string;
+    topic: string;
+    age_group: string;
+    questions: {
+      question: string;
+      options: string[];
+      correct_answer: number;
+      explanation: string;
+    }[];
+  };
 }
 
 
