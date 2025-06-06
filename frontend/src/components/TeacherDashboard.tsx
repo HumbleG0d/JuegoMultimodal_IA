@@ -1,0 +1,120 @@
+import React , { useState } from "react"
+import Icon from "./ui/Icon";
+import { SIDEBAR_ITEMS_TEACHER } from "../constants";
+import Button from "./ui/Button";
+import { 
+  Plus, 
+  Search, 
+  Bell, 
+  User,
+  ChevronRight,
+} from 'lucide-react';
+import QuizzCards from "./QuizzCards";
+const TeacherDashBoard: React.FC = () => {
+    const [activeSection, setActiveSection] = useState('quizzes');
+
+
+    return (
+        <section className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">
+            <div className="flex">
+                <div className="w-64 bg-white/10 backdrop-blur-md border-r border-white/20 min-h-screen">
+                    <div className="p-6">
+                        {/* Teacher Profile */}
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-6 border border-white/20">
+                            <div className="flex items-center space-x-3">
+                                {/*Img profile*/}
+                                <img 
+                                    src="https://www.facebook.com/SiDeRaLLL/posts/buenas-tardes-mis-pr%C3%ADncipes-%EF%B8%8Fhoy-no-se-olviden-el-stream-a-las-9-pm-los-espero-l/2290860037712130/"
+                                    alt="Lujan Carrion Sideral"
+                                    className="w-10 h-10 rounded-full object-cover"
+                                />
+                                <div>
+                                    <p className="text-white font-medium text-sm">Lujan Carrion</p>
+                                    <p className="text-white/70 text-xs">Profesor</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/*Quick Action*/}
+                        <Button className="w-full bg-gradient-to-r from-pink-500 to-violet-500 text-white rounded-xl py-3 px-4 font-medium mb-6 hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2 group"
+                            variant="secondary"
+                            onClick={() => console.log('Quick Action Clicked')}>
+                            <Plus />
+                            <span>Generate Quiz</span>
+                        </Button>
+
+                        {/* Navigation Links */}
+
+                        <nav className="space-y-2">
+                            {SIDEBAR_ITEMS_TEACHER.map((item) => (
+                                <Button
+                                    key={item.id}
+                                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                                    activeSection === item.id
+                                    ? 'bg-white/20 text-white border border-white/30'
+                                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                                }`}
+                                    onClick={() => setActiveSection(item.id)}>
+                                    <Icon name={item.icon} className="w-4 h-4" />
+                                    <span className="font-medium">{item.label}</span>
+                                    {activeSection === item.id && (
+                                        <ChevronRight className="w-4 h-4 ml-auto" />
+                                    )}
+                                    </Button>
+                            ))}
+                        </nav>
+                    </div>
+                </div>
+                
+                {/*Main Content*/}
+                <section className="flex-1">
+                    <div className="bg-white/10 backdrop-blur-md border-b border-white/20 px-8 py-4">
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <h1 className="text-2x1 font-bold text-white mb-1">
+                                    {activeSection === 'quizzes' && 'Quizzes'}
+                                    {activeSection === 'students' && 'Students'}
+                                    {activeSection === 'analytics' && 'Analytics'}
+                                    {activeSection === 'settings' && 'Settings'}
+                                </h1>
+                                <p className="text-white/70 text-sm">
+                                    {activeSection === 'quizzes' && 'Create and manage quizzes for your students.'}
+                                    {activeSection === 'students' && 'View and manage your students.'}
+                                    {activeSection === 'analytics' && 'Analyze student performance and progress.'}
+                                    {activeSection === 'settings' && 'Adjust your account settings.'}
+                                </p>
+                            </div>
+
+                            <div className="flex items-center space-x-4">
+                            <div className="relative">
+                            <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+                                <input 
+                                    type="text" 
+                                    placeholder="Buscar..."
+                                    className="bg-white/10 border border-white/20 rounded-lg py-2 pl-10 pr-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 backdrop-blur-sm"
+                                />
+                            </div>
+                                <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors">
+                                <Bell className="w-4 h-4" />
+                                </button>
+                                <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors">
+                                <User className="w-4 h-4" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section className="p-8">
+                        {
+                            activeSection === 'quizzes' && (
+                                <QuizzCards/>
+                            )
+                        }
+                    </section>
+                </section>
+
+            </div>
+        </section>
+    );
+};
+export default TeacherDashBoard;
