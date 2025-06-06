@@ -234,6 +234,11 @@
       "emailPlaceholder": "user@example.com",
       "passwordLabel": "Password",
       "passwordPlaceholder": "••••••••",
+      "userTypeLabel": "User Type",
+      "userType": {
+        "student": "Student",
+        "teacher": "Teacher"
+      },
       "submit": "Log In",
       "or": "or",
       "continueWithGmail": "Continue with Gmail",
@@ -249,11 +254,51 @@
       "passwordLabel": "Password",
       "passwordPlaceholder": "••••••••",
       "confirmPasswordLabel": "Confirm Password",
+      "userTypeLabel": "User Type",
+      "userType": {
+        "student": "Student",
+        "teacher": "Teacher"
+      },
       "submit": "Sign Up",
       "or": "or",
       "continueWithGmail": "Continue with Gmail",
       "haveAccount": "Already have an account?",
       "loginLink": "Log In"
+    }
+  },
+"dashboard": {
+    "title": "Generate Exam Questions",
+    "generatedQuestions": "Generated Questions",
+    "labels": {
+      "examTitle": "Exam Title",
+      "ageGroup": "Age Group",
+      "description": "Description"
+    },
+    "placeholders": {
+      "examTitle": "Enter exam title",
+      "description": "Describe the topic and type of questions you want to generate..."
+    },
+    "buttons": {
+      "voice": "Voice",
+      "stop": "Stop",
+      "generate": "Generate",
+      "generating": "Generating...",
+      "saveExam": "Save Exam"
+    },
+    "question": {
+      "explanation": "Explanation:"
+    },
+    "errors": {
+      "noToken": "No authentication token found. Please log in.",
+      "invalidResponse": "Invalid response from server.",
+      "failedToGenerate": "Failed to generate questions.",
+      "invalidQuizData": "Invalid quiz data received.",
+      "generic": "An error occurred while generating questions."
+    },
+    "ageGroups": {
+      "3_5_years": "3-5 years",
+      "6_8_years": "6-8 years",
+      "9_11_years": "9-11 years"
     }
   }
 }
