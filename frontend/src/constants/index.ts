@@ -109,3 +109,10 @@ export const FAQ_ITEMS = [
     answer: "Yes, educators can set specific learning goals, and the AI will generate content to meet these objectives while maintaining its adaptive approach to each student's needs."
   }
 ];
+
+export const SIDEBAR_ITEMS_TEACHER = [
+  { id: "quizzes", label: "Quizzes", icon: "BookOpen" },
+  { id: "students", label: "Students", icon: "Users" },
+  { id: "analytics", label: "Analytics", icon: "BarChart3" },
+  { id: "settings", label: "Settings", icon: "Settings" }
+]

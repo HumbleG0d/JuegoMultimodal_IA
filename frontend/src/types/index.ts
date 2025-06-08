@@ -94,3 +94,23 @@ export interface QuizResponse {
 export interface IconProps extends LucideProps {
   name: string;
 }
+
+export interface DashQuiz {
+  id: string,
+  title: string,
+  subject: string,
+  questions: number,
+  timeAgo: string,
+  thumbnail: string,
+  plays: number,
+  accuracy: number,
+}
+
+export interface StudensQuiz{
+  id: string,
+  name: string,
+  avatar: string,
+  score: number,
+  progress: number,
+  lastActive: string,
+}
