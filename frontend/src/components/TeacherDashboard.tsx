@@ -10,6 +10,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import QuizzCards from "./QuizzCards";
+import ListStudents from "./ListStudens";
 const TeacherDashBoard: React.FC = () => {
     const [activeSection, setActiveSection] = useState('quizzes');
 
@@ -108,6 +109,11 @@ const TeacherDashBoard: React.FC = () => {
                         {
                             activeSection === 'quizzes' && (
                                 <QuizzCards/>
+                            )
+                        }
+                        {
+                            activeSection === 'students' && (
+                                <ListStudents />
                             )
                         }
                     </section>
