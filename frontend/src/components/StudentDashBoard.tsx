@@ -9,7 +9,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { TowerControl as GameController } from 'lucide-react';
-
+import { useNavigate } from "react-router";
 
 import QuizzCards from "./QuizzCards";
 import ListStudents from "./ListStudens";
@@ -20,6 +20,11 @@ const StudentDashBoard: React.FC = () => {
     
     const [isScrolled, setIsScrolled] = useState(false);
     
+    const [isExiting, setIsExiting] = useState(false);
+    
+    const navigate = useNavigate();
+    
+
     const menuRef = useRef<HTMLDivElement>(null);
 
 
@@ -33,7 +38,9 @@ const StudentDashBoard: React.FC = () => {
     }, []);
     
 
-
+    if (isExiting) navigate('/')
+    
+    
     return (
         <section className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">
             <div className="flex">
@@ -91,8 +98,15 @@ const StudentDashBoard: React.FC = () => {
                                     {activeSection === item.id && (
                                         <ChevronRight className="w-4 h-4 ml-auto" />
                                     )}
-                                    </Button>
+                                </Button>
                             ))}
+                            <Button
+                                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 group hover:bg-white/10 hover:text-white'
+                                }`}
+                                    onClick={() => setIsExiting(true)}>
+                                    <Icon name="LogOut" className="w-4 h-4" />
+                                    <span className="font-medium">Logout</span>
+                            </Button>
                         </nav>
                     </div>
                 </div>
