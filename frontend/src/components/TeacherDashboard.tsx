@@ -1,4 +1,5 @@
-import React , { useState , useEffect , useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
+import { useNavigate } from "react-router";
 import Icon from "./ui/Icon";
 import { Link } from 'react-router';
 import { SIDEBAR_ITEMS_TEACHER } from "../constants";
@@ -10,19 +11,22 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { TowerControl as GameController } from 'lucide-react';
-
-
+import GenerateQuiz from "./GenerateQuiz";
 import QuizzCards from "./QuizzCards";
 import ListStudents from "./ListStudens";
+
 const TeacherDashBoard: React.FC = () => {
 
 
     const [activeSection, setActiveSection] = useState('quizzes');
     
     const [isScrolled, setIsScrolled] = useState(false);
-    
+
+    const [isExiting, setIsExiting] = useState(false);
+
     const menuRef = useRef<HTMLDivElement>(null);
 
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -34,6 +38,7 @@ const TeacherDashBoard: React.FC = () => {
     }, []);
     
 
+    if( isExiting ) navigate('/')
 
     return (
         <section className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">
@@ -75,10 +80,12 @@ const TeacherDashBoard: React.FC = () => {
                             </div>
                         </div>
 
-                        {/*Quick Action*/}
+                        {/*Quick Action
+                            TODO: Implement the quick action functionality
+                        */ }
                         <Button className="w-full bg-gradient-to-r from-pink-500 to-violet-500 text-white rounded-xl py-3 px-4 font-medium mb-6 hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2 group"
                             variant="secondary"
-                            onClick={() => console.log('Quick Action Clicked')}>
+                            onClick={() => setActiveSection('generateQuiz')}>
                             <Plus />
                             <span>Generate Quiz</span>
                         </Button>
@@ -102,6 +109,13 @@ const TeacherDashBoard: React.FC = () => {
                                     )}
                                     </Button>
                             ))}
+                            <Button
+                                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 group hover:bg-white/10 hover:text-white'
+                                }`}
+                                    onClick={() => setIsExiting(true)}>
+                                    <Icon name="LogOut" className="w-4 h-4" />
+                                    <span className="font-medium">Logout</span>
+                                    </Button>
                         </nav>
                     </div>
                 </div>
@@ -116,6 +130,7 @@ const TeacherDashBoard: React.FC = () => {
                                     {activeSection === 'students' && 'Students'}
                                     {activeSection === 'analytics' && 'Analytics'}
                                     {activeSection === 'settings' && 'Settings'}
+                                    {activeSection === 'generateQuiz' && 'Generate Quiz'}
                                 </h1>
                                 <p className="text-white/70 text-sm">
                                     {activeSection === 'quizzes' && 'Create and manage quizzes for your students.'}
@@ -154,7 +169,13 @@ const TeacherDashBoard: React.FC = () => {
                             activeSection === 'students' && (
                                 <ListStudents />
                             )
+                        }{
+                            activeSection === 'generateQuiz' && (
+                                <GenerateQuiz/>
+                            )
                         }
+                        
+
                     </section>
                 </section>
 

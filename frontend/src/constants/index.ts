@@ -114,11 +114,9 @@ export const SIDEBAR_ITEMS_TEACHER = [
   { id: "quizzes", label: "Quizzes", icon: "BookOpen" },
   { id: "students", label: "Students", icon: "Users" },
   { id: "analytics", label: "Analytics", icon: "BarChart3" },
-  { id: "logout", label: "Logout", icon: "LogOut" }
 ]
 
 export const SIDEBAR_ITEMS_STUDENT = [
   { id: "quizzes", label: "Quizzes", icon: "BookOpen" },
   { id: "analytics", label: "Analytics", icon: "BarChart3" },
-  { id: "logout", label: "Logout", icon: "LogOut" }
 ]

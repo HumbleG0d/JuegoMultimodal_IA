@@ -282,7 +282,8 @@
       "stop": "Detener",
       "generate": "Generar",
       "generating": "Generando...",
-      "saveExam": "Guardar Examen"
+      "saveExam": "Guardar Examen",
+       "clearText": "Limpiar Texto"
     },
     "question": {
       "explanation": "Explicación:"

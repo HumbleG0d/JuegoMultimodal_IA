@@ -283,7 +283,8 @@
       "stop": "Stop",
       "generate": "Generate",
       "generating": "Generating...",
-      "saveExam": "Save Exam"
+      "saveExam": "Save Exam",
+      "clearText": "Clear Text"
     },
     "question": {
       "explanation": "Explanation:"
