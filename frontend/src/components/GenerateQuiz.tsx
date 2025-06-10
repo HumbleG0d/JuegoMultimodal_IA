@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Button from './ui/Button';
-import { Mic, Send, Save, MicOff } from 'lucide-react';
+import { Mic, Send, Save, MicOff , BrushCleaning } from 'lucide-react';
 import type { Question , QuizResponse , SpeechRecognition , SpeechRecognitionErrorEvent , SpeechRecognitionEvent} from '../types';
 import { useTranslation } from 'react-i18next';
 
@@ -203,7 +203,7 @@ const Dashboard: React.FC = () => {
       }));
 
       setGeneratedQuestions(questions);
-      setExamTitle(data.quiz_data.title);
+      setExamTitle(examTitle);
     } catch (err) {
       console.error('Error generando preguntas:', err);
       setError(err instanceof Error ? err.message : t('dashboard.errors.generic'));
@@ -221,14 +221,12 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">{t('dashboard.title')}</h1>
           
-          <div className="bg-white rounded-xl shadow-md p-6 mb-8">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-md p-6 mb-8">
             <div className="mb-6">
-              <label htmlFor="examTitle" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="examTitle" className="block text-sm font-medium text-white/80 mb-2">
                 {t('dashboard.labels.examTitle')}
               </label>
               <input
@@ -237,13 +235,13 @@ const Dashboard: React.FC = () => {
                 name="examTitle"
                 value={examTitle}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-white/20 rounded-lg text-white bg-white/5 focus:ring-2 focus:ring-pink-500 focus:border-transparent placeholder-white/50 :"
                 placeholder={t('dashboard.placeholders.examTitle')}
               />
             </div>
             
             <div className="mb-6">
-              <label htmlFor="age_group" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="age_group" className="block text-sm font-medium text-white/80 mb-2">
                 {t('dashboard.labels.ageGroup')}
               </label>
               <select
@@ -251,7 +249,7 @@ const Dashboard: React.FC = () => {
                 name="age_group"
                 value={prompt.age_group}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-white/20 rounded-lg text-white bg-white/5 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
               >
                 <option value="3-5 años">{t('dashboard.ageGroups.3_5_years')}</option>
                 <option value="6-8 años">{t('dashboard.ageGroups.6_8_years')}</option>
@@ -267,8 +265,8 @@ const Dashboard: React.FC = () => {
                     name="description"
                     value={prompt.description}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      isListening ? 'border-red-500 bg-red-50' : ''
+                    className={`w-full px-4 py-3 border border-white/20 rounded-lg text-white bg-white/5 focus:ring-2 focus:ring-pink-500 focus:border-transparent ${
+                      isListening ? 'border-red-500 bg-red-900/20' : ''
                     }`}
                     rows={4}
                     placeholder={t('dashboard.placeholders.description')}
@@ -276,19 +274,21 @@ const Dashboard: React.FC = () => {
                   {isListening && (
                     <div className="absolute top-2 right-2 flex items-center gap-2">
                       <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs text-red-600 font-medium">
+                      <span className="text-xs text-red-200 font-medium">
                         {t('dashboard.listening') || 'Escuchando...'}
                       </span>
                     </div>
                   )}
                 </div>
                 {prompt.description && (
-                  <button
-                    onClick={clearDescription}
-                    className="mt-2 text-sm text-gray-500 hover:text-gray-700 underline"
-                  >
-                    {t('dashboard.buttons.clearText') || 'Limpiar texto'}
-                  </button>
+                <Button
+                  onClick={clearDescription}
+                  variant="primary"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 hover:from-purple-600 hover:to-pink-400"
+                >
+                  <BrushCleaning size={20} />
+               {t('dashboard.buttons.clearText')}
+                </Button>
                 )}
               </div>
               <div className="flex flex-col gap-2">
@@ -297,7 +297,7 @@ const Dashboard: React.FC = () => {
                   variant={isListening ? 'secondary' : 'outline'}
                   className={`flex items-center gap-2 ${
                     !voiceSupported ? 'opacity-50 cursor-not-allowed' : ''
-                  } ${isListening ? 'bg-red-100 border-red-300 text-red-700' : ''}`}
+                  } ${isListening ? 'bg-pink-900/50 border-pink-600 text-white' : 'bg-white/10 border-white/20 text-white'}`}
                   disabled={!voiceSupported}
                   title={!voiceSupported ? 'Reconocimiento de voz no soportado' : ''}
                 >
@@ -307,7 +307,7 @@ const Dashboard: React.FC = () => {
                 <Button
                   onClick={generateQuestions}
                   variant="primary"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 hover:from-purple-600 hover:to-pink-400"
                   disabled={isLoading || !prompt.description}
                 >
                   <Send size={20} />
@@ -317,26 +317,26 @@ const Dashboard: React.FC = () => {
             </div>
 
             {error && (
-              <div className="text-red-500 text-sm text-center mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+              <div className="text-red-200 text-sm text-center mb-4 p-3 bg-red-900/20 border border-red-800 rounded-lg">
                 {error}
               </div>
             )}
 
             {!voiceSupported && (
-              <div className="text-amber-600 text-sm text-center mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+              <div className="text-amber-200 text-sm text-center mb-4 p-3 bg-amber-900/20 border border-amber-800 rounded-lg">
                 {t('dashboard.warnings.voiceNotSupported') || 'El reconocimiento de voz no está disponible en este navegador. Usa Chrome, Edge o Safari para obtener mejor compatibilidad.'}
               </div>
             )}
           </div>
           
           {generatedQuestions.length > 0 && (
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-md p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-gray-900">{t('dashboard.generatedQuestions')}</h2>
+                <h2 className="text-xl font-semibold text-white">{t('dashboard.generatedQuestions')}</h2>
                 <Button
                   onClick={saveExam}
                   variant="primary"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 hover:from-purple-600 hover:to-pink-400"
                 >
                   <Save size={20} />
                   {t('dashboard.buttons.saveExam')}
@@ -347,20 +347,20 @@ const Dashboard: React.FC = () => {
                 {generatedQuestions.map((question) => (
                   <div
                     key={question.id}
-                    className="border border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                    className="border border-white/20 rounded-lg p-4 hover:border-pink-500 transition-colors bg-white/5"
                   >
                     <div className="mb-3">
-                      <h3 className="text-lg font-medium text-gray-800">{question.question}</h3>
+                      <h3 className="text-lg font-medium text-white">{question.question}</h3>
                     </div>
                     
                     <div className="space-y-2">
                       {question.options.map((option, index) => (
                         <div
                           key={index}
-                          className={`p-2 text-black rounded-lg border ${
+                          className={`p-2 text-white rounded-lg border ${
                             option === question.correct_answer
-                              ? 'border-green-500 bg-green-50'
-                              : 'border-gray-200'
+                              ? 'border-green-500 bg-green-900/20'
+                              : 'border-white/10'
                           }`}
                         >
                           {option}
@@ -369,8 +369,8 @@ const Dashboard: React.FC = () => {
                     </div>
                     
                     <div className="mt-2">
-                      <p className="text-sm font-medium text-gray-500">{t('dashboard.question.explanation')}</p>
-                      <p className="text-gray-700 mt-1">{question.explanation}</p>
+                      <p className="text-sm font-medium text-white/70">{t('dashboard.question.explanation')}</p>
+                      <p className="text-white/90 mt-1">{question.explanation}</p>
                     </div>
                   </div>
                 ))}
@@ -379,7 +379,6 @@ const Dashboard: React.FC = () => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 

@@ -115,7 +115,7 @@ const TeacherDashBoard: React.FC = () => {
                                     onClick={() => setIsExiting(true)}>
                                     <Icon name="LogOut" className="w-4 h-4" />
                                     <span className="font-medium">Logout</span>
-                                    </Button>
+                            </Button>
                         </nav>
                     </div>
                 </div>
