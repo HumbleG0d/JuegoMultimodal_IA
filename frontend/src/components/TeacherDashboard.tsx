@@ -1,25 +1,64 @@
-import React , { useState } from "react"
+import React , { useState , useEffect , useRef } from "react"
 import Icon from "./ui/Icon";
+import { Link } from 'react-router';
 import { SIDEBAR_ITEMS_TEACHER } from "../constants";
 import Button from "./ui/Button";
 import { 
   Plus, 
   Search, 
   Bell, 
-  User,
   ChevronRight,
 } from 'lucide-react';
+import { TowerControl as GameController } from 'lucide-react';
+
+
 import QuizzCards from "./QuizzCards";
 import ListStudents from "./ListStudens";
 const TeacherDashBoard: React.FC = () => {
+
+
     const [activeSection, setActiveSection] = useState('quizzes');
+    
+    const [isScrolled, setIsScrolled] = useState(false);
+    
+    const menuRef = useRef<HTMLDivElement>(null);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setIsScrolled(window.scrollY > 10);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    
 
 
     return (
         <section className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">
             <div className="flex">
-                <div className="w-64 bg-white/10 backdrop-blur-md border-r border-white/20 min-h-screen">
-                    <div className="p-6">
+                <div className="w-64 bg-white/10 backdrop-blur-md border-r border-white/20 min-h-screen top-">
+                    
+
+                    <div className="p-3.5">
+                        {/* Logo */}
+                        <div className={`flex  items-center justify-start h-16 ${isScrolled ? 'bg-white/20' : 'bg-transparent'}`}>
+                       <Link to="/#home" className="flex items-center gap-2">
+                        <GameController
+                        className={`h-8 w-8 ${isScrolled ? 'text-blue-600' : 'text-white'}`}
+                        aria-hidden="true"
+                        />
+                        <span
+                        className={`text-xl font-bold ${
+                            isScrolled ? 'text-gray-800' : 'text-white'
+                        }`}
+                        >
+                            Edugame AI
+                        </span>
+                     </Link>    
+                    </div>
+
                         {/* Teacher Profile */}
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-6 border border-white/20">
                             <div className="flex items-center space-x-3">
@@ -95,12 +134,12 @@ const TeacherDashBoard: React.FC = () => {
                                     className="bg-white/10 border border-white/20 rounded-lg py-2 pl-10 pr-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 backdrop-blur-sm"
                                 />
                             </div>
-                                <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors">
+                                <div className="relative flex gap-4"  ref={menuRef}>
+                                    <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors">
                                 <Bell className="w-4 h-4" />
                                 </button>
-                                <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors">
-                                <User className="w-4 h-4" />
-                                </button>
+                                
+                                </div>
                             </div>
                         </div>
                     </div>
