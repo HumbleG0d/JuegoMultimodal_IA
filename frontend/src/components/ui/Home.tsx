@@ -7,12 +7,11 @@ import CTA from "./CTA"
 import Footer from "./Footer"
 import React from "react"
 import HelpBot from "./HelpBot"
-import Header from "./Header"
+
 const Home: React.FC = () => {
 
     return (
         <>
-            <Header />
             <Hero />
             <HelpBot/>
             <Features />
