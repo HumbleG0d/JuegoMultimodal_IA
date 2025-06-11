@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2, HelpCircle, Zap, Clock } from 'lucide-react';
-import type { ChatBootMessage } from '../types';
+import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2, HelpCircle, Zap} from 'lucide-react';
+import type { ChatBootMessage } from '../types'; // Asegúrate de que este tipo esté definido en tu proyecto
 
 const HelpBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [message, setMessage] = useState('');
- 
   const [messages, setMessages] = useState<ChatBootMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
 
   const quickResponses = [
     { icon: HelpCircle, text: 'Preguntas frecuentes', color: 'bg-blue-100 text-blue-700 hover:bg-blue-200' },
     { icon: Zap, text: 'Funciones principales', color: 'bg-purple-100 text-purple-700 hover:bg-purple-200' },
-    { icon: Clock, text: 'Horarios de atención', color: 'bg-green-100 text-green-700 hover:bg-green-200' }
   ];
 
   // Fetch initial message from API when chat opens
@@ -30,16 +29,17 @@ const HelpBot: React.FC = () => {
         .then((data) => {
           if (data.success) {
             const initialMessage: ChatBootMessage = {
-              id: data.session_id,
-              type: "bot",
+              id: Date.now(), // Usar timestamp como ID temporal
+              type: 'bot',
               text: data.response.message,
-              time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+              time: new Date(data.response.timestamp).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
             };
             setMessages([initialMessage]);
+            setSessionId(data.session_id); // Guardar session_id
           } else {
             setMessages([
               {
-                id: 1,
+                id: Date.now(),
                 type: 'bot',
                 text: 'Error al conectar con el asistente. Intenta de nuevo más tarde.',
                 time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
@@ -51,7 +51,7 @@ const HelpBot: React.FC = () => {
           console.error('Error fetching initial message:', error);
           setMessages([
             {
-              id: 1,
+              id: Date.now(),
               type: 'bot',
               text: 'No se pudo conectar al servidor. Verifica tu conexión.',
               time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
@@ -63,26 +63,60 @@ const HelpBot: React.FC = () => {
   }, [isOpen, messages.length]);
 
   const handleSendMessage = () => {
-    if (message.trim()) {
-      const newMessage: ChatBootMessage = {
-        id: messages.length + 1,
-        type: "user",
+    if (message.trim() && sessionId) {
+      const userMessage: ChatBootMessage = {
+        id: Date.now(), // Usar timestamp como ID temporal
+        type: 'user',
         text: message,
         time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
       };
-      setMessages([...messages, newMessage]);
+      setMessages((prev) => [...prev, userMessage]);
       setMessage('');
 
-      // Simular respuesta del bot
-      setTimeout(() => {
-        const botResponse: ChatBootMessage = {
-          id: messages.length + 2,
-          type: "bot",
-          text: 'Gracias por tu mensaje. Un agente te responderá pronto. 🤖',
-          time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
-        };
-        setMessages((prev) => [...prev, botResponse]);
-      }, 1000);
+      // Enviar mensaje al backend
+      setIsLoading(true);
+      fetch('http://localhost:5000/chat/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ session_id: sessionId, message: message }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            const botResponse: ChatBootMessage = {
+              id: Date.now() + 1, // ID único para la respuesta
+              type: 'bot',
+              text: data.response.message,
+              time: new Date(data.response.timestamp).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages((prev) => [...prev, botResponse]);
+          } else {
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: Date.now() + 1,
+                type: 'bot',
+                text: 'Error al procesar tu mensaje. Intenta de nuevo.',
+                time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+              }
+            ]);
+          }
+        })
+        .catch((error) => {
+          console.error('Error sending message:', error);
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: Date.now() + 1,
+              type: 'bot',
+              text: 'No se pudo enviar el mensaje. Verifica tu conexión.',
+              time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+            }
+          ]);
+        })
+        .finally(() => setIsLoading(false));
     }
   };
 
@@ -95,13 +129,9 @@ const HelpBot: React.FC = () => {
           className="group relative bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-full shadow-2xl cursor-pointer hover:shadow-3xl transform hover:scale-110 transition-all duration-300 animate-pulse"
         >
           <MessageCircle size={24} className="group-hover:rotate-12 transition-transform duration-300" />
-          
-          {/* Badge de notificación */}
           <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-bounce">
             1
           </div>
-          
-          {/* Tooltip */}
           <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
             ¿Necesitas ayuda? ¡Haz clic aquí!
             <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
@@ -112,7 +142,6 @@ const HelpBot: React.FC = () => {
       {/* Ventana del chat */}
       {isOpen && (
         <div className={`bg-white rounded-2xl shadow-2xl border border-gray-200 ${isMinimized ? 'w-80 h-16' : 'w-80 h-96'} transition-all duration-300 overflow-hidden`}>
-          {/* Header */}
           <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="relative">
@@ -127,16 +156,10 @@ const HelpBot: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setIsMinimized(!isMinimized)}
-                className="p-1.5 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors duration-200"
-              >
+              <button onClick={() => setIsMinimized(!isMinimized)} className="p-1.5 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors duration-200">
                 {isMinimized ? <Maximize2 size={16} /> : <Minimize2 size={16} />}
               </button>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-1.5 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors duration-200"
-              >
+              <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors duration-200">
                 <X size={16} />
               </button>
             </div>
@@ -144,10 +167,33 @@ const HelpBot: React.FC = () => {
 
           {!isMinimized && (
             <>
-              {/* Área de mensajes */}
               <div className="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50">
                 {isLoading ? (
-                  <div className="text-center text-gray-500">Cargando mensaje inicial...</div>
+                  <>
+                    {messages.map((msg) => (
+                      <div key={msg.id} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+                        <div className={`flex items-end space-x-2 max-w-xs ${msg.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                            msg.type === 'bot' 
+                              ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' 
+                              : 'bg-gray-300 text-gray-600'
+                          }`}>
+                            {msg.type === 'bot' ? <Bot size={16} /> : <User size={16} />}
+                          </div>
+                          <div className={`px-4 py-2 rounded-2xl ${
+                            msg.type === 'bot'
+                              ? 'bg-white border border-gray-200 text-gray-800'
+                              : 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                          } ${msg.type === 'user' ? 'rounded-br-md' : 'rounded-bl-md'}`}>
+                            <p className="text-sm">{msg.text}</p>
+                            <p className={`text-xs mt-1 ${msg.type === 'bot' ? 'text-gray-500' : 'text-white text-opacity-70'}`}>
+                              {msg.time}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </>
                 ) : (
                   <>
                     {messages.map((msg) => (
@@ -175,8 +221,6 @@ const HelpBot: React.FC = () => {
                     ))}
                   </>
                 )}
-                
-                {/* Respuestas rápidas */}
                 {messages.length === 1 && !isLoading && (
                   <div className="space-y-2">
                     <p className="text-xs text-gray-500 text-center">Respuestas rápidas:</p>
@@ -184,6 +228,10 @@ const HelpBot: React.FC = () => {
                       <button
                         key={index}
                         className={`w-full flex items-center space-x-2 p-3 rounded-xl transition-all duration-200 ${response.color}`}
+                        onClick={() => {
+                          setMessage(response.text);
+                          handleSendMessage();
+                        }}
                       >
                         <response.icon size={16} />
                         <span className="text-sm font-medium">{response.text}</span>
@@ -193,7 +241,6 @@ const HelpBot: React.FC = () => {
                 )}
               </div>
 
-              {/* Input de mensaje */}
               <div className="p-4 border-t border-gray-200 bg-white">
                 <div className="flex items-center space-x-2">
                   <div className="flex-1 relative">
@@ -214,7 +261,7 @@ const HelpBot: React.FC = () => {
                   </div>
                   <button
                     onClick={handleSendMessage}
-                    disabled={!message.trim()}
+                    disabled={!message.trim() || !sessionId || isLoading}
                     className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     <Send size={16} />
@@ -241,4 +288,4 @@ const HelpBot: React.FC = () => {
   );
 };
 
-export default HelpBot;
+export default HelpBot
