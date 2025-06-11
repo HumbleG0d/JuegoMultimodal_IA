@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2, HelpCircle, Zap, Clock } from 'lucide-react';
+import type { ChatBootMessage } from '../types';
 
 const HelpBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      type: 'bot',
-      text: '¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?',
-      time: '10:30'
-    }
-  ]);
+ 
+  const [messages, setMessages] = useState<ChatBootMessage[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const quickResponses = [
     { icon: HelpCircle, text: 'Preguntas frecuentes', color: 'bg-blue-100 text-blue-700 hover:bg-blue-200' },
@@ -20,26 +16,72 @@ const HelpBot: React.FC = () => {
     { icon: Clock, text: 'Horarios de atención', color: 'bg-green-100 text-green-700 hover:bg-green-200' }
   ];
 
+  // Fetch initial message from API when chat opens
+  useEffect(() => {
+    if (isOpen && messages.length === 0) {
+      setIsLoading(true);
+      fetch('http://localhost:5000/chat/start', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            const initialMessage: ChatBootMessage = {
+              id: data.session_id,
+              type: "bot",
+              text: data.response.message,
+              time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages([initialMessage]);
+          } else {
+            setMessages([
+              {
+                id: 1,
+                type: 'bot',
+                text: 'Error al conectar con el asistente. Intenta de nuevo más tarde.',
+                time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+              }
+            ]);
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching initial message:', error);
+          setMessages([
+            {
+              id: 1,
+              type: 'bot',
+              text: 'No se pudo conectar al servidor. Verifica tu conexión.',
+              time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+            }
+          ]);
+        })
+        .finally(() => setIsLoading(false));
+    }
+  }, [isOpen, messages.length]);
+
   const handleSendMessage = () => {
     if (message.trim()) {
-      const newMessage = {
+      const newMessage: ChatBootMessage = {
         id: messages.length + 1,
-        type: 'user',
+        type: "user",
         text: message,
         time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
       };
       setMessages([...messages, newMessage]);
       setMessage('');
-      
+
       // Simular respuesta del bot
       setTimeout(() => {
-        const botResponse = {
+        const botResponse: ChatBootMessage = {
           id: messages.length + 2,
-          type: 'bot',
+          type: "bot",
           text: 'Gracias por tu mensaje. Un agente te responderá pronto. 🤖',
           time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
         };
-        setMessages(prev => [...prev, botResponse]);
+        setMessages((prev) => [...prev, botResponse]);
       }, 1000);
     }
   };
@@ -104,32 +146,38 @@ const HelpBot: React.FC = () => {
             <>
               {/* Área de mensajes */}
               <div className="h-64 overflow-y-auto p-4 space-y-4 bg-gray-50">
-                {messages.map((msg) => (
-                  <div key={msg.id} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-                    <div className={`flex items-end space-x-2 max-w-xs ${msg.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        msg.type === 'bot' 
-                          ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' 
-                          : 'bg-gray-300 text-gray-600'
-                      }`}>
-                        {msg.type === 'bot' ? <Bot size={16} /> : <User size={16} />}
+                {isLoading ? (
+                  <div className="text-center text-gray-500">Cargando mensaje inicial...</div>
+                ) : (
+                  <>
+                    {messages.map((msg) => (
+                      <div key={msg.id} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+                        <div className={`flex items-end space-x-2 max-w-xs ${msg.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                            msg.type === 'bot' 
+                              ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' 
+                              : 'bg-gray-300 text-gray-600'
+                          }`}>
+                            {msg.type === 'bot' ? <Bot size={16} /> : <User size={16} />}
+                          </div>
+                          <div className={`px-4 py-2 rounded-2xl ${
+                            msg.type === 'bot'
+                              ? 'bg-white border border-gray-200 text-gray-800'
+                              : 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                          } ${msg.type === 'user' ? 'rounded-br-md' : 'rounded-bl-md'}`}>
+                            <p className="text-sm">{msg.text}</p>
+                            <p className={`text-xs mt-1 ${msg.type === 'bot' ? 'text-gray-500' : 'text-white text-opacity-70'}`}>
+                              {msg.time}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className={`px-4 py-2 rounded-2xl ${
-                        msg.type === 'bot'
-                          ? 'bg-white border border-gray-200 text-gray-800'
-                          : 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                      } ${msg.type === 'user' ? 'rounded-br-md' : 'rounded-bl-md'}`}>
-                        <p className="text-sm">{msg.text}</p>
-                        <p className={`text-xs mt-1 ${msg.type === 'bot' ? 'text-gray-500' : 'text-white text-opacity-70'}`}>
-                          {msg.time}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    ))}
+                  </>
+                )}
                 
                 {/* Respuestas rápidas */}
-                {messages.length === 1 && (
+                {messages.length === 1 && !isLoading && (
                   <div className="space-y-2">
                     <p className="text-xs text-gray-500 text-center">Respuestas rápidas:</p>
                     {quickResponses.map((response, index) => (
