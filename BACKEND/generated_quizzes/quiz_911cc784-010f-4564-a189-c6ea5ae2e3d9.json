@@ -1,0 +1,65 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-11T13:45:31.720943",
+  "original_prompt": "figuras geometricas",
+  "title": "¡Descubre las Figuras Geométricas!",
+  "topic": "Figuras Geométricas",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Qué figura geométrica tiene cuatro lados?",
+      "options": [
+        "Círculo",
+        "Cuadrado",
+        "Triángulo",
+        "Rectángulo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Un cuadrado tiene cuatro lados iguales. ¡Estás aprendiendo mucho!"
+    },
+    {
+      "question": "¿De qué forma es una moneda?",
+      "options": [
+        "Cuadrada",
+        "Redonda",
+        "Triangular",
+        "Rectangular"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Exacto! Las monedas suelen ser redondas. ¡Tu respuesta es perfecta!"
+    },
+    {
+      "question": "¿Qué figura geométrica tiene tres lados?",
+      "options": [
+        "Círculo",
+        "Cuadrado",
+        "Triángulo",
+        "Rectángulo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! Un triángulo tiene tres lados. ¡Estás haciendo un gran trabajo!"
+    },
+    {
+      "question": "¿Qué figura geométrica es larga y estrecha?",
+      "options": [
+        "Cuadrado",
+        "Círculo",
+        "Rectángulo",
+        "Triángulo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! Un rectángulo es largo y estrecho. ¡Tu respuesta es correcta!"
+    },
+    {
+      "question": "¿Qué figura geométrica no tiene lados?",
+      "options": [
+        "Círculo",
+        "Cuadrado",
+        "Triángulo",
+        "Rectángulo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Exacto! Un círculo no tiene lados. ¡Eres un experto en figuras geométricas!"
+    }
+  ]
+}
