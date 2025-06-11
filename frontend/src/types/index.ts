@@ -114,3 +114,10 @@ export interface StudensQuiz{
   progress: number,
   lastActive: string,
 }
+
+export interface ChatBootMessage{
+  id: number,
+  type: 'bot' | 'user',
+  text: string,
+  time: string,
+}
