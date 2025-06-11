@@ -13,12 +13,18 @@ from BACKEND.Entidades.apitoIA import call_groq_api
 from BACKEND.Entidades.apitoIA import call_groq_api
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {
-    "origins": ["http://localhost:5173"],
-    "methods": ["GET", "POST", "OPTIONS"],
-    "allow_headers": ["Content-Type", "Authorization"]
-    # Configuración explícita de CORS
-}})  # Permitir solicitudes desde el frontend React
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ["http://localhost:5173"],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    },
+    r"/chat/*": {  # Agregar esta configuración para las rutas de Voiceflow
+        "origins": ["http://localhost:5173"],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})  # Permitir solicitudes desde el frontend React
 QUIZ_STORAGE_PATH = "generated_quizzes"
 
 if not os.path.exists(QUIZ_STORAGE_PATH):
