@@ -11,7 +11,7 @@ from flask import Flask, request, jsonify
 from psycopg2.extras import RealDictCursor
 
 # Configuración
-SECRET_KEY = "your-secret-key"  # Cambia esto en producción
+SECRET_KEY = ""  # Cambia esto en producción
 TOKEN_EXPIRATION_MINUTES = 30
 
 app = Flask(__name__)
