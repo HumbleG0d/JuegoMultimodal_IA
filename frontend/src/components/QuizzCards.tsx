@@ -7,49 +7,67 @@ import {
   Trash2,
   Trophy,
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
-import type { DashQuiz } from '../types';
+import type { DashQuiz, QuizzesResponse } from '../types';
 import Button from './ui/Button';
 
-const recentQuizzes: DashQuiz[] = [
-  {
-    id: '1',
-    title: 'Animal Sounds',
-    subject: 'Science',
-    questions: 15,
-    timeAgo: '1 hora atrás',
-    thumbnail: 'https://images.com/photos/33045/lion-wild-africa-african.jpg',
-    plays: 24,
-    accuracy: 87
-  },
-  {
-    id: '2',
-    title: 'Matemáticas Básicas',
-    subject: 'Mathematics',
-    questions: 20,
-    timeAgo: '2 horas atrás',
-    thumbnail: 'https://images.com/mathematics/mathema.jpg',
-    plays: 2,
-    accuracy: 92
-  },
-  {
-    id: '3',
-    title: 'Historia Mundial',
-    subject: 'History',
-    questions: 12,
-    timeAgo: '1 día atrás',
-    thumbnail: 'https://images.com/photos/1329296/pexels-photo-1329296.jpeg',
-    plays: 31,
-    accuracy: 79
-  }
-];
 
 const QuizzCards: React.FC = () => {
+  const [dashQuiz , setDashQuiz] = useState<DashQuiz[]>([]);
   const navigate = useNavigate();
+  
+  const getQuizzes = async () => { 
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:5000/api/teacher/dashboard/quizzes', {
+        method: 'GET',
+         headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      let data: QuizzesResponse
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error('Error parsing JSON response:', jsonError);
+        throw new Error('Invalid JSON response');
+      }
+
+      console.log("Respuesta de la api:", data);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch quizzes');
+      }
+
+      const cards: DashQuiz[] = data.quizzes.map((quiz) => ({
+        id: quiz.id,
+        title: quiz.quiz_data.title,
+        questions: quiz.quiz_data.questions.length,
+        timeAgo: new Date(quiz.created_at).toLocaleDateString('es-ES', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }),
+        thumbnail: 'https://m.media-amazon.com/images/M/MV5BZjA0MDgyYmItNzkzMC00OTM2LThlYzktMWMxZWU3ZGNkNDI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+        students: 0, // Por implementar
+        accuracy: Math.floor(Math.random() * 100), // Por implementar
+      }));
+      setDashQuiz(cards);
+    } catch (error) {
+      console.error('Error fetching quizzes:', error);
+    }
+  }
+
+  useEffect(() => {
+    getQuizzes();
+  }, []);
 
   const handleViewQuiz = (quizId: string) => {
-    navigate(`/play/${quizId}`);
+    navigate(`/teacher/quiz/${quizId}`);
   };
 
   return ( 
@@ -95,7 +113,7 @@ const QuizzCards: React.FC = () => {
 
       {/* Quizz List */}
       <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {recentQuizzes.map((quiz) => (
+        {dashQuiz.map((quiz) => (
           <div key={quiz.id} className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 hover:bg-white/15 transition-all duration-200 group">
             <div className="relative h-48 overflow-hidden">
               <img 
@@ -103,12 +121,6 @@ const QuizzCards: React.FC = () => {
                 alt={quiz.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute top-4 right-4">
-                <span className="bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full text-xs text-white">
-                  {quiz.subject}
-                </span>
-              </div>
             </div>
 
             <div className='p-6'>
@@ -123,7 +135,7 @@ const QuizzCards: React.FC = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2 text-sm text-white/70">
                   <Play className="w-4 h-4" />
-                  <span>{quiz.plays} jugadas</span>
+                  <span>{quiz.students} estudiantes</span>
                 </div>
                 <div className="text-sm text-white/70">
                   {quiz.accuracy}% precisión
