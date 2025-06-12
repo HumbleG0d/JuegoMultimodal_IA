@@ -135,7 +135,7 @@ def generate_quiz(token_info):
 
 @app.route("/api/teacher/dashboard/quiz/<quiz_id>", methods=["GET"])
 @token_required
-def get_quiz(token_info, quiz_id):
+def get_quiz_teacher(token_info, quiz_id):
     """Endpoint para obtener un quiz guardado"""
     if token_info["user_type"] != "profesor":
         return jsonify({"message": "Access denied! Teacher only."}), 403
@@ -146,9 +146,10 @@ def get_quiz(token_info, quiz_id):
 
     return jsonify({"quiz": quiz})
 
+
 @app.route("/api/student/dashboard/quiz/<quiz_id>", methods=["GET"])
 @token_required
-def get_quiz(token_info, quiz_id):
+def get_quiz_alumno(token_info, quiz_id):
     """Endpoint para obtener un quiz guardado"""
     if token_info["user_type"] != "estudiante":
         return jsonify({"message": "Access denied! Teacher only."}), 403
