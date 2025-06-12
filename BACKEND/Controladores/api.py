@@ -157,21 +157,25 @@ def get_quiz(token_info, quiz_id):
     if token_info["user_type"] != "profesor":
         return jsonify({"message": "Access denied! Teacher only."}), 403
 
-    try:
-        filename = f"quiz_{quiz_id}.json"
-        filepath = os.path.join(QUIZ_STORAGE_PATH, filename)
+    authservice = AuthService(Database())
 
-        if not os.path.exists(filepath):
-            return jsonify({"error": "Quiz not found"}), 404
+    quiz = authservice.get_quiz(quiz_id)
 
-        with open(filepath, 'r', encoding='utf-8') as f:
-            quiz_data = json.load(f)
+    return jsonify({"quiz": quiz})
 
-        return jsonify(quiz_data)
 
-    except Exception as e:
-        return jsonify({"error": f"Error loading quiz: {str(e)}"}), 500
+@app.route("/api/student/dashboard/quiz/<quiz_id>", methods=["GET"])
+@token_required
+def get_quiz_alumno(token_info, quiz_id):
+    """Endpoint para obtener un quiz guardado"""
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
 
+    authservice = AuthService(Database())
+
+    quiz = authservice.get_quiz(quiz_id)
+
+    return jsonify({"quiz": quiz})
 
 @app.route("/api/student/dashboard", methods=["GET"])
 @token_required
@@ -250,6 +254,22 @@ def list_quizzes(token_info):
     quizzes = auth_service.get_all_quizzes(teacher_id)
     return jsonify({"quizzes": quizzes}), 200
 
+
+
+@app.route("/api/teacher/dashboard/asignar", methods=["POST"])
+@token_required
+def asign_quizzes(token_info):
+    """Endpoint para listar todos los quizzes creados por el profesor"""
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+    teacher_id = token_info["user_id"]
+    data = request.get_json()
+    alumno_id = data.get("alumno_id")
+    quiz_id=data.get("quiz_id")
+    auth_service = AuthService(Database())
+    auth_service.register_quiz_toalumn(alumno_id,quiz_id)
+
+    return jsonify({"Asignacion Exitosa": alumno_id + "to" + quiz_id}), 200
 
 @app.route("/api/teacher/listare", methods=["GET"])
 @token_required
