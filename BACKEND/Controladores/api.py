@@ -223,7 +223,20 @@ def list_quizzes(token_info):
     return jsonify({"quizzes": quizzes}), 200
 
 
+@app.route("/api/teacher/dashboard/asignar", methods=["POST"])
+@token_required
+def asign_quizzes(token_info):
+    """Endpoint para listar todos los quizzes creados por el profesor"""
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+    teacher_id = token_info["user_id"]
+    data = request.get_json()
+    alumno_id = data.get("alumno_id")
+    quiz_id=data.get("quiz_id")
+    auth_service = AuthService(Database())
+    auth_service.register_quiz_toalumn(alumno_id,quiz_id)
 
+    return jsonify({"Asignacion Exitosa": alumno_id + "to" + quiz_id}), 200
 
 
 

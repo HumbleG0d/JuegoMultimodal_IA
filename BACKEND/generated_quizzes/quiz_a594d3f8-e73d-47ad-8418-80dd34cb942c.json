@@ -1,0 +1,65 @@
+{
+  "created_by": 2,
+  "created_at": "2025-06-12T12:12:16.937405",
+  "original_prompt": "figuras geometricas",
+  "title": "Adivina las Figuras",
+  "topic": "Figuras Geométricas",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Qué figura tiene cuatro lados iguales?",
+      "options": [
+        "Círculo",
+        "Cuadrado",
+        "Triángulo",
+        "Rombo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Excelente! Un cuadrado tiene cuatro lados iguales y es una figura muy especial."
+    },
+    {
+      "question": "¿Qué figura es redonda?",
+      "options": [
+        "Cuadrado",
+        "Círculo",
+        "Triángulo",
+        "Rectángulo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Un círculo es una figura redonda y perfecta."
+    },
+    {
+      "question": "¿Qué figura tiene tres lados?",
+      "options": [
+        "Cuadrado",
+        "Círculo",
+        "Triángulo",
+        "Pentágono"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! Un triángulo tiene tres lados y es una figura muy útil."
+    },
+    {
+      "question": "¿Qué figura tiene seis lados?",
+      "options": [
+        "Cuadrado",
+        "Círculo",
+        "Hexágono",
+        "Triángulo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Impresionante! Un hexágono tiene seis lados y es una figura muy interesante."
+    },
+    {
+      "question": "¿Qué figura es larga y estrecha?",
+      "options": [
+        "Cuadrado",
+        "Círculo",
+        "Rectángulo",
+        "Triángulo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Excelente! Un rectángulo es una figura larga y estrecha, y es muy común en nuestro entorno."
+    }
+  ]
+}

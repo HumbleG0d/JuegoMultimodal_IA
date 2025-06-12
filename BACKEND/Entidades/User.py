@@ -124,6 +124,17 @@ class AuthService:
                 ))
                 conn.commit()
 
+    def register_quiz_toalumn(self,alumno_id,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute('''
+                INSERT INTO estudiante_quiz (estudiante_id,quiz_id)
+                VALUES (%s,%s)
+                ''',(
+                    alumno_id,quiz_id
+                ))
+                conn.commit()
+
     def get_all_students(self) -> List[Dict]:
         """Obtiene una lista de todos los estudiantes registrados."""
         with self.db.get_connection() as conn:
@@ -144,7 +155,6 @@ class AuthService:
                 cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE user_id= %s"
                                , (user_id,))
                 return cursor.fetchall()
-
 
     def login_user(self, usuario: User) -> Optional[Dict]:
         if usuario.user_type not in ["estudiante", "profesor"]:
