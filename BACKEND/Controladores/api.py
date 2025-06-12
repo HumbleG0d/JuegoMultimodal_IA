@@ -140,20 +140,11 @@ def get_quiz(token_info, quiz_id):
     if token_info["user_type"] != "profesor":
         return jsonify({"message": "Access denied! Teacher only."}), 403
 
-    try:
-        filename = f"quiz_{quiz_id}.json"
-        filepath = os.path.join(QUIZ_STORAGE_PATH, filename)
+    authservice = AuthService(Database())
 
-        if not os.path.exists(filepath):
-            return jsonify({"error": "Quiz not found"}), 404
+    quiz = authservice.get_quiz(quiz_id)
 
-        with open(filepath, 'r', encoding='utf-8') as f:
-            quiz_data = json.load(f)
-
-        return jsonify(quiz_data)
-
-    except Exception as e:
-        return jsonify({"error": f"Error loading quiz: {str(e)}"}), 500
+    return jsonify({"quiz": quiz})
 
 
 @app.route("/api/student/dashboard", methods=["GET"])
@@ -196,7 +187,7 @@ def register():
 
 @app.route("/api/login", methods=["POST"])
 def login():
-    usuario=User
+    usuario = User
     data = request.get_json()
     usuario.email = data.get("email")
     usuario.password = data.get("password")
@@ -220,6 +211,18 @@ def list_quizzes(token_info):
     teacher_id = token_info["user_id"]
     auth_service = AuthService(Database())
     quizzes = auth_service.get_all_quizzes(teacher_id)
+    return jsonify({"quizzes": quizzes}), 200
+
+
+@app.route("/api/estudiante/dashboard/quizzes", methods=["GET"])
+@token_required
+def list_quizzes_estudiante(token_info):
+    """Endpoint para listar todos los quizzes que se le han asignado a los estudiantes"""
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message": "Access denied! Estudiante only."}), 403
+    estudiante_id = token_info["user_id"]
+    auth_service = AuthService(Database())
+    quizzes = auth_service.get_all_quizzes_estudiante(estudiante_id)
     return jsonify({"quizzes": quizzes}), 200
 
 

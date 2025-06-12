@@ -135,6 +135,13 @@ class AuthService:
                 ))
                 conn.commit()
 
+    def get_quiz(self,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE id= %s",
+                               (quiz_id,))
+                return cursor.fetchall()
+
     def get_all_students(self) -> List[Dict]:
         """Obtiene una lista de todos los estudiantes registrados."""
         with self.db.get_connection() as conn:
@@ -153,6 +160,18 @@ class AuthService:
         with self.db.get_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE user_id= %s"
+                               , (user_id,))
+                return cursor.fetchall()
+
+    def get_all_quizzes_estudiante(self,user_id) -> List[Dict]:
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("""
+                    SELECT estudiante_quiz.estudiante_id, estudiante_quiz.quiz_id, quizzes.nombre, quizzes.quiz_data
+                    FROM estudiante_quiz
+                    INNER JOIN quizzes ON estudiante_quiz.quiz_id = quizzes.id
+                    WHERE estudiante_quiz.estudiante_id = %s
+                    """
                                , (user_id,))
                 return cursor.fetchall()
 
