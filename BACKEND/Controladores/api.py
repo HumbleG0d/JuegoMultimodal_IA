@@ -146,6 +146,19 @@ def get_quiz(token_info, quiz_id):
 
     return jsonify({"quiz": quiz})
 
+@app.route("/api/student/dashboard/quiz/<quiz_id>", methods=["GET"])
+@token_required
+def get_quiz(token_info, quiz_id):
+    """Endpoint para obtener un quiz guardado"""
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+
+    authservice = AuthService(Database())
+
+    quiz = authservice.get_quiz(quiz_id)
+
+    return jsonify({"quiz": quiz})
+
 
 @app.route("/api/student/dashboard", methods=["GET"])
 @token_required
