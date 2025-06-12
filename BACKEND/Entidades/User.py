@@ -1,14 +1,18 @@
-import sqlite3
+import json
 import hashlib
 import datetime
+import bcrypt
 import jwt
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List , Union
 from dataclasses import dataclass
 from functools import wraps
+from psycopg2.extras import DictCursor
+import psycopg2
 from flask import Flask, request, jsonify
+from psycopg2.extras import RealDictCursor
 
 # Configuración
-SECRET_KEY = "your-secret-key"  # Cambia esto en producción
+SECRET_KEY = ""  # Cambia esto en producción
 TOKEN_EXPIRATION_MINUTES = 30
 
 app = Flask(__name__)
@@ -17,40 +21,69 @@ app = Flask(__name__)
 @dataclass
 class User:
     id: int
-    nombre: str
     email: str
-    password_hash: str
+    nombre: str
+    password: str
     user_type: str  # 'student' o 'teacher'
 
+@dataclass
+class LoginUser:
+    email: str
+    password: str
+    user_type: str
 
 class Database:
-    def __init__(self, db_name: str = "users.db"):
-        self.db_name = db_name
+    def __init__(self, dbname="edugame", user="developer", password="dev_password_123", host="localhost", port=5433):
+        self.conn_params: Dict[str, str] = {
+            "dbname": str(dbname),
+            "user": str(user),
+            "password": str(password),
+            "host": str(host),
+            "port": str(port)  # ensure port is a string
+        }
         self.init_db()
+    def get_connection(self):
+        return psycopg2.connect(**self.conn_params, cursor_factory=RealDictCursor)
 
     def init_db(self):
-        with sqlite3.connect(self.db_name) as conn:
-            cursor = conn.cursor()
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS estudiantes (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    nombre TEXT NOT NULL,
-                    email TEXT UNIQUE NOT NULL,
-                    password_hash TEXT NOT NULL
-                )
-            ''')
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS profesores (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    nombre TEXT NOT NULL,
-                    email TEXT UNIQUE NOT NULL,
-                    password_hash TEXT NOT NULL
-                )
-            ''')
-            conn.commit()
-
-    def get_connection(self):
-        return sqlite3.connect(self.db_name)
+        with self.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS estudiantes (
+                        id SERIAL PRIMARY KEY,
+                        nombre TEXT NOT NULL,
+                        email TEXT UNIQUE NOT NULL,
+                        password_hash TEXT NOT NULL
+                    )
+                ''')
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS profesores (
+                        id SERIAL PRIMARY KEY,
+                        nombre TEXT NOT NULL,
+                        email TEXT UNIQUE NOT NULL,
+                        password_hash TEXT NOT NULL
+                    )
+                ''')
+                cursor.execute('''
+                CREATE TABLE IF NOT EXISTS quizzes (
+                        id UUID PRIMARY KEY,
+                        user_id INTEGER NOT NULL,
+                        FOREIGN KEY (user_id) REFERENCES profesores(id),
+                        nombre TEXT NOT NULL,
+                        quiz_data JSONB NOT NULL,
+                        created_at TIMESTAMP NOT NULL
+                    )
+                ''')
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS estudiante_quiz (
+                        estudiante_id INTEGER NOT NULL,
+                        quiz_id UUID NOT NULL,
+                        PRIMARY KEY (estudiante_id, quiz_id),
+                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
+                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
+                    )
+                ''')
+                conn.commit()
 
 
 class AuthService:
@@ -59,64 +92,108 @@ class AuthService:
 
     def hash_password(self, password: str) -> str:
         return hashlib.sha256(password.encode()).hexdigest()
-
-    def register_user(self, email: str, nombre: str, password: str, user_type: str) -> bool:
-        if user_type not in ["estudiante", "profesor"]:
+    def verify_password(self, plain_password: str, stored_hash: str) -> bool:
+        """Verifica si la contraseña coincide con el hash almacenado"""
+        try:
+            # Generar hash de la contraseña ingresada
+            password_hash = hashlib.sha256(plain_password.encode()).hexdigest()
+            # Comparar con el hash almacenado
+            return password_hash == stored_hash
+        except Exception as e:
+            print(f"Error verificando contraseña: {e}")
+            return False
+    def register_user(self, usuario: User) -> bool:
+        if usuario.user_type not in ["estudiante", "profesor"]:
             return False
 
-        table = "estudiantes" if user_type == "estudiante" else "profesores"
-        password_hash = self.hash_password(password)
+        table = "estudiantes" if usuario.user_type == "estudiante" else "profesores"
+        password_hash = self.hash_password(usuario.password)
 
         try:
             with self.db.get_connection() as conn:
-                cursor = conn.cursor()
-                cursor.execute(f'''
-                    INSERT INTO {table} (nombre,email, password_hash)
-                    VALUES (?, ?,?)
-                ''', (nombre, email, password_hash))
-                conn.commit()
+                with conn.cursor() as cursor:
+                    cursor.execute(f'''
+                        INSERT INTO {table} (nombre,email, password_hash)
+                        VALUES (%s,%s,%s)
+                    ''', (usuario.nombre, usuario.email, password_hash))
+                    conn.commit()
                 return True
-        except sqlite3.IntegrityError:
+        except psycopg2.IntegrityError:
             return False  # Email ya existe
+        except Exception as e:
+            print("Error:", e)
+            return False
+
+    def register_quiz(self, quiz_id, user_id, title, quiz_data, timestamp):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute('''
+                    INSERT INTO quizzes (id, user_id, nombre, quiz_data, created_at)
+                    VALUES (%s, %s, %s, %s, %s)
+                ''', (
+                    quiz_id,
+                    user_id,
+                    title,
+                    json.dumps(quiz_data, ensure_ascii=False),
+                    timestamp
+                ))
+                conn.commit()
 
     def get_all_students(self) -> List[Dict]:
         """Obtiene una lista de todos los estudiantes registrados."""
         with self.db.get_connection() as conn:
-            cursor = conn.cursor()
-            cursor.execute("SELECT id, nombre, email FROM estudiantes")
-            students = cursor.fetchall()
-            return [{"id": s[0], "nombre": s[1], "email": s[2]} for s in students]
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id, nombre, email FROM estudiantes")
+                return cursor.fetchall()
 
     def get_all_teachers(self) -> List[Dict]:
         """Obtiene una lista de todos los profesores registrados."""
         with self.db.get_connection() as conn:
-            cursor = conn.cursor()
-            cursor.execute("SELECT id, nombre, email FROM profesores")
-            teachers = cursor.fetchall()
-            return [{"id": t[0], "nombre": t[1], "email": t[2]} for t in teachers]
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id, nombre, email FROM profesores")
+                return cursor.fetchall()
 
-    def login_user(self, email: str, password: str, user_type: str) -> Optional[Dict]:
-        if user_type not in ["estudiante", "profesor"]:
+    def get_all_quizzes(self, user_id) -> List[Dict]:
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE user_id= %s"
+                               , (user_id,))
+                return cursor.fetchall()
+
+
+    def login_user(self, usuario: LoginUser) -> Optional[Dict]:
+        if usuario.user_type not in ["estudiante", "profesor"]:
+            return None
+        table = ""
+        if usuario.user_type == "estudiante":
+            table = "estudiantes"
+        else:
+            table = "profesores"
+
+        try:
+            with self.db.get_connection() as conn:
+                with conn.cursor(cursor_factory=DictCursor) as cursor:
+                    cursor.execute(
+                        f'''
+                        SELECT id, email, password_hash FROM {table} 
+                        WHERE email = %s
+                        ''',
+                        (usuario.email,)
+                    )
+                    user = cursor.fetchone()
+            print("Usuario encontrado:", user)  # Depuración
+
+            if user and self.verify_password(usuario.password, user['password_hash']):
+                return {
+                    "id": user['id'],
+                    "email": user['email'],
+                    "token": self.generate_token(user['id'] , usuario.user_type),
+                }
+            return None
+        except Exception as e:
+            print(f"Error en login_user: {e}")
             return None
 
-        table = "estudiantes" if user_type == "estudiante" else "profesores"
-        password_hash = self.hash_password(password)
-
-        with self.db.get_connection() as conn:
-            cursor = conn.cursor()
-            cursor.execute(f'''
-                SELECT id, email, password_hash FROM {table}
-                WHERE email = ? AND password_hash = ?
-            ''', (email, password_hash))
-            user = cursor.fetchone()
-
-        if user:
-            return {
-                "id": user[0],
-                "email": user[1],
-                "token": self.generate_token(user[0], user_type)
-            }
-        return None
 
     def generate_token(self, user_id: int, user_type: str) -> str:
         payload = {
@@ -138,6 +215,5 @@ class AuthService:
             return None  # Token expirado
         except jwt.InvalidTokenError:
             return None  # Token inválido
-
 
 # Decorador para proteger rutas

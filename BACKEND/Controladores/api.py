@@ -8,9 +8,11 @@ from functools import wraps
 from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
 from BACKEND.Entidades.voiceflowconfig import update_conversation_stage,process_voiceflow_response,determine_response_context,get_timestamp
-from BACKEND.Entidades.User import Database, AuthService
+from BACKEND.Entidades.User import Database, AuthService , User , LoginUser
 from BACKEND.Entidades.apitoIA import call_groq_api
+from flask import Flask, request, jsonify
 from BACKEND.Entidades.apitoIA import call_groq_api
+
 
 app = Flask(__name__)
 CORS(app, resources={
@@ -123,11 +125,10 @@ def generate_quiz(token_info):
 
         # Estructura completa del quiz
         quiz_data = {
-            "quiz_id": quiz_id,
             "created_by": token_info["user_id"],
             "created_at": timestamp,
             "original_prompt": user_prompt,
-            **quiz_response#Agregar todos los campos de quiz_response a esto
+            **quiz_response#Agregar todos los campos de quiz_response
         }
 
         # Guardar quiz en archivo
@@ -136,7 +137,8 @@ def generate_quiz(token_info):
 
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(quiz_data, f, ensure_ascii=False, indent=2)
-
+        auth_service = AuthService(Database())
+        auth_service.register_quiz(quiz_id, token_info["user_id"], quiz_response["title"], quiz_data, timestamp)
         return jsonify({
             "success": True,
             "filename": filename,
@@ -189,45 +191,49 @@ def teacher_dashboard(token_info):
 @app.route("/api/register", methods=["POST"])
 def register():
     data = request.get_json()
-    email = data.get("email")
-    username = data.get("username")
-    password = data.get("password")
-    confirm_password = data.get("confirm_password")
-    if password != confirm_password:
-        return jsonify({"message": "Passwords do not match!"}), 400
-    user_type = data.get("user_type")
+    usuario = User(
+        id=None,
+        email=data.get("email"),
+        nombre=data.get("nombre"),
+        password=data.get("password"),
+        user_type=data.get("user_type")
+    )
 
-    if not email or not password or not user_type:
-        return jsonify({"message": "¡Faltan campos requeridos!"}), 400
+    if not usuario.email or not usuario.password or not usuario.user_type :
+        return jsonify({"message": "Missing required fields!"}), 400
 
-    if user_type not in ["estudiante", "profesor"]:
-        return jsonify({"message": "Solo se permiten tipos de usuario estudiante o profesor."}), 400
+    if usuario.user_type!="estudiante" and usuario.user_type!="profesor":
+        return jsonify(({"message": "Solo existen dos tipos de usuarios, estudiante o profesores"}))
 
     auth_service = AuthService(Database())
-    if auth_service.register_user(email, username, password, user_type):
-        return jsonify({"message": "¡Usuario registrado exitosamente!"}), 201
-    return jsonify({"message": "¡El correo ya existe o las contraseñas no coinciden!"}), 400
+    if auth_service.register_user(usuario):
+        return jsonify({"message": "User registered successfully!"}), 201
+    return jsonify({"message": "Email already exists!"}), 400
+
 
 @app.route("/api/login", methods=["POST"])
 def login():
     data = request.get_json()
-    email = data.get("email")
-    password = data.get("password")
-    user_type = data.get("user_type")
+    usuario_register=LoginUser(
+        email=data.get("email"),  # Email opcional en el login
+        password=data.get("password"),  # Password opcional en el login
+        user_type=data.get("user_type")  # user_type opcional en el login
+    )
 
-    if not email or not password or not user_type:
-        return jsonify({"message": "¡Faltan campos requeridos!"}), 400
+
+    if not usuario_register.email or not usuario_register.password or not usuario_register.user_type:
+        return jsonify({"message": "Missing required fields!"}), 400
 
     auth_service = AuthService(Database())
-    user = auth_service.login_user(email, password, user_type)
+    user = auth_service.login_user(usuario_register)
     if user:
         # Asegúrate de que user incluya user_type
         response_data = {
             "message": "¡Inicio de sesión exitoso!",
-            "email": user.get("email", email),
+            "email": user.get("email", usuario_register.email),
             "id": user.get("user_id", user.get("id")),
             "token": user.get("token"),
-            "user_type": user.get("user_type", user_type)  # Añadir user_type
+            "user_type": user.get("user_type", usuario_register.user_type)  # Añadir user_type
         }
         return jsonify(response_data), 200
     return jsonify({"message": "¡Credenciales o tipo de usuario inválidos!"}), 401
@@ -239,40 +245,11 @@ def list_quizzes(token_info):
     """Endpoint para listar todos los quizzes creados por el profesor"""
     if token_info["user_type"] != "profesor":
         return jsonify({"message": "Access denied! Teacher only."}), 403
+    teacher_id = token_info["user_id"]
+    auth_service = AuthService(Database())
+    quizzes = auth_service.get_all_quizzes(teacher_id)
+    return jsonify({"quizzes": quizzes}), 200
 
-    try:
-        quizzes = []
-        teacher_id = token_info["user_id"]
-
-        for filename in os.listdir(QUIZ_STORAGE_PATH):
-            if filename.startswith("quiz_") and filename.endswith(".json"):
-                filepath = os.path.join(QUIZ_STORAGE_PATH, filename)
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    quiz_data = json.load(f)
-
-                # Filtrar solo quizzes del profesor actual
-                if quiz_data.get("created_by") == teacher_id:
-                    quizzes.append({
-                        "quiz_id": quiz_data["quiz_id"],
-                        "title": quiz_data.get("title", "Untitled Quiz"),
-                        "topic": quiz_data.get("topic", "General"),
-                        "age_group": quiz_data.get("age_group", "3-5 años"),
-                        "created_at": quiz_data["created_at"],
-                        "questions_count": len(quiz_data.get("questions", []))
-                    })
-
-        # Ordenar por fecha de creación (más recientes primero)
-        quizzes.sort(key=lambda x: x["created_at"], reverse=True)
-
-        return jsonify({"quizzes": quizzes})
-
-    except Exception as e:
-        return jsonify({"error": f"Error listing quizzes: {str(e)}"}), 500
-
-
-
-
-# --- NUEVAS RUTAS PARA LISTAR USUARIOS (SOLO PROFESORES) ---
 
 @app.route("/api/teacher/listare", methods=["GET"])
 @token_required

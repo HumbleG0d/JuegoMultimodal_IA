@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import Header from './components/Header';
 import Home from './components/Home';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import DashBoard from './components/GenerateQuiz';
 import StudenDashBoard from './components/StudentDashBoard';
+import TeacherDashBoard from './components/TeacherDashboard';
+import PlayQuizz from './components/PlayQuizz';
 function App() {
   useEffect(() => {
     // Update the page title
@@ -38,11 +38,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-900 text-white">
-        <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/teacher/dashboard" element={<DashBoard />} />
+          <Route path="/teacher/dashboard" element={<TeacherDashBoard />} />
           <Route path="/student/dashboard" element={<StudenDashBoard />} />
+           <Route path="/play/:quizId" element={<PlayQuizz />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
