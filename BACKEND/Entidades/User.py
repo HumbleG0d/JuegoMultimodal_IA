@@ -161,6 +161,14 @@ class AuthService:
                                (student_id,))
                 return cursor.fetchall()
 
+    def get_teacher(self,teacher_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id, nombre, email FROM profesores WHERE id= %s",
+                               (teacher_id,))
+                return cursor.fetchall()
+
+
 
 
 

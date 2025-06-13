@@ -283,6 +283,13 @@ def get_alumno(token_info,student_id):
     student = auth_service.get_estudiante(student_id)
     return jsonify({"student":student})
 
+@app.route("/api/teacher/<teacher_id>", methods=["GET"])
+@token_required
+def get_teacher(token_info,teacher_id):
+    auth_service = AuthService(Database())
+    student = auth_service.get_teacher(teacher_id)
+    return jsonify({"student":student})
+
 
 @app.route("/api/teacher/listarp", methods=["GET"])
 @token_required
