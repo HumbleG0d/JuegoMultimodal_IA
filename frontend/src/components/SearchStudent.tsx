@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, X, User, Plus } from 'lucide-react';
-import type { Students } from '../types'; // Asegúrate de que el tipo Student esté definido en tu archivo de tipos
-
+import type { StudensResponse, Students } from '../types'; 
 
 interface SearchStudentProps {  
   isOpen: boolean;
@@ -11,17 +10,48 @@ interface SearchStudentProps {
 
 const SearchStudent = ({ isOpen, onClose, onStudentAdd }: SearchStudentProps) => {
   const [searchTerm, setSearchTerm] = useState('');
+    const [students, setStudents] = useState<Students[]>([]);
+    
+    const listStudents = async() => {
+        try {
+            const tonken = localStorage.getItem('token');
+            const response = await fetch('http://localhost:5000/api/teacher/listare', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${tonken}`,
+                },
+            });
+            if (!response.ok) {
+                throw new Error('Failed to fetch students');
+            }
+            let data: StudensResponse
 
-  // Alumnos disponibles para buscar
-  const availableStudents: Students[] = [
-    { id: 1, nombre: 'Ana García', email: 'ana.garcia@email.com' },
-    { id: 2, nombre: 'Carlos López', email: 'carlos.lopez@email.com'},
-    { id: 3, nombre: 'María Rodriguez', email: 'maria.rodriguez@email.com' },
-    { id: 4, nombre: 'Pedro Martínez', email: 'pedro.martinez@email.com' }
-  ];
+            try {
+                data = await response.json();
+            } catch (jsonError) {
+                console.error('Error parsing JSON response:', jsonError);
+                throw new Error('Invalid JSON response');
+            }
+
+            const students: Students[] = data.students.map(st => ({
+                id: st.id,
+                nombre: st.nombre,
+                email: st.email,
+            }));
+            setStudents(students);
+        }catch(error) {
+            console.error('Error fetching students:', error);
+        }
+        
+    }
+
+    useEffect(() => {
+        listStudents();
+    }, []);
 
   // Filtrar alumnos por búsqueda
-    const filteredStudents = availableStudents.filter((student: Students) =>
+    const filteredStudents = students.filter((student: Students) =>
         student.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
         student.email.toLowerCase().includes(searchTerm.toLowerCase()));
 
