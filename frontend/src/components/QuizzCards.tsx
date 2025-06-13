@@ -3,19 +3,23 @@ import {
   Play,
   Clock,
   Eye,
-  Edit,
+  UserRoundPlus,
   Trash2,
   Trophy,
 } from 'lucide-react';
 import { useNavigate} from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
-import type { DashQuiz, QuizzesResponse } from '../types';
+import type { DashQuiz, QuizzesResponse, Students } from '../types';
 import Button from './ui/Button';
+import SearchStudent from './SearchStudent';
 
 
 const QuizzCards: React.FC = () => {
   const [dashQuiz , setDashQuiz] = useState<DashQuiz[]>([]);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [selectedStudents, setSelectedStudents] = useState<Students[]>([]);
+
   const navigate = useNavigate();
   
   const getQuizzes = async () => { 
@@ -61,6 +65,25 @@ const QuizzCards: React.FC = () => {
       console.error('Error fetching quizzes:', error);
     }
   }
+
+  const togglePopup = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  const closeSearchPopup = () => {
+    setIsSearchOpen(false);
+  };
+
+  // Agregar el alumno a la lista (evitar duplicados)
+  const handleStudentAdd = (student:Students) => {
+    setSelectedStudents(prev => {
+      if (!prev.find(s => s.id === student.id)) {
+        return [...prev, student];
+      }
+      return prev;
+    });
+    console.log('Alumno agregado:', student);
+  };
 
   useEffect(() => {
     getQuizzes();
@@ -149,9 +172,10 @@ const QuizzCards: React.FC = () => {
                   <Eye className="w-4 h-4" />
                   <span>Ver</span>
                 </Button>
-                <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors">
-                  <Edit className="w-4 h-4" />
-                </button>
+                <Button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors"
+                  onClick={togglePopup}>
+                  <UserRoundPlus className="w-4 h-4" />
+                </Button>
                 <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/30 transition-colors">
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -159,6 +183,14 @@ const QuizzCards: React.FC = () => {
             </div>
           </div>
         ))}
+
+        {isSearchOpen && (
+          <SearchStudent
+            isOpen={isSearchOpen}
+            onClose={closeSearchPopup}
+            onStudentAdd={handleStudentAdd}
+          />
+        )}
       </article>
     </div>
   );
