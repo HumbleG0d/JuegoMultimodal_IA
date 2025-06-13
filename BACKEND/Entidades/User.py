@@ -1,6 +1,8 @@
 import json
 import hashlib
 import datetime
+from os.path import curdir
+
 import jwt
 from typing import Optional, Dict, List
 from dataclasses import dataclass
@@ -148,6 +150,19 @@ class AuthService:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("SELECT id, nombre, email FROM estudiantes")
                 return cursor.fetchall()
+
+
+
+
+    def get_estudiante(self,student_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id, nombre, email FROM estudiantes WHERE id= %s",
+                               (student_id,))
+                return cursor.fetchall()
+
+
+
 
     def get_all_teachers(self) -> List[Dict]:
         """Obtiene una lista de todos los profesores registrados."""
