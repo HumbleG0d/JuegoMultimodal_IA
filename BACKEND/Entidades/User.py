@@ -139,14 +139,14 @@ class AuthService:
                 ))
                 conn.commit()
 
-    def register_quiz_toalumn(self,alumno_id,quiz_id):
+    def register_quiz_toalumn(self,estudiante_id,quiz_id):
         with self.db.get_connection() as conn:
             with conn.cursor() as cursor:
                 cursor.execute('''
                 INSERT INTO estudiante_quiz (estudiante_id,quiz_id)
                 VALUES (%s,%s)
                 ''',(
-                    alumno_id,quiz_id
+                    estudiante_id,quiz_id
                 ))
                 conn.commit()
                 
@@ -156,7 +156,26 @@ class AuthService:
                 cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE id= %s",
                                (quiz_id,))
                 return cursor.fetchall()
-            
+
+
+    def get_estudiante_name(self,student_name):
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id , nombre, email FROM estudiantes WHERE nombre= %s",
+                               (student_name,))
+                return cursor.fetchall()    
+
+    def get_all_quizzes_estudiante(self,user_id) -> List[Dict]:
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("""
+                    SELECT estudiante_quiz.estudiante_id, estudiante_quiz.quiz_id, quizzes.nombre, quizzes.quiz_data
+                    FROM estudiante_quiz
+                    INNER JOIN quizzes ON estudiante_quiz.quiz_id = quizzes.id
+                    WHERE estudiante_quiz.estudiante_id = %s
+                    """
+                               , (user_id,))
+                return cursor.fetchall()
 
     def get_all_students(self) -> List[Dict]:
         """Obtiene una lista de todos los estudiantes registrados."""

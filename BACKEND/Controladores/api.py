@@ -19,14 +19,18 @@ CORS(app, resources={
     r"/api/*": {
         "origins": ["http://localhost:5173"],
         "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
+        "allow_headers": ["Content-Type", "Authorization"],
+        "max_age": 3600,
+        "supports_credentials": True
     },
-    r"/chat/*": {  # Agregar esta configuración para las rutas de Voiceflow
+    r"/chat/*": {
         "origins": ["http://localhost:5173"],
         "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
+        "allow_headers": ["Content-Type", "Authorization"],
+        "max_age": 3600,
+        "supports_credentials": True
     }
-})  # Permitir solicitudes desde el frontend React
+}) # Permitir solicitudes desde el frontend React
 QUIZ_STORAGE_PATH = "generated_quizzes"
 
 if not os.path.exists(QUIZ_STORAGE_PATH):
@@ -184,6 +188,19 @@ def student_dashboard(token_info):
         return jsonify({"message": "¡Acceso denegado! Solo para estudiantes."}), 403
     return jsonify({"message": f"¡Bienvenido estudiante {token_info['user_id']}!", "user": token_info})
 
+
+@app.route("/api/estudiante/dashboard/quizzes", methods=["GET"])
+@token_required
+def list_quizzes_estudiante(token_info):
+    """Endpoint para listar todos los quizzes que se le han asignado a los estudiantes"""
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message": "Access denied! Estudiante only."}), 403
+    estudiante_id = token_info["user_id"]
+    auth_service = AuthService(Database())
+    quizzes = auth_service.get_all_quizzes_estudiante(estudiante_id)
+    return jsonify({"quizzes": quizzes}), 200
+
+
 @app.route("/api/teacher/dashboard", methods=["GET"])
 @token_required
 def teacher_dashboard(token_info):
@@ -256,7 +273,7 @@ def list_quizzes(token_info):
 
 
 
-@app.route("/api/teacher/dashboard/asignar", methods=["POST"])
+@app.route("/api/teacher/dashboard/asignar", methods=["POST" , "METHODS"])
 @token_required
 def asign_quizzes(token_info):
     """Endpoint para listar todos los quizzes creados por el profesor"""
@@ -264,12 +281,23 @@ def asign_quizzes(token_info):
         return jsonify({"message": "Access denied! Teacher only."}), 403
     teacher_id = token_info["user_id"]
     data = request.get_json()
-    alumno_id = data.get("alumno_id")
+    estudiante_id = data.get("estudiante_id")
     quiz_id=data.get("quiz_id")
     auth_service = AuthService(Database())
-    auth_service.register_quiz_toalumn(alumno_id,quiz_id)
+    auth_service.register_quiz_toalumn(estudiante_id,quiz_id)
 
-    return jsonify({"Asignacion Exitosa": alumno_id + "to" + quiz_id}), 200
+    return jsonify({"Asignacion Exitosa": estudiante_id + "to" + quiz_id}), 200
+
+@app.route("/api/student/<student_name>", methods=["GET"])
+@token_required
+def get_alumno(token_info,student_name):
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+    auth_service = AuthService(Database())
+    student = auth_service.get_estudiante_name(student_name)
+    return jsonify({"student":student})
+
+
 
 @app.route("/api/teacher/listare", methods=["GET"])
 @token_required
