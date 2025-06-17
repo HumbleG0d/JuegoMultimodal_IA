@@ -7,18 +7,18 @@ import {
   Trash2,
   Trophy,
 } from 'lucide-react';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 import type { DashQuiz, QuizzesResponse, Students } from '../types';
 import Button from './ui/Button';
 import SearchStudent from './SearchStudent';
 
-
 const QuizzCards: React.FC = () => {
-  const [dashQuiz , setDashQuiz] = useState<DashQuiz[]>([]);
+  const [dashQuiz, setDashQuiz] = useState<DashQuiz[]>([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedStudents, setSelectedStudents] = useState<Students[]>([]);
+  const [selectedQuizId, setSelectedQuizId] = useState<string | null>(null); // Track selected quiz
 
   const navigate = useNavigate();
   
@@ -27,13 +27,13 @@ const QuizzCards: React.FC = () => {
       const token = localStorage.getItem('token');
       const response = await fetch('http://localhost:5000/api/teacher/dashboard/quizzes', {
         method: 'GET',
-         headers: {
+        headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
         },
       });
 
-      let data: QuizzesResponse
+      let data: QuizzesResponse;
       try {
         data = await response.json();
       } catch (jsonError) {
@@ -64,25 +64,58 @@ const QuizzCards: React.FC = () => {
     } catch (error) {
       console.error('Error fetching quizzes:', error);
     }
-  }
+  };
 
-  const togglePopup = () => {
-    setIsSearchOpen(!isSearchOpen);
+  const togglePopup = (quizId: string) => {
+    setSelectedQuizId(quizId); 
+    setIsSearchOpen(true); 
   };
 
   const closeSearchPopup = () => {
     setIsSearchOpen(false);
+    setSelectedQuizId(null); 
   };
 
-  // Agregar el alumno a la lista (evitar duplicados)
-  const handleStudentAdd = (student:Students) => {
+  // Handle adding a student and sending the API request
+  const handleStudentAdd = async (student: Students) => {
+    if (!selectedQuizId) {
+      console.error('No quiz selected');
+      return;
+    }
+
     setSelectedStudents(prev => {
       if (!prev.find(s => s.id === student.id)) {
         return [...prev, student];
       }
       return prev;
     });
-    console.log('Alumno agregado:', student);
+
+    const payload = {
+      estudiante_id: student.id,
+      quiz_id: selectedQuizId,
+    };
+
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:5000/api/teacher/dashboard/asignar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to assign quiz to student');
+      }
+
+      console.log('Quiz assigned successfully:', payload);
+    } catch (error) {
+      console.error('Error assigning quiz:', error);
+    }
+
+    closeSearchPopup();
   };
 
   useEffect(() => {
@@ -166,20 +199,22 @@ const QuizzCards: React.FC = () => {
               </div>
               <div className="flex space-x-2">
                 <Button 
-                  className="flex-1 bg-gradient-to-r from-pink-500 to-violet-500 text-white py-2 px-4 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-1"
+                  className="flex-1 bg-gradient-to-r from-pink-500 to-violet-500 text-white py-2 px-4 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-200 flex  items-center justify-center space-x-1"
                   onClick={() => handleViewQuiz(quiz.id)}
                 >
                   <Eye className="w-4 h-4" />
                   <span>Ver</span>
                 </Button>
-                <Button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors"
-                  onClick={togglePopup}>
+                <Button 
+                  className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-white/20 transition-colors"
+                  onClick={() => togglePopup(quiz.id)} // Pass the quiz ID
+                >
                   <UserRoundPlus className="w-4 h-4" />
                 </Button>
                 <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/30 transition-colors">
                   <Trash2 className="w-4 h-4" />
                 </button>
-              </div>
+                </div>
             </div>
           </div>
         ))}
