@@ -3,6 +3,7 @@ import Home from './components/Home';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import StudenDashBoard from './components/StudentDashBoard';
 import TeacherDashBoard from './components/TeacherDashboard';
+import ViewQuizGenerate from './components/ViewQuizGenerate';
 import PlayQuizz from './components/PlayQuizz';
 function App() {
   useEffect(() => {
@@ -42,7 +43,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/teacher/dashboard" element={<TeacherDashBoard />} />
           <Route path="/student/dashboard" element={<StudenDashBoard />} />
-           <Route path="/play/:quizId" element={<PlayQuizz />} />
+          <Route path="/teacher/quiz/:quizId" element={<ViewQuizGenerate />} /> {/* Teacher view */}
+          <Route path="/student/quiz/:quizId" element={<PlayQuizz />} /> {/* Student play */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
