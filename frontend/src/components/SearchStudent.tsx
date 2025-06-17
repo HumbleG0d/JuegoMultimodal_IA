@@ -9,9 +9,8 @@ interface SearchStudentProps {
 }
 
 const SearchStudent = ({ isOpen, onClose, onStudentAdd }: SearchStudentProps) => {
-  const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [students, setStudents] = useState<Students[]>([]);
-    
     const listStudents = async() => {
         try {
             const tonken = localStorage.getItem('token');
@@ -46,7 +45,7 @@ const SearchStudent = ({ isOpen, onClose, onStudentAdd }: SearchStudentProps) =>
         
     }
 
-    useEffect(() => {
+  useEffect(() => {
         listStudents();
     }, []);
 

@@ -37,9 +37,6 @@ const ListStudents = () => {
         throw new Error('Invalid JSON response');
       }
 
-      if(!response.ok) throw new Error('Failed to fetch students');
-
-
       const students: StudensQuiz[] = data.students.map(st => ({
         id: st.id,
         name: st.nombre,
