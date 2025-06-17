@@ -10,9 +10,8 @@ import {
 } from 'lucide-react';
 import { TowerControl as GameController } from 'lucide-react';
 import { useNavigate } from "react-router";
-
-import QuizzCards from "./QuizzCards";
 import ListStudents from "./ListStudens";
+import QuizzCardsStudent from "./QuizCardsStudent";
 const StudentDashBoard: React.FC = () => {
 
 
@@ -152,7 +151,7 @@ const StudentDashBoard: React.FC = () => {
                     <section className="p-8">
                         {
                             activeSection === 'quizzes' && (
-                                <QuizzCards/>
+                                <QuizzCardsStudent/>
                             )
                         }
                         {
