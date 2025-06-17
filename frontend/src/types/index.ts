@@ -59,13 +59,31 @@ export interface InputProps{
   placeholder?: string;
 };
 
-export interface Question {
-  id: string; // Generaremos un ID único en el frontend
+interface Question {
+  id: string;
   question: string;
   options: string[];
-  correct_answer: string; // Convertimos el índice a la opción correcta
+  correct_answer: number;
   explanation: string;
-  type: 'multiple_choice';
+}
+ 
+
+export interface Questionprompt {
+  id: string; // Generaremos un ID único en el frontend
+  correct_answer: string;
+  explanation: string;
+  options: string[];
+  question: string;
+}
+
+export interface QuizData {
+  age_group: string;
+  created_at: string;
+  created_by: number;
+  original_prompt: string;
+  questions: Question[];
+  title: string;
+  topic: string;
 }
 
 export interface QuizResponse {
@@ -90,6 +108,32 @@ export interface QuizResponse {
   };
 }
 
+export interface Quiz {
+  id: string;
+  nombre: string;
+  created_at: string;
+  user_id: number;
+  quiz_data: {
+    age_group: string;
+    created_at: string;
+    created_by: number;
+    original_prompt: string;
+    title: string;
+    topic: string;
+    questions: {
+      question: string;
+      options: string[];
+      correct_answer: number;
+      explanation: string;
+    }[];
+  };
+  quiz_id: string;
+}
+
+
+export interface QuizzesResponse {
+  quizzes: Quiz[];
+}
 
 export interface IconProps extends LucideProps {
   name: string;
@@ -98,21 +142,36 @@ export interface IconProps extends LucideProps {
 export interface DashQuiz {
   id: string,
   title: string,
-  subject: string,
   questions: number,
   timeAgo: string,
   thumbnail: string,
-  plays: number,
+  students: number,
   accuracy: number,
 }
 
 export interface StudensQuiz{
-  id: string,
+  id: number,
   name: string,
   avatar: string,
   score: number,
   progress: number,
   lastActive: string,
+}
+
+export interface Students {
+  email: string;
+  id: number;
+  nombre: string;
+}
+
+export interface AsignedStudentQuiz{
+  id_quiz: string,
+  id_student: number,
+}
+
+
+export interface StudensResponse { 
+  students: Students[];
 }
 
 export interface ChatBootMessage{
