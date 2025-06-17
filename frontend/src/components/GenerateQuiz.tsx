@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Button from './ui/Button';
 import { Mic, Send, Save, MicOff , BrushCleaning } from 'lucide-react';
-import type { Question , QuizResponse , SpeechRecognition , SpeechRecognitionErrorEvent , SpeechRecognitionEvent} from '../types';
+import type {Questionprompt, QuizResponse , SpeechRecognition , SpeechRecognitionErrorEvent , SpeechRecognitionEvent} from '../types';
 import { useTranslation } from 'react-i18next';
 
 // Extend the Window interface to include SpeechRecognition and webkitSpeechRecognition
@@ -18,7 +18,7 @@ const Dashboard: React.FC = () => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [generatedQuestions, setGeneratedQuestions] = useState<Question[]>([]);
+  const [generatedQuestions, setGeneratedQuestions] = useState<Questionprompt[]>([]);
   const [examTitle, setExamTitle] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [voiceSupported, setVoiceSupported] = useState(false);
@@ -193,7 +193,7 @@ const Dashboard: React.FC = () => {
         throw new Error(t('dashboard.errors.invalidQuizData'));
       }
 
-      const questions: Question[] = data.quiz_data.questions.map((q, index) => ({
+      const questions: Questionprompt[] = data.quiz_data.questions.map((q, index) => ({
         id: `${data.quiz_data.quiz_id}-${index}`,
         question: q.question,
         options: q.options,
