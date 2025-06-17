@@ -13,7 +13,7 @@ const RegisterModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchTo
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: '',
-    username: '',
+    nombre: '',
     password: '',
     confirm_password: '',
     user_type: 'estudiante',
@@ -44,9 +44,8 @@ const RegisterModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchTo
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: formData.email,
-          username: formData.username,
+          nombre: formData.nombre,
           password: formData.password,
-          confirm_password: formData.confirm_password,
           user_type: formData.user_type,
         }),
       });
@@ -83,8 +82,8 @@ const RegisterModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchTo
         <Input
           label={t('auth.register.usernameLabel')}
           type="text"
-          name="username"
-          value={formData.username}
+          name="nombre"
+          value={formData.nombre}
           onChange={handleChange}
           required
           placeholder={t('auth.register.usernamePlaceholder')}
