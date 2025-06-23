@@ -12,6 +12,7 @@ import { TowerControl as GameController } from 'lucide-react';
 import { useNavigate } from "react-router";
 import ListStudents from "./ListStudens";
 import QuizzCardsStudent from "./QuizCardsStudent";
+import type { Profile } from "../types";
 const StudentDashBoard: React.FC = () => {
 
 
@@ -21,6 +22,8 @@ const StudentDashBoard: React.FC = () => {
     
     const [isExiting, setIsExiting] = useState(false);
     
+    const [isProfile , setIsProfile] = useState<Profile>();
+
     const navigate = useNavigate();
     
 
@@ -32,6 +35,17 @@ const StudentDashBoard: React.FC = () => {
           setIsScrolled(window.scrollY > 10);
         };
     
+
+        const token = localStorage.getItem('token');
+        const decodedToken = token ? JSON.parse(atob(token.split('.')[1])) : null;  
+
+        const dataProfile: Profile = {
+            user_name: decodedToken.user_name,
+            user_type: decodedToken.user_type,
+        }
+
+        setIsProfile(dataProfile);
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -69,13 +83,13 @@ const StudentDashBoard: React.FC = () => {
                             <div className="flex items-center space-x-3">
                                 {/*Img profile*/}
                                 <img 
-                                    src="https://www.facebook.com/SiDeRaLLL/posts/buenas-tardes-mis-pr%C3%ADncipes-%EF%B8%8Fhoy-no-se-olviden-el-stream-a-las-9-pm-los-espero-l/2290860037712130/"
-                                    alt="Lujan Carrion Sideral"
+                                    src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/05/Kaguya-sama-season-2.jpg"
+                                    alt="Profile"
                                     className="w-10 h-10 rounded-full object-cover"
                                 />
                                 <div>
-                                    <p className="text-white font-medium text-sm">Lujan Carrion</p>
-                                    <p className="text-white/70 text-xs">Profesor</p>
+                                    <p className="text-white font-medium text-sm">{isProfile?.user_name}</p>
+                                    <p className="text-white/70 text-xs">{isProfile?.user_type}</p>
                                 </div>
                             </div>
                         </div>

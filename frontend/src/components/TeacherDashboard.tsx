@@ -14,7 +14,7 @@ import { TowerControl as GameController } from 'lucide-react';
 import GenerateQuiz from "./GenerateQuiz";
 import QuizzCards from "./QuizzCards";
 import ListStudents from "./ListStudens";
-
+import type {Profile} from "../types";
 const TeacherDashBoard: React.FC = () => {
 
 
@@ -24,6 +24,9 @@ const TeacherDashBoard: React.FC = () => {
 
     const [isExiting, setIsExiting] = useState(false);
 
+
+    const [isProfile , setIsProfiele] = useState<Profile>();
+
     const menuRef = useRef<HTMLDivElement>(null);
 
     const navigate = useNavigate();
@@ -32,7 +35,16 @@ const TeacherDashBoard: React.FC = () => {
         const handleScroll = () => {
           setIsScrolled(window.scrollY > 10);
         };
-    
+        const token = localStorage.getItem('token');
+        const decodedToken = token ? JSON.parse(atob(token.split('.')[1])) : null;
+
+        const dataProfile: Profile = {
+            user_name: decodedToken.user_name,
+            user_type: decodedToken.user_type,
+        }
+
+        setIsProfiele(dataProfile);
+        console.log('Decoded Token:', decodedToken);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -69,13 +81,13 @@ const TeacherDashBoard: React.FC = () => {
                             <div className="flex items-center space-x-3">
                                 {/*Img profile*/}
                                 <img 
-                                    src="https://www.facebook.com/SiDeRaLLL/posts/buenas-tardes-mis-pr%C3%ADncipes-%EF%B8%8Fhoy-no-se-olviden-el-stream-a-las-9-pm-los-espero-l/2290860037712130/"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEIJr8_FgBJYrdc_5C9oHRKOFcuJyAg4-j5XfI7IlB6YMGy4iafScYo2-aT7qhgjX9xWk&usqp=CAU"
                                     alt="Lujan Carrion Sideral"
                                     className="w-10 h-10 rounded-full object-cover"
                                 />
                                 <div>
-                                    <p className="text-white font-medium text-sm">Lujan Carrion</p>
-                                    <p className="text-white/70 text-xs">Profesor</p>
+                                    <p className="text-white font-medium text-sm">{isProfile?.user_name}</p>
+                                    <p className="text-white/70 text-xs">{isProfile?.user_type}</p>
                                 </div>
                             </div>
                         </div>
