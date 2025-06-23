@@ -213,7 +213,7 @@ class AuthService:
                 with conn.cursor(cursor_factory=DictCursor) as cursor:
                     cursor.execute(
                         f'''
-                        SELECT id, email, password_hash FROM {table} 
+                        SELECT id, nombre , email, password_hash FROM {table} 
                         WHERE email = %s
                         ''',
                         (usuario.email,)
@@ -225,7 +225,7 @@ class AuthService:
                 return {
                     "id": user['id'],
                     "email": user['email'],
-                    "token": self.generate_token(user['id'] , usuario.user_type),
+                    "token": self.generate_token(user['id'] , usuario.user_type , user['nombre']),
                 }
             return None
         except Exception as e:
@@ -233,9 +233,10 @@ class AuthService:
             return None
 
 
-    def generate_token(self, user_id: int, user_type: str) -> str:
+    def generate_token(self, user_id: int, user_type: str , user_name: str) -> str:
         payload = {
             "user_id": user_id,
+            "user_name" : user_name,
             "user_type": user_type,
             "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=TOKEN_EXPIRATION_MINUTES)
         }
