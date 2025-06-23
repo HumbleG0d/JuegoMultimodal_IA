@@ -290,6 +290,19 @@ def get_teacher(token_info,teacher_id):
     student = auth_service.get_teacher(teacher_id)
     return jsonify({"student":student})
 
+@app.route("/api/teacher/delete/quizStudent", methods=["DELETE"])
+@token_required
+def delete_student_from_quiz(token_info):
+    if token_info["user_type"]!="profesor":
+        return jsonify({"message":"Acceso no autorizado"})
+    data=request.get_json()
+    quiz_id=data.get("quiz_id")
+    student_id=data.get("student_id")
+    auth_service = AuthService(Database())
+    auth_service.delete_student_from_quiz(student_id,quiz_id)
+    return jsonify({"Estudiante eliminado de la tarea":quiz_id })
+
+
 
 @app.route("/api/teacher/listarp", methods=["GET"])
 @token_required

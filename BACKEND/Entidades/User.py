@@ -168,7 +168,13 @@ class AuthService:
                                (teacher_id,))
                 return cursor.fetchall()
 
-
+    def delete_student_from_quiz(self,estudiante_id,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                DELETE FROM estudiante_quiz WHERE estudiante_id=%s AND quiz_id=%s""", (estudiante_id,quiz_id)
+                )
+                conn.commit()
 
 
 
