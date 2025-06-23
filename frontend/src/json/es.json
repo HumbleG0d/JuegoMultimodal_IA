@@ -239,6 +239,7 @@
         "teacher": "Profesor"
       },
       "submit": "Iniciar Sesión",
+      "loading": "Iniciando sesión...",
       "or": "o",
       "continueWithGmail": "Continuar con Gmail",
       "noAccount": "¿No tienes una cuenta?",

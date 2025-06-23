@@ -240,6 +240,7 @@
         "teacher": "Teacher"
       },
       "submit": "Log In",
+      "loading": "Logging in...",
       "or": "or",
       "continueWithGmail": "Continue with Gmail",
       "noAccount": "Don't have an account?",
