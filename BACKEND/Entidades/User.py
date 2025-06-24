@@ -1,6 +1,7 @@
 import json
 import hashlib
 import datetime
+from operator import countOf
 from os.path import curdir
 
 import jwt
@@ -199,6 +200,14 @@ class AuthService:
                 cursor.execute("SELECT id, nombre, email FROM profesores WHERE id= %s",
                                (teacher_id,))
                 return cursor.fetchall()
+
+    def count_students_for_quiz(self,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                SELECT COUNT(*) from estudiante_quiz where quiz_id=%s
+                """,(quiz_id,))
+                return cursor.fetchone()[0]
 
     def delete_student_from_quiz(self,estudiante_id,quiz_id):
         with self.db.get_connection() as conn:

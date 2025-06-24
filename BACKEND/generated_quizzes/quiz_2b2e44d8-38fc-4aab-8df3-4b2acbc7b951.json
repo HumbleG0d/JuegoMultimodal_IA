@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T15:58:09.890595",
+  "original_prompt": "presidentes del peru",
+  "title": "¡Conoce a los presidentes del Perú!",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es el presidente del Perú actual?",
+      "options": [
+        "Alan García",
+        "Martín Vizcarra",
+        "Dina Boluarte",
+        "Ollanta Humala"
+      ],
+      "correct_answer": 2,
+      "explanation": "Dina Boluarte es la presidenta actual del Perú. ¡Bien hecho por saberlo!",
+      "incorrect": "Estas opciones son incorrectas"
+    },
+    {
+      "question": "¿Quién fue un presidente del Perú que se llamaba Alan?",
+      "options": [
+        "Alan García",
+        "Alberto Fujimori",
+        "Martín Vizcarra",
+        "Ollanta Humala"
+      ],
+      "correct_answer": 0,
+      "explanation": "Alan García fue un presidente del Perú. ¡Muy bien!",
+      "incorrect": "Estas opciones son incorrectas"
+    },
+    {
+      "question": "¿Quién es un presidente del Perú que se llamaba Martín?",
+      "options": [
+        "Martín Vizcarra",
+        "Alberto Fujimori",
+        "Ollanta Humala",
+        "Alan García"
+      ],
+      "correct_answer": 0,
+      "explanation": "Martín Vizcarra fue un presidente del Perú. ¡Excelente!",
+      "incorrect": "Estas opciones son incorrectas"
+    },
+    {
+      "question": "¿Quién fue un presidente del Perú que se llamaba Alberto?",
+      "options": [
+        "Alberto Fujimori",
+        "Alan García",
+        "Martín Vizcarra",
+        "Ollanta Humala"
+      ],
+      "correct_answer": 0,
+      "explanation": "Alberto Fujimori fue un presidente del Perú. ¡Muy bien!",
+      "incorrect": "Estas opciones son incorrectas"
+    },
+    {
+      "question": "¿Quién es un presidente del Perú que se llamaba Ollanta?",
+      "options": [
+        "Ollanta Humala",
+        "Martín Vizcarra",
+        "Alan García",
+        "Alberto Fujimori"
+      ],
+      "correct_answer": 0,
+      "explanation": "Ollanta Humala fue un presidente del Perú. ¡Bien hecho!",
+      "incorrect": "Estas opciones son incorrectas"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T15:58:57.622496",
+  "original_prompt": "presidentes del peru",
+  "title": "Conoce a los presidentes del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es el presidente actual del Perú?",
+      "options": [
+        "Dina Boluarte",
+        "Pedro Castillo",
+        "Alan García",
+        "Ollanta Humala"
+      ],
+      "correct_answer": 0,
+      "explanation": "Muy bien, Dina Boluarte es la presidenta actual del Perú. Estás aprendiendo sobre la historia de nuestro país",
+      "incorrect": "No te preocupes, la presidenta actual del Perú es Dina Boluarte. Sigue aprendiendo sobre los presidentes del Perú"
+    },
+    {
+      "question": "¿Quién fue un presidente importante del Perú?",
+      "options": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "Pedro Castillo",
+        "Alan García"
+      ],
+      "correct_answer": 0,
+      "explanation": "Excelente, José de San Martín es un héroe nacional del Perú. Estás haciendo un gran trabajo",
+      "incorrect": "No te preocupes, José de San Martín es un héroe nacional del Perú. Sigue aprendiendo sobre los presidentes y héroes del Perú"
+    },
+    {
+      "question": "¿Cuál es el trabajo de un presidente?",
+      "options": [
+        "Enseñar en la escuela",
+        "Construir casas",
+        "Gobernar el país",
+        "Jugar fútbol"
+      ],
+      "correct_answer": 2,
+      "explanation": "Muy bien, el presidente trabaja para gobernar el país y ayudar a su gente. Estás aprendiendo sobre la importancia de los líderes",
+      "incorrect": "No te preocupes, el presidente trabaja para gobernar el país y ayudar a su gente. Sigue aprendiendo sobre los líderes y su trabajo"
+    },
+    {
+      "question": "¿Dónde vive el presidente del Perú?",
+      "options": [
+        "En la escuela",
+        "En el parque",
+        "En la casa de gobierno",
+        "En el hospital"
+      ],
+      "correct_answer": 2,
+      "explanation": "Excelente, el presidente del Perú vive en la casa de gobierno. Estás aprendiendo sobre los lugares importantes del país",
+      "incorrect": "No te preocupes, el presidente del Perú vive en la casa de gobierno. Sigue aprendiendo sobre los lugares importantes del país"
+    },
+    {
+      "question": "¿Por qué es importante conocer a los presidentes del Perú?",
+      "options": [
+        "Para jugar con ellos",
+        "Para aprender sobre la historia del país",
+        "Para ir al parque",
+        "Para comer helado"
+      ],
+      "correct_answer": 1,
+      "explanation": "Muy bien, conocer a los presidentes del Perú es importante para aprender sobre la historia del país. Estás haciendo un gran trabajo",
+      "incorrect": "No te preocupes, conocer a los presidentes del Perú es importante para aprender sobre la historia del país. Sigue aprendiendo sobre la importancia de los líderes y la historia"
+    }
+  ]
+}

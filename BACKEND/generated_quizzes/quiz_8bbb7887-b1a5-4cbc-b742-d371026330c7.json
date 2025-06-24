@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T16:03:00.394812",
+  "original_prompt": "presidentes del peru",
+  "title": "¿Quién es el presidente?",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es una persona importante en el Perú?",
+      "options": [
+        "Un médico",
+        "Un presidente",
+        "Un profesor",
+        "Un policía"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Excelente! El presidente es una persona muy importante que ayuda a nuestro país.",
+      "incorrect": "No es correcto, pero eso es ok, sigue intentándolo"
+    },
+    {
+      "question": "¿Qué hace el presidente?",
+      "options": [
+        "Enseña en la escuela",
+        "Cura a los enfermos",
+        "Ayuda a nuestro país",
+        "Conduce un auto"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! El presidente ayuda a nuestro país a ser un mejor lugar.",
+      "incorrect": "No es correcto, pero eso es ok, sigue intentándolo"
+    },
+    {
+      "question": "¿Quién es un presidente famoso del Perú?",
+      "options": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "Alan García",
+        "Martín Vizcarra"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! Alan García fue un presidente del Perú.",
+      "incorrect": "No es correcto, pero eso es ok, sigue intentándolo"
+    },
+    {
+      "question": "¿Dónde trabaja el presidente?",
+      "options": [
+        "En la escuela",
+        "En el hospital",
+        "En la casa de gobierno",
+        "En el parque"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Exacto! El presidente trabaja en la casa de gobierno.",
+      "incorrect": "No es correcto, pero eso es ok, sigue intentándolo"
+    },
+    {
+      "question": "¿Por qué es importante el presidente?",
+      "options": [
+        "Porque es rico",
+        "Porque es famoso",
+        "Porque ayuda a nuestro país",
+        "Porque es alto"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! El presidente es importante porque ayuda a nuestro país.",
+      "incorrect": "No es correcto, pero eso es ok, sigue intentándolo"
+    }
+  ]
+}

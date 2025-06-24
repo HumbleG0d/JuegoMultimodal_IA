@@ -80,6 +80,7 @@ def generate_quiz(token_info):
                     "options": ["Opción A", "Opción B", "Opción C", "Opción D"],
                     "correct_answer": 0,
                     "explanation": "Explicación simple y positiva para niños"
+                    "incorrect":"Decirle al niño que la respuesta es incorrecta , por ejemplo, "Respuesta incorrecta, la respuesta correcta es ..."
                 }}
             ]
         }}
@@ -252,7 +253,7 @@ def save_stadistics(token_info):
     estadistica=auth_service.register_stadistics(student_id,quiz_id,points)
     return jsonify({"Estadistica guardada":estadistica})
 
-@app.route("/api/estudiante/estadisticas")
+@app.route("/api/estudiante/estadisticas", methods=["GET"])
 @token_required
 def stadistics(token_info):
     auth_service=AuthService(Database())
@@ -262,7 +263,7 @@ def stadistics(token_info):
         return jsonify({"Estadisticas del alumno":estadisticas})
     return None
 
-@app.route("/api/teacher/estadisticas")
+@app.route("/api/teacher/estadisticas",methods=["GET"])
 @token_required
 def stadistics_of_students(token_info):
     if token_info["user_type"] != "profesor":
@@ -323,6 +324,15 @@ def get_teacher(token_info,teacher_id):
     auth_service = AuthService(Database())
     student = auth_service.get_teacher(teacher_id)
     return jsonify({"student":student})
+
+@app.route("/api/quizz/students/<quiz_id>",methods=["GET"])
+@token_required
+def get_number_alums_for_quiz(token_info,quiz_id):
+    auth_service= AuthService(Database())
+    alumnos_asignados=auth_service.count_students_for_quiz(quiz_id)
+    return jsonify({"NumberofStudents":alumnos_asignados})
+
+
 
 @app.route("/api/teacher/delete/quizStudent", methods=["DELETE"])
 @token_required

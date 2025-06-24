@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T16:03:42.459050",
+  "original_prompt": "presidentes del peru",
+  "title": "Conoce a los Presidentes del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es el presidente actual del Perú?",
+      "options": [
+        "Dina Boluarte",
+        "Pedro Castillo",
+        "Alan García",
+        "Ollanta Humala"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Muy bien! Dina Boluarte es la presidenta actual del Perú. Estás aprendiendo mucho sobre la historia de nuestro país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Dina Boluarte. No te preocupes, sigue aprendiendo"
+    },
+    {
+      "question": "¿Quién fue un presidente muy importante del Perú?",
+      "options": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "Alan García",
+        "Alberto Fujimori"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Excelente! José de San Martín fue un héroe nacional que ayudó a liberar al Perú. Estás haciendo un gran trabajo.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es José de San Martín. Sigue intentándolo"
+    },
+    {
+      "question": "¿Qué hace un presidente?",
+      "options": [
+        "Enseña en la escuela",
+        "Conduce un auto",
+        "Gobierna el país",
+        "Juega fútbol"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! Un presidente gobierna el país y toma decisiones importantes. Estás aprendiendo sobre el papel de un presidente.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Gobierna el país. No te rindas"
+    },
+    {
+      "question": "¿Quién fue un presidente que trabajó por el bienestar de los peruanos?",
+      "options": [
+        "Ollanta Humala",
+        "Pedro Castillo",
+        "Alan García",
+        "Juan Diego Flórez"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Pedro Castillo fue un presidente que trabajó por el bienestar de los peruanos. Estás mostrando interés en la historia de nuestro país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Pedro Castillo. Sigue adelante"
+    },
+    {
+      "question": "¿Por qué es importante conocer a los presidentes del Perú?",
+      "options": [
+        "Para aprender historia",
+        "Para jugar fútbol",
+        "Para comer helado",
+        "Para ver televisión"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Exacto! Conocer a los presidentes del Perú nos ayuda a aprender sobre nuestra historia y a entender cómo se ha desarrollado nuestro país. Estás demostrando curiosidad y amor por el aprendizaje.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Para aprender historia. No te desanimes"
+    }
+  ]
+}
