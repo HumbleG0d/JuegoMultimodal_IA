@@ -239,6 +239,40 @@ def list_quizzes_estudiante(token_info):
     quizzes = auth_service.get_all_quizzes_estudiante(estudiante_id)
     return jsonify({"quizzes": quizzes}), 200
 
+@app.route("/api/estudiante/dashboard/quizzes/save", methods=["POST"])
+@token_required
+def save_stadistics(token_info):
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message":"Access denied"})
+    student_id = token_info["user_id"]
+    data= request.get_json()
+    quiz_id=data.get("quiz_id")
+    points=data.get("puntaje")
+    auth_service=AuthService(Database())
+    estadistica=auth_service.register_stadistics(student_id,quiz_id,points)
+    return jsonify({"Estadistica guardada":estadistica})
+
+@app.route("/api/estudiante/estadisticas")
+@token_required
+def stadistics(token_info):
+    auth_service=AuthService(Database())
+    if token_info["user_type"] == "estudiante":
+        student_id=token_info["user_id"]
+        estadisticas=auth_service.get_stadistics_student(student_id)
+        return jsonify({"Estadisticas del alumno":estadisticas})
+    return None
+
+@app.route("/api/teacher/estadisticas")
+@token_required
+def stadistics_of_students(token_info):
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message":"Acces Denied, you are not a teacher"})
+    data=request.get_json()
+    student_id=data.get("alumno_id")
+    auth_service=AuthService(Database())
+    estadistica=auth_service.get_stadistics_student(student_id)
+    return jsonify({"Estadisticas del alumno": estadistica})
+
 
 @app.route("/api/teacher/dashboard/asignar", methods=["POST"])
 @token_required
@@ -303,6 +337,14 @@ def delete_student_from_quiz(token_info):
     return jsonify({"Estudiante eliminado de la tarea":quiz_id })
 
 
+@app.route("/api/teacher/delete/<quiz_id>", methods=["DELETE"])
+@token_required
+def delete_quiz(token_info,quiz_id):
+    if token_info["user_type"]!="profesor":
+        return jsonify({"message":"Acceso no autorizado"})
+    auth_service = AuthService(Database())
+    auth_service.delete_quiz(quiz_id)
+    return jsonify({"Estudiante eliminado de la tarea":quiz_id })
 
 @app.route("/api/teacher/listarp", methods=["GET"])
 @token_required

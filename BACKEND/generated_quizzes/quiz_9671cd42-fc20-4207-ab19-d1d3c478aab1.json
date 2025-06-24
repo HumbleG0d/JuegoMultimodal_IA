@@ -1,0 +1,65 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T12:35:08.760389",
+  "original_prompt": "presidentes del peru",
+  "title": "¿Quiénes son nuestros presidentes?",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es el presidente que vemos en las monedas?",
+      "options": [
+        "Alan García",
+        "Ollanta Humala",
+        "Martín Vizcarra",
+        "San Martín"
+      ],
+      "correct_answer": 3,
+      "explanation": "San Martín es un héroe del Perú y aparece en algunas monedas"
+    },
+    {
+      "question": "¿Qué hace un presidente?",
+      "options": [
+        "Enseña en la escuela",
+        "Conduce un auto",
+        "Ayuda a la gente",
+        "Juega fútbol"
+      ],
+      "correct_answer": 2,
+      "explanation": "El presidente ayuda a la gente y toma decisiones importantes"
+    },
+    {
+      "question": "¿Dónde vive el presidente?",
+      "options": [
+        "En la escuela",
+        "En el parque",
+        "En la casa de gobierno",
+        "En el hospital"
+      ],
+      "correct_answer": 2,
+      "explanation": "El presidente vive en la casa de gobierno, que es un lugar especial"
+    },
+    {
+      "question": "¿Qué se llama al lugar donde trabaja el presidente?",
+      "options": [
+        "Palacio",
+        "Escuela",
+        "Parque",
+        "Biblioteca"
+      ],
+      "correct_answer": 0,
+      "explanation": "El presidente trabaja en el Palacio, que es un lugar muy importante"
+    },
+    {
+      "question": "¿Por qué es importante el presidente?",
+      "options": [
+        "Porque juega fútbol",
+        "Porque come helado",
+        "Porque ayuda a la gente",
+        "Porque duerme mucho"
+      ],
+      "correct_answer": 2,
+      "explanation": "El presidente es importante porque ayuda a la gente y hace que nuestro país sea un mejor lugar"
+    }
+  ]
+}

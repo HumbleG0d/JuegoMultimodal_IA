@@ -5,7 +5,7 @@ from contextlib import contextmanager
 from groq import Groq
 import json
 
-GROQ_API_KEY = "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"  # Configura tu API key de Groq
+GROQ_API_KEY = "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"  # Configura tu API key de Groq
 QUIZ_STORAGE_PATH = "generated_quizzes"
 groq_client = Groq(api_key=GROQ_API_KEY)
 DATABASE_PATH = "quiz_database.db"

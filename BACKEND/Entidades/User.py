@@ -71,14 +71,25 @@ class Database:
                     )
                 ''')
                 cursor.execute('''
-                    CREATE TABLE IF NOT EXISTS estudiante_quiz (
-                        estudiante_id INTEGER NOT NULL,
-                        quiz_id UUID NOT NULL,
-                        PRIMARY KEY (estudiante_id, quiz_id),
-                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
-                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
-                    )
+                CREATE TABLE IF NOT EXISTS estudiante_quiz (
+                    estudiante_id INTEGER NOT NULL,
+                    quiz_id UUID NOT NULL,
+                    PRIMARY KEY (estudiante_id, quiz_id),
+                    FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id) ON DELETE CASCADE,
+                    FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE
+                )
                 ''')
+                cursor.execute('''
+                CREATE TABLE IF NOT EXISTS estadisticas(
+                    id SERIAL PRIMARY KEY,
+                    quiz_id UUID NOT NULL,
+                    estudiante_id INTEGER NOT NULL,
+                    puntaje Integer NOT NULL,
+                    FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
+                    FOREIGN KEY (quiz_id) REFERENCES quizzes(id)            
+                    )        
+                ''')
+
                 conn.commit()
 
 
@@ -137,6 +148,27 @@ class AuthService:
                 ))
                 conn.commit()
 
+    def register_stadistics(self,student_id,quiz_id,puntaje):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                INSERT INTO estadisticas (quiz_id,estudiante_id,puntaje)
+                VALUES (%s,%s,%s)
+                RETURNING id
+                """,(quiz_id,student_id,puntaje))
+                conn.commit()
+                estadistica=cursor.fetchone()
+        return estadistica[0]
+
+    def get_stadistics_student(self,student_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("""
+                SELECT id,quiz_id,estudiante_id,puntaje from estadisticas
+                WHERE estudiante_id=%s
+                """,(student_id,))
+                return cursor.fetchall()
+
     def get_quiz(self,quiz_id):
         with self.db.get_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -175,7 +207,13 @@ class AuthService:
                 DELETE FROM estudiante_quiz WHERE estudiante_id=%s AND quiz_id=%s""", (estudiante_id,quiz_id)
                 )
                 conn.commit()
-
+    def delete_quiz(self,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                DELETE FROM quizzes where id=%s
+                """,(quiz_id,))
+                conn.commit()
 
 
     def get_all_teachers(self) -> List[Dict]:

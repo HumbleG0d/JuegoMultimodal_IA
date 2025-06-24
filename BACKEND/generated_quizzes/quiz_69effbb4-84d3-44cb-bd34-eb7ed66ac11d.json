@@ -1,0 +1,65 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T12:34:05.943768",
+  "original_prompt": "anime",
+  "title": "¡Aventuras en el mundo del anime!",
+  "topic": "Anime",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Qué hace Naruto en el anime?",
+      "options": [
+        "Volar",
+        "Nadar",
+        "Correr",
+        "Usar ninjutsu"
+      ],
+      "correct_answer": 3,
+      "explanation": "Naruto es un ninja y usa ninjutsu para ayudar a sus amigos"
+    },
+    {
+      "question": "¿De qué color es el cabello de Sakura en Naruto?",
+      "options": [
+        "Rosa",
+        "Azul",
+        "Amarillo",
+        "Rojo"
+      ],
+      "correct_answer": 0,
+      "explanation": "Sakura tiene un hermoso cabello rosa"
+    },
+    {
+      "question": "¿Qué animal es el compañero de Monkey D. Luffy en One Piece?",
+      "options": [
+        "Perro",
+        "Gato",
+        "Pájaro",
+        "Mono"
+      ],
+      "correct_answer": 3,
+      "explanation": "Monkey D. Luffy tiene un mono como compañero"
+    },
+    {
+      "question": "¿Qué come Goku para tener energía en Dragon Ball?",
+      "options": [
+        "Arroz",
+        "Frutas",
+        "Verduras",
+        "Arroz con albóndigas"
+      ],
+      "correct_answer": 3,
+      "explanation": "Goku come arroz con albóndigas para tener energía y salvar el día"
+    },
+    {
+      "question": "¿Dónde viven los personajes en Pokémon?",
+      "options": [
+        "En la ciudad",
+        "En el bosque",
+        "En el mar",
+        "En diferentes regiones"
+      ],
+      "correct_answer": 3,
+      "explanation": "Los personajes de Pokémon viven en diferentes regiones y tienen muchas aventuras"
+    }
+  ]
+}
