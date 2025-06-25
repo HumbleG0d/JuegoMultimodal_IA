@@ -32,15 +32,6 @@ const Hero: React.FC = () => {
             <p className="text-xl text-white/90 mb-8 max-w-xl mx-auto lg:mx-0">
               {t('hero.description')}
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-                {t('hero.buttons.watchDemo')}
-              </Button>
-              <Button size="lg" className="bg-opacity-10 border-white text-blue-600 hover:bg-blue-50">
-                {t('hero.buttons.getStarted')} <ChevronRight size={20} className="ml-2" aria-hidden="true" />
-              </Button>
-            </div>
           </div>
           
           <div className="lg:w-1/2 mt-8 lg:mt-0">

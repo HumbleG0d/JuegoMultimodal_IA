@@ -116,7 +116,7 @@ const ListStudents: React.FC = () => {
   // Calcular estadísticas generales para las tarjetas superiores
   const totalStudents = students.length;
   const averageGeneralScore = studentsWithScores.length > 0
-    ? Math.round(studentsWithScores.reduce((sum, student) => sum + student.score, 0) / studentsWithScores.length)
+    ? Math.round(studentsWithScores.reduce((sum, student) => sum + student.score, 0))
     : 0;
   const completionRate = students.length > 0
     ? Math.round(students.reduce((sum, student) => sum + student.progress, 0) / students.length)
@@ -142,20 +142,12 @@ const ListStudents: React.FC = () => {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-white/70 text-sm">Promedio General</p>
-            <p className="text-2xl font-bold text-white">{averageGeneralScore}</p>
+            <p className="text-2xl font-bold text-white">{averageGeneralScore}%</p>
           </div>
           <Trophy className="w-6 h-6 text-yellow-400" />
         </div>
       </div>
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-white/70 text-sm">Completados</p>
-            <p className="text-2xl font-bold text-white">{completionRate}%</p>
-          </div>
-          <Calendar className="w-6 h-6 text-purple-400" />
-        </div>
-      </div>
+      
       {/* Top Students */}
       <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-6">
         <h3 className="text-white font-semibold text-lg mb-6">Mejores Estudiantes</h3>

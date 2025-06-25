@@ -1,6 +1,5 @@
 import { 
   BookOpen, 
-  Play,
   Clock,
   Eye,
   UserRoundPlus,
@@ -135,6 +134,8 @@ const QuizzCards: React.FC = () => {
     } catch (error) {
       console.error('Error deleting quiz:', error);
     }
+
+     await getQuizzes();
   }
 
   useEffect(() => {
@@ -161,18 +162,6 @@ const QuizzCards: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-white/70 text-sm">Participaciones</p> {/* LA SUMA DE LOS ESTUDIANTES */}
-              <p className="text-2xl font-bold text-white">1,247</p>
-            </div>
-            <div className="p-3 bg-blue-500/20 rounded-lg">
-              <Play className="w-6 h-6 text-blue-400" />
-            </div>
-          </div>
-        </div>
-        
         <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
           <div className="flex items-center justify-between">
             <div>
@@ -208,10 +197,6 @@ const QuizzCards: React.FC = () => {
                 <span>{quiz.questions} preguntas</span>
               </div>
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2 text-sm text-white/70">
-                  <Play className="w-4 h-4" />
-                  <span>{quiz.students} estudiantes</span>
-                </div>
                 <div className="text-sm text-white/70">
                   {quiz.accuracy}% precisión {/* ESTA INFO SERA EL PROMEDIO LAS PRESISCIONES DE LOS ESTUDIANSTES */}
                 </div>

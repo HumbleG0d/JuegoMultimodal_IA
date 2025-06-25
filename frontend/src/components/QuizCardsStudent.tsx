@@ -1,7 +1,6 @@
 import { 
   BookOpen, 
   Play,
-  Clock,
   Trophy,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -154,10 +153,6 @@ const QuizzCardsStudent: React.FC = () => {
             <div className='p-6'>
               <h3 className="text-white font-semibold text-lg mb-2">{quiz.title}</h3>
               <div className="flex items-center text-white/70 text-sm mb-4 space-x-4">
-                <span className="flex items-center space-x-1">
-                  <Clock className="w-4 h-4" />
-                  <span>{quiz.timeAgo}</span>
-                </span>
                 <span>{quiz.questions} preguntas</span>
               </div>
               <div className="flex items-center justify-between mb-4">

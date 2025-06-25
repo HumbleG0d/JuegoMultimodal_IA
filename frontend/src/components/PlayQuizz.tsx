@@ -393,25 +393,6 @@ const PlayQuizz: React.FC = () => {
                                             )}
                                         </div>
                                     </button>
-                                    {showBotForThisOption && (
-                                        <div className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 z-30 hidden lg:flex items-center">
-                                            {/* Speech Bubble */}
-                                            <div className="bg-white rounded-2xl p-4 shadow-xl max-w-sm relative mr-4">
-                                                <div className="text-gray-800 text-sm font-medium">
-                                                    {botMessage}
-                                                </div>
-                                                {/* Arrow pointing to answer */}
-                                                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full">
-                                                    <div className="w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-white"></div>
-                                                </div>
-                                            </div>
-                                            
-                                            {/* Bot Face */}
-                                            <div className={`w-5 h-5 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all duration-500 ${showBotMessage ? 'animate-bounce' : ''}`}>
-                                                {getBotFace()}
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
                             );
                         })}

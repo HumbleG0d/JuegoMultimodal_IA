@@ -101,7 +101,7 @@ const TeacherDashBoard: React.FC = () => {
                             variant="secondary"
                             onClick={() => setActiveSection('generateQuiz')}>
                             <Plus />
-                            <span>Generate Quiz</span>
+                            <span>Generar Quiz</span>
                         </Button>
 
                         {/* Navigation Links */}
@@ -128,7 +128,7 @@ const TeacherDashBoard: React.FC = () => {
                                 }`}
                                     onClick={() => setIsExiting(true)}>
                                     <Icon name="LogOut" className="w-4 h-4" />
-                                    <span className="font-medium">Logout</span>
+                                    <span className="font-medium">Salir</span>
                             </Button>
                         </nav>
                     </div>
@@ -141,16 +141,14 @@ const TeacherDashBoard: React.FC = () => {
                             <div>
                                 <h1 className="text-2x1 font-bold text-white mb-1">
                                     {activeSection === 'quizzes' && 'Quizzes'}
-                                    {activeSection === 'students' && 'Students'}
-                                    {activeSection === 'analytics' && 'Analytics'}
-                                    {activeSection === 'settings' && 'Settings'}
-                                    {activeSection === 'generateQuiz' && 'Generate Quiz'}
+                                    {activeSection === 'students' && 'Estudiantes'}
+                                    {activeSection === 'analytics' && 'Estadisticas'}
+                                    {activeSection === 'generateQuiz' && 'Generar Quiz'}
                                 </h1>
                                 <p className="text-white/70 text-sm">
-                                    {activeSection === 'quizzes' && 'Create and manage quizzes for your students.'}
-                                    {activeSection === 'students' && 'View and manage your students.'}
-                                    {activeSection === 'analytics' && 'Analyze student performance and progress.'}
-                                    {activeSection === 'settings' && 'Adjust your account settings.'}
+                                    {activeSection === 'quizzes' && 'Crear quizzes para los estudiantes'}
+                                    {activeSection === 'students' && 'Ver los estudiantes registrados.'}
+                                    {activeSection === 'analytics' && 'Estadisticas de los alumnos en base a los quizzes'}
                                 </p>
                             </div>
 
