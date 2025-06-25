@@ -5,6 +5,7 @@ import requests
 import uuid
 from datetime import datetime
 from functools import wraps
+from typing import List, Dict
 from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
 from BACKEND.Entidades.voiceflowconfig import update_conversation_stage,process_voiceflow_response,determine_response_context,get_timestamp
@@ -18,14 +19,14 @@ app = Flask(__name__)
 CORS(app, resources={
     r"/api/*": {
         "origins": ["http://localhost:5173"],
-        "methods": ["GET", "POST", "OPTIONS"],
+        "methods": ["GET", "POST","DELETE","OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"],
         "max_age": 3600,
         "supports_credentials": True
     },
     r"/chat/*": {
         "origins": ["http://localhost:5173"],
-        "methods": ["GET", "POST", "OPTIONS"],
+        "methods": ["GET", "POST","DELETE","OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"],
         "max_age": 3600,
         "supports_credentials": True
@@ -41,7 +42,7 @@ if not os.path.exists(QUIZ_STORAGE_PATH):
 def handle_options(path):
     response = make_response()
     response.headers["Access-Control-Allow-Origin"] = "http://localhost:5173"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS , DELETE"
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     return response
 
@@ -153,6 +154,87 @@ def generate_quiz(token_info):
     except Exception as e:
         return jsonify({"error": f"Internal server error: {str(e)}"}), 500
 
+@app.route("/api/teacher/delete/quizStudent", methods=["DELETE"])
+@token_required
+def delete_student_from_quiz(token_info):
+    if token_info["user_type"]!="profesor":
+        return jsonify({"message":"Acceso no autorizado"})
+    data=request.get_json()
+    quiz_id=data.get("quiz_id")
+    student_id=data.get("student_id")
+    auth_service = AuthService(Database())
+    auth_service.delete_student_from_quiz(student_id,quiz_id)
+    return jsonify({"Estudiante eliminado de la tarea":quiz_id })
+
+
+@app.route("/api/teacher/delete/<quiz_id>", methods=["DELETE"])
+@token_required
+def delete_quiz(token_info,quiz_id):
+    if token_info["user_type"]!="profesor":
+        return jsonify({"message":"Acceso no autorizado"})
+    auth_service = AuthService(Database())
+    auth_service.delete_quiz(quiz_id)
+    return jsonify({"Estudiante eliminado de la tarea":quiz_id })
+
+
+
+
+@app.route("/api/estudiante/dashboard/quizzes/save", methods=["POST"])
+@token_required
+def save_stadistics(token_info):
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message":"Access denied"})
+    student_id = token_info["user_id"]
+    data = request.get_json()
+    quiz_id = data.get("quiz_id")
+    points = data.get("puntaje")
+    auth_service = AuthService(Database())
+    
+    estadistica=auth_service.register_stadistics(student_id,quiz_id,points)
+    return jsonify({"Estadistica guardada":estadistica})
+
+@app.route("/api/estudiante/estadisticas" , methods=["GET"])
+@token_required
+def stadistics(token_info):
+    auth_service = AuthService(Database())
+    if token_info["user_type"] == "estudiante":
+        student_id = token_info["user_id"]
+        estadisticas = auth_service.get_stadistics_student(student_id)
+        return jsonify({"Estadisticas del alumno": estadisticas})
+    return jsonify({"message": "¡Acceso denegado! Solo para estudiantes."}), 403
+
+@app.route("/api/teacher/estadisticas", methods=["GET"])
+@token_required
+def get_teacher_statistics(token_info: Dict) -> tuple:
+    """Obtiene las estadísticas de todos los estudiantes, agrupadas por estudiante_id."""
+    auth_service = AuthService(Database())
+
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied"}), 403
+
+    try:
+        results: List[Dict] = auth_service.get_all_quiz_results()
+
+        # Agrupar por estudiante_id
+        grouped_stats = {}
+        for result in results:
+            estudiante_id = result["estudiante_id"]
+            if estudiante_id not in grouped_stats:
+                grouped_stats[estudiante_id] = {
+                    "estudiante_id": estudiante_id,
+                    "quizzes": []
+                }
+            grouped_stats[estudiante_id]["quizzes"].append({
+                "quiz_id": str(result["quiz_id"]),  # Convertir UUID a string
+                "puntaje": result["puntaje"]
+            })
+
+        formatted_results = list(grouped_stats.values())
+
+        return jsonify({"estadisticas": formatted_results}), 200
+
+    except Exception as e:
+        return jsonify({"message": f"Error al obtener estadísticas: {str(e)}"}), 500
 
 @app.route("/api/teacher/dashboard/quiz/<quiz_id>", methods=["GET"])
 @token_required
