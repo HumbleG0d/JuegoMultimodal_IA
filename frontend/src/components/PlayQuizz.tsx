@@ -45,7 +45,8 @@ const PlayQuizz: React.FC = () => {
     const [botEmotion, setBotEmotion] = useState('neutral');
     const [botMessage, setBotMessage] = useState('');
     const [showBotMessage, setShowBotMessage] = useState(false);
-
+    const [statisticsSent, setStatisticsSent] = useState(false);
+    
     useEffect(() => {
     const fetchQuizData = async () => {
         if (!quizId || quizId === 'undefined') {
@@ -116,7 +117,44 @@ const PlayQuizz: React.FC = () => {
     };
 
     fetchQuizData();
-}, [quizId]);
+    }, [quizId]);
+    
+
+
+    useEffect(() => {
+        const sendQuizStatistics = async () => {
+            if (!quizCompleted || statisticsSent || !quizId) return;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/estudiante/dashboard/quizzes/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        quiz_id: quizId,
+                        puntaje: score,
+                    }),
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Error al guardar estadísticas: ${response.status} - ${errorText}`);
+                }
+
+                const data = await response.json();
+                console.log('✅ Estadísticas guardadas:', data);
+                setStatisticsSent(true); // Marcar como enviadas para evitar múltiples envíos
+            } catch (err) {
+                console.error('❌ Error al enviar estadísticas:', err);
+                setError(err instanceof Error ? err.message : 'Error al guardar las estadísticas del quiz');
+            }
+        };
+
+        sendQuizStatistics();
+    }, [quizCompleted, quizId, score, statisticsSent]);
 
     const handleAnswerSelect = (answerIndex: number) => {
         if (selectedAnswer !== null || questions.length === 0) return;
