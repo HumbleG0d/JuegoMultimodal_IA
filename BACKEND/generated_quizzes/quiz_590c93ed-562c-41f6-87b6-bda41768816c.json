@@ -1,0 +1,162 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T11:32:50.681399",
+  "original_prompt": "historia de los incas",
+  "title": "Narrativa Interactiva: La Aventura Inca",
+  "topic": "Historia de los Incas",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio Inca",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y las cosechas están muy escasas. El Inca debe tomar una decisión importante para asegurar la supervivencia de su pueblo.",
+      "pregunta": "¿Qué debemos hacer para sobrevivir a la sequía?",
+      "concepto_educativo": "Administración de recursos y planificación para la supervivencia",
+      "opciones": [
+        "Administrar bien los recursos actuales",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos actuales",
+          "consecuencia": "Se logra estirar los recursos y mantener a la población alimentada durante un tiempo más",
+          "es_correcta": true,
+          "explicacion_educativa": "Al administrar bien los recursos, se asegura que la comida y el agua duren más, lo que permite a la población sobrevivir durante un período más largo",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "La población se queda sin comida y agua, lo que lleva a una crisis grave",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede parecer una solución a corto plazo, pero en realidad agota los recursos y pone en peligro la supervivencia de la población",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Reconstrucción de la Agricultura",
+      "narrativa": "Después de administrar bien los recursos, el Inca decide reconstruir la agricultura para asegurar la supervivencia a largo plazo. Sin embargo, se enfrenta a un nuevo desafío: la falta de herramientas y mano de obra",
+      "pregunta": "¿Cómo podemos reconstruir la agricultura?",
+      "concepto_educativo": "Importancia de la planificación y la cooperación en la reconstrucción",
+      "opciones": [
+        "Utilizar herramientas primitivas y mano de obra local",
+        "Buscar ayuda de otros pueblos y utilizar herramientas avanzadas"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Utilizar herramientas primitivas y mano de obra local",
+          "consecuencia": "Se logra reconstruir la agricultura, pero de manera lenta y con mucha dificultad",
+          "es_correcta": true,
+          "explicacion_educativa": "Utilizar herramientas primitivas y mano de obra local puede ser una solución viable, pero requiere mucho tiempo y esfuerzo",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Buscar ayuda de otros pueblos y utilizar herramientas avanzadas",
+          "consecuencia": "Se logra reconstruir la agricultura de manera rápida y eficiente, gracias a la ayuda de otros pueblos y herramientas avanzadas",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar ayuda de otros pueblos y utilizar herramientas avanzadas puede ser una solución más rápida y eficiente, siempre y cuando se mantenga la cooperación y el respeto mutuo",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Lucha contra la Enfermedad",
+      "narrativa": "Después de reconstruir la agricultura, el Inca se enfrenta a un nuevo desafío: una epidemia que afecta a la población. Debe decidir cómo combatir la enfermedad",
+      "pregunta": "¿Cómo podemos combatir la enfermedad?",
+      "concepto_educativo": "Importancia de la higiene y la medicina en la prevención de enfermedades",
+      "opciones": [
+        "Utilizar remedios tradicionales y mantener la higiene",
+        "Ignorar la enfermedad y esperar que pase"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Utilizar remedios tradicionales y mantener la higiene",
+          "consecuencia": "Se logra controlar la enfermedad y prevenir su propagación",
+          "es_correcta": true,
+          "explicacion_educativa": "Utilizar remedios tradicionales y mantener la higiene es fundamental para prevenir y controlar la propagación de enfermedades",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Ignorar la enfermedad y esperar que pase",
+          "consecuencia": "La enfermedad se propaga y causa graves consecuencias para la población",
+          "es_correcta": false,
+          "explicacion_educativa": "Ignorar la enfermedad y esperar que pase es una decisión peligrosa que puede tener graves consecuencias para la población",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Celebración de la Reconstrucción",
+      "narrativa": "Después de reconstruir la agricultura y combatir la enfermedad, el Inca decide celebrar la reconstrucción del Imperio Inca. Debe decidir cómo celebrar",
+      "pregunta": "¿Cómo podemos celebrar la reconstrucción?",
+      "concepto_educativo": "Importancia de la celebración y la gratitud en la vida comunitaria",
+      "opciones": [
+        "Organizar una gran fiesta con música, danza y comida",
+        "Hacer una ceremonia solemne para agradecer a los dioses"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Organizar una gran fiesta con música, danza y comida",
+          "consecuencia": "La población se reúne para celebrar y agradecer la reconstrucción del Imperio Inca",
+          "es_correcta": true,
+          "explicacion_educativa": "Organizar una gran fiesta es una manera de celebrar y agradecer la reconstrucción del Imperio Inca, y de fortalecer la comunidad",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Hacer una ceremonia solemne para agradecer a los dioses",
+          "consecuencia": "La población se reúne para agradecer a los dioses y reflexionar sobre la reconstrucción del Imperio Inca",
+          "es_correcta": true,
+          "explicacion_educativa": "Hacer una ceremonia solemne es una manera de agradecer a los dioses y reflexionar sobre la reconstrucción del Imperio Inca, y de fortalecer la espiritualidad de la comunidad",
+          "proxima_escena": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Nueva Era del Imperio Inca",
+      "narrativa": "Después de reconstruir la agricultura, combatir la enfermedad y celebrar la reconstrucción, el Inca se enfrenta a un nuevo desafío: asegurar la supervivencia a largo plazo del Imperio Inca. Debe decidir cómo hacerlo",
+      "pregunta": "¿Cómo podemos asegurar la supervivencia a largo plazo del Imperio Inca?",
+      "concepto_educativo": "Importancia de la planificación y la cooperación en la supervivencia a largo plazo",
+      "opciones": [
+        "Establecer alianzas con otros pueblos y fortalecer la economía",
+        "Concentrarse en la defensa militar y la expansión territorial"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Establecer alianzas con otros pueblos y fortalecer la economía",
+          "consecuencia": "El Imperio Inca se convierte en una potencia económica y política estable, gracias a las alianzas y la planificación",
+          "es_correcta": true,
+          "explicacion_educativa": "Establecer alianzas con otros pueblos y fortalecer la economía es fundamental para asegurar la supervivencia a largo plazo del Imperio Inca",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Concentrarse en la defensa militar y la expansión territorial",
+          "consecuencia": "El Imperio Inca se convierte en una potencia militar, pero a costa de la estabilidad económica y la cooperación con otros pueblos",
+          "es_correcta": false,
+          "explicacion_educativa": "Concentrarse en la defensa militar y la expansión territorial puede ser una solución a corto plazo, pero a largo plazo puede debilitar la estabilidad económica y la cooperación con otros pueblos",
+          "proxima_escena": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Caída del Imperio Inca",
+      "narrativa": "Después de una serie de decisiones incorrectas, el Imperio Inca se enfrenta a una crisis grave. La población se rebela, la economía se derrumba y la defensa militar es ineficaz. El Inca debe aceptar que el Imperio Inca ha caído",
+      "pregunta": "¿Qué podemos hacer ahora?",
+      "concepto_educativo": "Importancia de la reflexión y el aprendizaje de los errores",
+      "opciones": [],
+      "decisiones": [
+        {
+          "opcion": "",
+          "consecuencia": "El Imperio Inca ha caído, y el Inca debe reflexionar sobre los errores del pasado para aprender y mejorar",
+          "es_correcta": null,
+          "explicacion_educativa": "La caída del Imperio Inca es un recordatorio de la importancia de la reflexión y el aprendizaje de los errores. El Inca debe aceptar la derrota y buscar la forma de mejorar y reconstruir",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T11:27:55.864990",
+  "original_prompt": "presidentes del peru",
+  "title": "Quizz sobre Presidentes del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es el presidente del Perú que los niños deben saber?",
+      "options": [
+        "Alan García",
+        "Alberto Fujimori",
+        "Martín Vizcarra",
+        "Ninguno de los anteriores"
+      ],
+      "correct_answer": 0,
+      "explanation": "Alan García es uno de los presidentes más conocidos, pero en la historia del Perú, ha habido muchos presidentes importantes.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Alan García, pero hay muchos presidentes importantes en la historia del Perú"
+    },
+    {
+      "question": "¿Dónde vive el presidente del Perú?",
+      "options": [
+        "En la playa",
+        "En la montaña",
+        "En el palacio de gobierno",
+        "En la selva"
+      ],
+      "correct_answer": 2,
+      "explanation": "El presidente del Perú vive en el palacio de gobierno en Lima, la capital del Perú.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es en el palacio de gobierno"
+    },
+    {
+      "question": "¿Qué hace el presidente del Perú?",
+      "options": [
+        "Juega fútbol",
+        "Lee libros",
+        "Ayuda a la gente",
+        "Canta canciones"
+      ],
+      "correct_answer": 2,
+      "explanation": "El presidente del Perú ayuda a la gente y toma decisiones importantes para el país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es ayuda a la gente"
+    },
+    {
+      "question": "¿Quién puede ser presidente del Perú?",
+      "options": [
+        "Un niño",
+        "Un adulto",
+        "Un animal",
+        "Un juguete"
+      ],
+      "correct_answer": 1,
+      "explanation": "Un adulto puede ser presidente del Perú, siempre y cuando sea una persona buena y trabajadora.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es un adulto"
+    },
+    {
+      "question": "¿Por qué es importante el presidente del Perú?",
+      "options": [
+        "Porque es famoso",
+        "Porque es rico",
+        "Porque ayuda a la gente",
+        "Porque es fuerte"
+      ],
+      "correct_answer": 2,
+      "explanation": "El presidente del Perú es importante porque ayuda a la gente y toma decisiones importantes para el país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es porque ayuda a la gente"
+    }
+  ]
+}

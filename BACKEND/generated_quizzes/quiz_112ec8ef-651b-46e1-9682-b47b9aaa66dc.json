@@ -1,0 +1,172 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T11:26:01.133673",
+  "original_prompt": "historia del peru",
+  "title": "Narrativa Interactiva: La Historia del Perú",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio Inca",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca y las cosechas son muy escasas. El Inca debe decidir qué hacer para salvar a su pueblo.",
+      "pregunta": "¿Qué debemos hacer para salvar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos actuales",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos actuales",
+          "consecuencia": "El pueblo tiene suficiente comida y agua para sobrevivir durante la sequía",
+          "es_correcta": true,
+          "explicacion_educativa": "La administración de recursos es importante para asegurar la supervivencia del pueblo durante tiempos difíciles",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "El pueblo se queda sin comida y agua, y muchos mueren de hambre y sed",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y la muerte",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de Caminos",
+      "narrativa": "El Inca ha decidido administrar bien los recursos y ahora necesita encontrar una forma de mejorar la comunicación y el comercio entre las diferentes regiones del imperio.",
+      "pregunta": "¿Cómo podemos mejorar la comunicación y el comercio?",
+      "concepto_educativo": "Importancia de la infraestructura",
+      "opciones": [
+        "Construir caminos y carreteras",
+        "No hacer nada"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construir caminos y carreteras",
+          "consecuencia": "El comercio y la comunicación mejoran, y el imperio se vuelve más próspero",
+          "es_correcta": true,
+          "explicacion_educativa": "La construcción de caminos y carreteras es importante para mejorar la comunicación y el comercio",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "No hacer nada",
+          "consecuencia": "El comercio y la comunicación no mejoran, y el imperio se vuelve más pobre",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada puede llevar a la estagnación y la pobreza",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Creación de un Sistema de Educación",
+      "narrativa": "El Inca ha decidido construir caminos y carreteras y ahora necesita encontrar una forma de educar a su pueblo para que puedan aprovechar las oportunidades que se presentan.",
+      "pregunta": "¿Cómo podemos educar a nuestro pueblo?",
+      "concepto_educativo": "Importancia de la educación",
+      "opciones": [
+        "Crear un sistema de educación",
+        "No hacer nada"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Crear un sistema de educación",
+          "consecuencia": "El pueblo se vuelve más educado y puede aprovechar las oportunidades que se presentan",
+          "es_correcta": true,
+          "explicacion_educativa": "La educación es importante para el desarrollo del pueblo",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "No hacer nada",
+          "consecuencia": "El pueblo no se vuelve más educado y no puede aprovechar las oportunidades que se presentan",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada puede llevar a la ignorancia y la pobreza",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Defensa del Imperio",
+      "narrativa": "El Inca ha decidido crear un sistema de educación y ahora necesita encontrar una forma de defender su imperio de los enemigos que lo rodean.",
+      "pregunta": "¿Cómo podemos defender nuestro imperio?",
+      "concepto_educativo": "Importancia de la defensa",
+      "opciones": [
+        "Crear un ejército fuerte",
+        "No hacer nada"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Crear un ejército fuerte",
+          "consecuencia": "El imperio se vuelve más seguro y puede defenderse de los enemigos",
+          "es_correcta": true,
+          "explicacion_educativa": "La defensa es importante para la seguridad del imperio",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No hacer nada",
+          "consecuencia": "El imperio se vuelve más vulnerable y puede ser atacado por los enemigos",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada puede llevar a la debilidad y la derrota",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Victoria del Imperio",
+      "narrativa": "El Inca ha decidido crear un ejército fuerte y ahora puede defender su imperio de los enemigos que lo rodean.",
+      "pregunta": "¿Qué debemos hacer para celebrar nuestra victoria?",
+      "concepto_educativo": "Importancia de la celebración",
+      "opciones": [
+        "Celebrar la victoria con una gran fiesta",
+        "No hacer nada"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Celebrar la victoria con una gran fiesta",
+          "consecuencia": "El pueblo se vuelve más unido y puede celebrar su victoria",
+          "es_correcta": true,
+          "explicacion_educativa": "La celebración es importante para la moral y la unidad del pueblo",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "No hacer nada",
+          "consecuencia": "El pueblo no se vuelve más unido y no puede celebrar su victoria",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada puede llevar a la desunión y la tristeza",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Derrota del Imperio",
+      "narrativa": "El Inca no ha podido defender su imperio y ha sido derrotado por los enemigos que lo rodean.",
+      "pregunta": "¿Qué debemos hacer para aprender de nuestra derrota?",
+      "concepto_educativo": "Importancia del aprendizaje",
+      "opciones": [
+        "Aprender de nuestros errores",
+        "No hacer nada"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Aprender de nuestros errores",
+          "consecuencia": "El pueblo puede aprender de sus errores y puede mejorar para el futuro",
+          "es_correcta": true,
+          "explicacion_educativa": "El aprendizaje es importante para el crecimiento y la mejora",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "No hacer nada",
+          "consecuencia": "El pueblo no aprende de sus errores y no puede mejorar para el futuro",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada puede llevar a la repetición de los mismos errores",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

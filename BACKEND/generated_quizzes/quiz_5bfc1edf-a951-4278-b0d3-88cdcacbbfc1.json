@@ -1,0 +1,163 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T11:34:21.805382",
+  "original_prompt": "historia de los incas",
+  "title": "Narrativa de los Incas: Un Viaje por el Imperio Inca",
+  "topic": "Historia de los Incas",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Fundación de Cusco",
+      "narrativa": "El sol está saliendo sobre la ciudad de Cusco, y el Inca Manco Cápac está decidido a construir un gran imperio. Debe elegir dónde establecer su capital.",
+      "pregunta": "¿Dónde debemos establecer la capital del Imperio Inca?",
+      "concepto_educativo": "La importancia de la ubicación geográfica en la historia",
+      "opciones": [
+        "En la costa",
+        "En la montaña"
+      ],
+      "decisiones": [
+        {
+          "opcion": "En la costa",
+          "consecuencia": "La ciudad sería más vulnerable a los ataques de los enemigos y el clima sería más inestable.",
+          "es_correcta": false,
+          "explicacion_educativa": "La costa es un lugar inseguro para establecer la capital, ya que es más vulnerable a los ataques y el clima es más inestable.",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "En la montaña",
+          "consecuencia": "La ciudad sería más segura y tendría un clima más estable, lo que permitiría un crecimiento más rápido.",
+          "es_correcta": true,
+          "explicacion_educativa": "La montaña es un lugar ideal para establecer la capital, ya que es más segura y tiene un clima más estable.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de la Carretera del Inca",
+      "narrativa": "El Imperio Inca está creciendo rápidamente, y el Inca Pachacútec necesita una forma de unir a todas las ciudades y pueblos.",
+      "pregunta": "¿Cómo debemos unir a todas las ciudades y pueblos del Imperio Inca?",
+      "concepto_educativo": "La importancia de la infraestructura en la historia",
+      "opciones": [
+        "Construyendo una carretera",
+        "Construyendo un río"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construyendo un río",
+          "consecuencia": "No sería posible construir un río que una a todas las ciudades y pueblos, y sería muy costoso.",
+          "es_correcta": false,
+          "explicacion_educativa": "No sería posible construir un río que una a todas las ciudades y pueblos, ya que sería muy costoso y no sería factible.",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Construyendo una carretera",
+          "consecuencia": "La carretera permitiría que las personas y los bienes se movieran fácilmente por el imperio, lo que facilitaría el comercio y la comunicación.",
+          "es_correcta": true,
+          "explicacion_educativa": "La carretera es una forma efectiva de unir a todas las ciudades y pueblos del Imperio Inca, ya que permitiría que las personas y los bienes se movieran fácilmente.",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Cosecha de Papas",
+      "narrativa": "La época de cosecha ha llegado, y el Inca Tupac Yupanqui necesita decidir cómo distribuir las papas entre la población.",
+      "pregunta": "¿Cómo debemos distribuir las papas entre la población?",
+      "concepto_educativo": "La importancia de la planificación y la distribución de recursos",
+      "opciones": [
+        "Distribuyendo las papas de manera igualitaria",
+        "Distribuyendo las papas según la necesidad"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Distribuyendo las papas de manera igualitaria",
+          "consecuencia": "Algunas personas podrían recibir más papas de las que necesitan, mientras que otras podrían no recibir suficientes.",
+          "es_correcta": false,
+          "explicacion_educativa": "Distribuir las papas de manera igualitaria no tomaría en cuenta las necesidades individuales de cada persona, lo que podría llevar a una distribución ineficiente.",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Distribuyendo las papas según la necesidad",
+          "consecuencia": "Las papas se distribuirían de manera justa y eficiente, asegurando que cada persona reciba lo que necesita.",
+          "es_correcta": true,
+          "explicacion_educativa": "Distribuir las papas según la necesidad es una forma justa y eficiente de asegurarse de que cada persona reciba lo que necesita.",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Defensa del Imperio",
+      "narrativa": "El Imperio Inca está siendo amenazado por un enemigo poderoso, y el Inca Atahualpa necesita decidir cómo defender el imperio.",
+      "pregunta": "¿Cómo debemos defender el Imperio Inca?",
+      "concepto_educativo": "La importancia de la defensa y la estrategia en la historia",
+      "opciones": [
+        "Construyendo una muralla",
+        "Entrenando a un ejército"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construyendo una muralla",
+          "consecuencia": "La muralla podría ser fácilmente rodeada o destruida por el enemigo.",
+          "es_correcta": false,
+          "explicacion_educativa": "La muralla no sería una forma efectiva de defender el imperio, ya que podría ser fácilmente rodeada o destruida.",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Entrenando a un ejército",
+          "consecuencia": "Un ejército bien entrenado podría defender el imperio de manera efectiva y proteger a su población.",
+          "es_correcta": true,
+          "explicacion_educativa": "Un ejército bien entrenado es una forma efectiva de defender el imperio, ya que podría proteger a su población y defender su territorio.",
+          "proxima_escena": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Celebración de la Victoria",
+      "narrativa": "El Imperio Inca ha sido defendido con éxito, y el Inca Atahualpa quiere celebrar la victoria.",
+      "pregunta": "¿Cómo debemos celebrar la victoria?",
+      "concepto_educativo": "La importancia de la celebración y la gratitud en la historia",
+      "opciones": [
+        "Con una gran fiesta",
+        "Con una ceremonia religiosa"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Con una gran fiesta",
+          "consecuencia": "La fiesta podría ser una forma divertida de celebrar la victoria, pero también podría ser una distracción y un desperdicio de recursos.",
+          "es_correcta": false,
+          "explicacion_educativa": "La fiesta podría ser una forma divertida de celebrar la victoria, pero también podría ser una distracción y un desperdicio de recursos.",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Con una ceremonia religiosa",
+          "consecuencia": "La ceremonia religiosa sería una forma respetuosa y agradecida de celebrar la victoria, y mostraría gratitud hacia los dioses.",
+          "es_correcta": true,
+          "explicacion_educativa": "La ceremonia religiosa es una forma respetuosa y agradecida de celebrar la victoria, y muestra gratitud hacia los dioses.",
+          "proxima_escena": 7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "El Final del Imperio",
+      "narrativa": "El Imperio Inca ha sido derrotado, y el Inca Atahualpa se ha rendido.",
+      "pregunta": "¿Qué pasó?",
+      "concepto_educativo": "La importancia de la historia y la consecuencia de las decisiones",
+      "opciones": [],
+      "decisiones": []
+    },
+    {
+      "id": 7,
+      "titulo": "El Legado del Imperio Inca",
+      "narrativa": "El Imperio Inca ha dejado un legado duradero en la historia, y su cultura y tradiciones siguen vivas hoy en día.",
+      "pregunta": "¿Qué podemos aprender del Imperio Inca?",
+      "concepto_educativo": "La importancia de la historia y la cultura en nuestra vida",
+      "opciones": [],
+      "decisiones": []
+    }
+  ]
+}

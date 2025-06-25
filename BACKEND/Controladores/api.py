@@ -80,7 +80,7 @@ def generate_narrative_game(token_info):
         Responde ÚNICAMENTE en formato "JSON" con la siguiente estructura:
         No respondas comentando el formato JSON
         {{
-            "title": "Título atractivo del quiz para niños",
+            "title": "Título atractivo para niños que comience con Narrativa ... ",
             "topic": "Tema principal",
             "age_group": "{age_group}",
               "escenas": [
@@ -132,6 +132,10 @@ def generate_narrative_game(token_info):
 
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(quiz_data, f, ensure_ascii=False, indent=2)
+
+        auth_service = AuthService(Database())
+        auth_service.register_quiz(quiz_id, token_info["user_id"], quiz_response["title"], quiz_data, timestamp)
+
         return jsonify({
             "success": True,
             "filename": filename,
@@ -172,7 +176,7 @@ def generate_quiz(token_info):
         Responde ÚNICAMENTE en formato JSON con la siguiente estructura:
         No respondas comentando el formato JSON
         {{
-            "title": "Título atractivo del quiz para niños",
+            "title": "Título atractivo del quiz para niños que comience con "Quizz ...",
             "topic": "Tema principal",
             "age_group": "{age_group}",
             "questions": [
