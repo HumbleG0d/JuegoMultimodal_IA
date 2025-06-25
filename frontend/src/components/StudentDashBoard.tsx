@@ -13,6 +13,7 @@ import { useNavigate } from "react-router";
 import ListStudents from "./ListStudens";
 import QuizzCardsStudent from "./QuizCardsStudent";
 import type { Profile } from "../types";
+import StaticsStudents from "./StaticsStudents";
 const StudentDashBoard: React.FC = () => {
 
 
@@ -42,14 +43,31 @@ const StudentDashBoard: React.FC = () => {
         const dataProfile: Profile = {
             user_name: decodedToken.user_name,
             user_type: decodedToken.user_type,
+            exp: decodedToken.exp,
         }
 
         setIsProfile(dataProfile);
+
+        handleExpireSession(); // Verificar si esto es
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     
+    
+    const handleExpireSession = () => { 
+        const nowDate = Date.now();
+        let expire: number | undefined;
+        if (isProfile && typeof isProfile.exp === 'number') {
+            expire = isProfile.exp * 1000 - nowDate;
+        }
+        if (expire && expire > 0) {
+            setTimeout(() => {
+                setIsExiting(true);
+                navigate('/')
+            }, expire);
+        }
+    }
 
     if (isExiting) navigate('/')
     
@@ -171,6 +189,11 @@ const StudentDashBoard: React.FC = () => {
                         {
                             activeSection === 'students' && (
                                 <ListStudents />
+                            )
+                        }
+                        {
+                            activeSection == 'analytics' && (
+                                <StaticsStudents/>
                             )
                         }
                     </section>

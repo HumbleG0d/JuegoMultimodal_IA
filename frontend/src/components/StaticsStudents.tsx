@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import { Trophy, BookOpen, Star, Award } from "lucide-react";
+import type { StaticsQuiz , StaticResponse} from "../types";
 
-interface StaticsQuiz {
-  id: number;
-  puntaje: number;
-  quiz_id: string;
-}
+
 
 interface QuizData {
   age_group: string;
@@ -32,11 +29,6 @@ interface QuizResponse {
   }[];
 }
 
-interface StaticResponse {
-  id: number;
-  puntaje: number;
-  quiz_id: string;
-}
 
 const StaticsStudents = () => {
     const [isStatics, setIsStatics] = useState<StaticsQuiz[]>([]);
