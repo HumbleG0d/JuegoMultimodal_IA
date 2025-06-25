@@ -212,6 +212,10 @@ const Dashboard: React.FC = () => {
     }
   };
 
+  const generateNarrativa = async () => {
+
+  }
+
   const saveExam = () => {
     console.log('Saving exam:', { title: examTitle, questions: generatedQuestions });
   };
@@ -227,7 +231,7 @@ const Dashboard: React.FC = () => {
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-md p-6 mb-8">
             <div className="mb-6">
               <label htmlFor="examTitle" className="block text-sm font-medium text-white/80 mb-2">
-                {t('dashboard.labels.examTitle')}
+                Título del Exámen
               </label>
               <input
                 type="text"
@@ -236,25 +240,25 @@ const Dashboard: React.FC = () => {
                 value={examTitle}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-white/20 rounded-lg text-white bg-white/5 focus:ring-2 focus:ring-pink-500 focus:border-transparent placeholder-white/50 :"
-                placeholder={t('dashboard.placeholders.examTitle')}
+                placeholder='Ingrese el titulo'
               />
             </div>
             
             <div className="mb-6">
               <label htmlFor="age_group" className="block text-sm font-medium text-white/80 mb-2">
-                {t('dashboard.labels.ageGroup')}
+                Rango de Edad
               </label>
               <select
-                id="age_group"
-                name="age_group"
-                value={prompt.age_group}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-white/20 rounded-lg text-white bg-white/5 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-              >
-                <option value="3-5 años">{t('dashboard.ageGroups.3_5_years')}</option>
-                <option value="6-8 años">{t('dashboard.ageGroups.6_8_years')}</option>
-                <option value="9-11 años">{t('dashboard.ageGroups.9_11_years')}</option>
-              </select>
+  id="age_group"
+  name="age_group"
+  value={prompt.age_group}
+  onChange={handleChange}
+  className="w-full px-4 py-2 border border-white/20 rounded-lg text-white bg-purple-500 focus:ring-2 focus:ring-pink-100 focus:border-transparent"
+>
+  <option value="3-5 años">3-5 años</option>
+  <option value="6-8 años">6-8 años</option>
+  <option value="9-11 años">9-11 años</option>
+</select>
             </div>
             
             <div className="flex gap-4 mb-6">
@@ -269,7 +273,7 @@ const Dashboard: React.FC = () => {
                       isListening ? 'border-red-500 bg-red-900/20' : ''
                     }`}
                     rows={4}
-                    placeholder={t('dashboard.placeholders.description')}
+                    placeholder='Ingrese el propot del quiz'
                   />
                   {isListening && (
                     <div className="absolute top-2 right-2 flex items-center gap-2">
@@ -296,13 +300,13 @@ const Dashboard: React.FC = () => {
                   onClick={handleVoiceInput}
                   variant={isListening ? 'secondary' : 'outline'}
                   className={`flex items-center gap-2 ${
-                    !voiceSupported ? 'opacity-50 cursor-not-allowed' : ''
+                    !voiceSupported ? 'opacity-10 cursor-not-allowed' : ''
                   } ${isListening ? 'bg-pink-900/50 border-pink-600 text-white' : 'bg-white/10 border-white/20 text-white'}`}
                   disabled={!voiceSupported}
                   title={!voiceSupported ? 'Reconocimiento de voz no soportado' : ''}
                 >
                   {isListening ? <MicOff size={20} /> : <Mic size={20} />}
-                  {isListening ? t('dashboard.buttons.stop') : t('dashboard.buttons.voice')}
+                  {isListening ? 'Parar' : 'Voz'}
                 </Button>
                 <Button
                   onClick={generateQuestions}
@@ -311,7 +315,17 @@ const Dashboard: React.FC = () => {
                   disabled={isLoading || !prompt.description}
                 >
                   <Send size={20} />
-                  {isLoading ? t('dashboard.buttons.generating') : t('dashboard.buttons.generate')}
+                  {isLoading ?'Generando ..' : 'Generar Quiz'}
+              </Button>
+              
+              <Button
+                  onClick={generateQuestions}
+                  variant="primary"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 hover:from-purple-600 hover:to-pink-400"
+                  disabled={isLoading || !prompt.description}
+                >
+                  <Send size={20} />
+                  {isLoading ?'Generando ..' : 'Generar Narritava'}
                 </Button>
               </div>
             </div>
