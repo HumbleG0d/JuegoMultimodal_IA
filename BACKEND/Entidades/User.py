@@ -68,7 +68,7 @@ class Database:
                 CREATE TABLE IF NOT EXISTS quizzes (
                         id UUID PRIMARY KEY,
                         user_id INTEGER NOT NULL,
-                        FOREIGN KEY (user_id) REFERENCES profesores(id),
+                        FOREIGN KEY (user_id) REFERENCES profesores(id) ON DELETE RESTRICT, 
                         nombre TEXT NOT NULL,
                         quiz_data JSONB NOT NULL,
                         created_at TIMESTAMP NOT NULL
@@ -79,9 +79,19 @@ class Database:
                         estudiante_id INTEGER NOT NULL,
                         quiz_id UUID NOT NULL,
                         PRIMARY KEY (estudiante_id, quiz_id),
-                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
-                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
+                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id) ON DELETE CASCADE,
+                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE
                     )
+                ''')
+                cursor.execute(''' 
+                    CREATE TABLE IF NOT EXISTS estadisticas(
+                        id SERIAL PRIMARY KEY,
+                        quiz_id UUID NOT NULL,
+                        estudiante_id INTEGER NOT NULL,
+                        puntaje Integer NOT NULL,
+                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
+                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id)            
+                    ) 
                 ''')
                 conn.commit()
 
@@ -139,6 +149,46 @@ class AuthService:
                 ))
                 conn.commit()
 
+    def delete_student_from_quiz(self,estudiante_id,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                DELETE FROM estudiante_quiz WHERE estudiante_id=%s AND quiz_id=%s""", (estudiante_id,quiz_id)
+                )
+                conn.commit()
+
+    def delete_quiz(self,quiz_id):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                DELETE FROM quizzes where id=%s
+                """,(quiz_id,))
+                conn.commit()
+
+
+
+    def register_stadistics(self,student_id,quiz_id,puntaje):
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                INSERT INTO estadisticas (quiz_id,estudiante_id,puntaje)
+                VALUES (%s,%s,%s)
+                RETURNING id
+                """,(quiz_id,student_id,puntaje))
+                conn.commit()
+                estadistica=cursor.fetchone()
+        return estadistica[0]
+
+    def get_stadistics_student(self,student_id)-> List[Dict]:
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("""
+                SELECT quiz_id,puntaje from estadisticas 
+                WHERE estudiante_id=%s
+                """,(student_id,))
+                return cursor.fetchall()
+
+
     def register_quiz_toalumn(self,estudiante_id,quiz_id):
         with self.db.get_connection() as conn:
             with conn.cursor() as cursor:
@@ -155,8 +205,27 @@ class AuthService:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE id= %s",
                                (quiz_id,))
-                return cursor.fetchall()
+                return cursor.fetchall()             
 
+
+    def get_all_students_id(self) -> List[Dict]:
+            """Obtiene una lista de todos los estudiantes registrados."""
+            with self.db.get_connection() as conn:
+                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                    cursor.execute("SELECT id FROM estudiantes")
+                    return cursor.fetchall()
+
+    def get_all_quiz_results(self) -> List[Dict]:
+        """Obtiene una lista de todos los resultados de quizzes con estudiante_id, quiz_id y puntaje."""
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("""
+                    SELECT estudiante_id, quiz_id, puntaje AS puntaje
+                    FROM estadisticas
+                    ORDER BY estudiante_id, quiz_id
+                """)
+                return cursor.fetchall()
+        
 
     def get_estudiante_name(self,student_name):
         with self.db.get_connection() as conn:
