@@ -15,6 +15,7 @@ import GenerateQuiz from "./GenerateQuiz";
 import QuizzCards from "./QuizzCards";
 import ListStudents from "./ListStudens";
 import type {Profile} from "../types";
+import AnaliticsStudents from "./AnaliticsStudents";
 const TeacherDashBoard: React.FC = () => {
 
 
@@ -41,6 +42,7 @@ const TeacherDashBoard: React.FC = () => {
         const dataProfile: Profile = {
             user_name: decodedToken.user_name,
             user_type: decodedToken.user_type,
+            exp: decodedToken.exp,
         }
 
         setIsProfiele(dataProfile);
@@ -186,7 +188,11 @@ const TeacherDashBoard: React.FC = () => {
                                 <GenerateQuiz/>
                             )
                         }
-                        
+                        {
+                            activeSection == 'analytics' && (
+                                <AnaliticsStudents/>
+                            )
+                        }
 
                     </section>
                 </section>
