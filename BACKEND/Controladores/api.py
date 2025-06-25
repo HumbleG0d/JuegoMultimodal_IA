@@ -74,15 +74,15 @@ def generate_quiz(token_info):
     try:
         data = request.get_json()
         user_prompt = data.get("prompt", "")
-        age_group = data.get("age_group", "3-5 años")  # Nuevo parámetro para edad
+        age_group = data.get("age_group", "")  # Nuevo parámetro para edad
 
         if not user_prompt:
             return jsonify({"error": "Prompt is required"}), 400
 
         # Configurar el prompt del sistema especializado para educación inicial
-        system_prompt = f"""Eres un asistente educativo especializado en crear quizzes para niños de educación inicial ({age_group}).
+        system_prompt = f"""Eres un asistente educativo especializado en crear quizzes para niños de  ({age_group}).
 
-        IMPORTANTE: Las preguntas deben ser apropiadas para niños pequeños:
+        IMPORTANTE: Las preguntas deben ser apropiadas para niños de ({age_group}) :
         - Usar vocabulario simple y claro
         - Conceptos básicos y concretos
         - Relacionados con su entorno cotidiano
@@ -93,7 +93,7 @@ def generate_quiz(token_info):
         Responde ÚNICAMENTE en formato JSON con la siguiente estructura:
         No respondas comentando el formato JSON
         {{
-            "title": "Título atractivo del quiz para niños",
+            "title": "Título atractivo del quiz para niños de ({age_group})",
             "topic": "Tema principal",
             "age_group": "{age_group}",
             "questions": [
@@ -101,16 +101,28 @@ def generate_quiz(token_info):
                     "question": "Pregunta simple y clara aquí",
                     "options": ["Opción A", "Opción B", "Opción C", "Opción D"],
                     "correct_answer": 0,
-                    "explanation": "Explicación simple y positiva para niños"
+                    "explanation": "Explicación simple y positiva para niños de ({age_group})"
                 }}
             ]
         }}
 
-        Ejemplo de buenas preguntas para niños:
+        Ejemplo de buenas preguntas para niños de 3-5 años:
         - "¿Qué animal hace 'miau'?"
         - "¿De qué color es el sol?"
         - "¿Cuántas patas tiene un perro?"
         - "¿Qué comes en el desayuno?"
+
+        Ejemplo de buenas preguntas para niños de 6-8 años :
+        - "¿Por qué crees que los pájaros vuelan?"
+        - "¿Qué pasa si mezclas rojo con azul?"
+        - "¿Qué cosas necesitas para ir al colegio?"
+        - "¿Cuál es tu personaje favorito y por qué?"
+
+        Ejemplo de buenas preguntas para niños de 9-11 años:
+        - "¿Qué harías si ves a alguien triste en el recreo?"
+        - "¿Por qué es importante cuidar el medio ambiente?"
+        - "¿Qué inventarías para ayudar a las personas?"
+        - "¿Qué harías si fueras presidente por un día?"
 
         - Las opciones deben ser simples y familiares para los niños
         - El índice de correct_answer corresponde a la posición en el array options (0-3)
@@ -134,6 +146,110 @@ def generate_quiz(token_info):
             "created_at": timestamp,
             "original_prompt": user_prompt,
             **quiz_response#Agregar todos los campos de quiz_response
+        }
+
+        # Guardar quiz en archivo
+        filename = f"quiz_{quiz_id}.json"
+        filepath = os.path.join(QUIZ_STORAGE_PATH, filename)
+
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(quiz_data, f, ensure_ascii=False, indent=2)
+        auth_service = AuthService(Database())
+        auth_service.register_quiz(quiz_id, token_info["user_id"], quiz_response["title"], quiz_data, timestamp)
+        return jsonify({
+            "success": True,
+            "filename": filename,
+            "quiz_data": quiz_data,
+            "message": "Quiz generated and saved successfully!"
+        })
+
+    except Exception as e:
+        return jsonify({"error": f"Internal server error: {str(e)}"}), 500
+
+
+
+@app.route("/api/teacher/dashboard/chat/generate-narrative-game", methods=["POST"])
+@token_required
+def generate_narrative_game(token_info):
+    """Endpoint para generar quiz usando Groq IA generativa"""
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+
+    try:
+        data = request.get_json()
+        user_prompt = data.get("prompt", "")
+        age_group = data.get("age_group", "3-5 años")  # Nuevo parámetro para edad
+
+        if not user_prompt:
+            return jsonify({"error": "Prompt is required"}), 400
+
+        # Configurar el prompt del sistema especializado para educación inicial
+        system_prompt = f"""Actúa como un diseñador de juegos educativos experto. Genera un juego narrativo interactivo para alumnos de la siguiente edad: ({age_group}).
+
+         **Estructura Narrativa:**
+        - Crea una historia de escenas interconectadas
+        - Cada escena debe presentar un dilema o decisión relacionada con el tema
+        - El protagonista debe enfrentar situaciones que requieran aplicar conocimientos del tema
+        - Incluye consecuencias educativas para cada decisión
+        - Cada decision abre un camino a una nueva escena , siendo cada escena diferente.
+        -Las decisiones abren un arbol de decisiones. 
+        -Generame todas las escenas que necesite el ejemplo
+        Por ejemplo:
+        "Supongamos que el tema elegido es la historia del Peru, y eres el inca que debe tomar decisiones importantes:
+        Por ejemplo la siguiente situacion: Ha habido una epoca de sequia, por lo que la cantidad de cosechas son muy escasas,
+        que debemos hacer. Y tienes 2 opciones, administrar bien los recursos(comida,etc) actuales para que el tiempo de duracion de estos
+        bienes sea lo maximo posibles, otra opcion seria gastar estos recursos rapidamenteç.  Cada uno de estas opciones nos guiara hacia escenarios diferentes, donde estos escenarios tendran un final triste si 
+        fue una mala eleccion
+        o seguira si la eleccion fue la correcta. Si la eleccion no es correcta se traslada a una escena final.
+        "
+    
+        Responde ÚNICAMENTE en formato "JSON" con la siguiente estructura:
+        No respondas comentando el formato JSON
+        {{
+            "title": "Título atractivo del quiz para niños",
+            "topic": "Tema principal",
+            "age_group": "{age_group}",
+              "escenas": [
+                {{
+                  "id": 1,
+                  "titulo": "Título de la escena",
+                  "narrativa": "Descripción de la situación",
+                  "pregunta": Pregunta sobre la situacion
+                  "concepto_educativo": "Concepto que se enseña en esta escena",
+                  "opciones": [OPCION A, OPCION B]
+                  "decisiones": [
+                    {{
+                      "opcion": "Texto de la opción(OPCION A,OPCION B)",
+                      "consecuencia": "Qué pasa si elige esta opción",
+                      "es_correcta": true/false,
+                      "explicacion_educativa": "Por qué esta decisión es correcta/incorrecta",
+                      "proxima_escena": 2
+                    }}
+                  ]
+                }}
+              ],
+        }}
+        
+        NUNCA COMENTES EL FORMATO JSON
+                  
+        """
+
+        # Llamada a la API de Groq
+        quiz_response = call_groq_api(system_prompt, user_prompt)
+
+        if not quiz_response:
+            return jsonify({"error": "Failed to generate quiz"}), 500
+
+        # Generar ID único para el quiz
+        quiz_id = str(uuid.uuid4())
+        timestamp = datetime.now().isoformat()
+
+        # Estructura completa del quiz
+        quiz_data = {
+            "created_by": token_info["user_id"],
+            "created_at": timestamp,
+            "original_prompt": user_prompt,
+            **quiz_response  # Agregar todos los campos de quiz_response
         }
 
         # Guardar quiz en archivo
