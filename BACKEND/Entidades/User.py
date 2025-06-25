@@ -242,8 +242,15 @@ class AuthService:
     def get_all_quizzes(self, user_id) -> List[Dict]:
         with self.db.get_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE user_id= %s"
-                               , (user_id,))
+                cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE user_id= %s AND nombre LIKE %s"
+                               , (user_id,"Quiz%"))
+                return cursor.fetchall()
+
+    def get_all_narratives(self, user_id) -> List[Dict]:
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE user_id= %s AND nombre LIKE %s"
+                               , (user_id,"Narra%"))
                 return cursor.fetchall()
 
     def get_all_quizzes_estudiante(self,user_id) -> List[Dict]:
@@ -253,9 +260,21 @@ class AuthService:
                     SELECT estudiante_quiz.estudiante_id, estudiante_quiz.quiz_id, quizzes.nombre, quizzes.quiz_data
                     FROM estudiante_quiz
                     INNER JOIN quizzes ON estudiante_quiz.quiz_id = quizzes.id
-                    WHERE estudiante_quiz.estudiante_id = %s
+                    WHERE estudiante_quiz.estudiante_id = %s and quizzes.nombre LIKE %s
                     """
-                               , (user_id,))
+                               , (user_id,"Qui%"))
+                return cursor.fetchall()
+
+    def get_all_narratives_estudiante(self,user_id) -> List[Dict]:
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("""
+                    SELECT estudiante_quiz.estudiante_id, estudiante_quiz.quiz_id, quizzes.nombre, quizzes.quiz_data
+                    FROM estudiante_quiz
+                    INNER JOIN quizzes ON estudiante_quiz.quiz_id = quizzes.id
+                    WHERE estudiante_quiz.estudiante_id = %s and quizzes.nombre LIKE %s
+                    """
+                               , (user_id,"Narr%"))
                 return cursor.fetchall()
 
     def login_user(self, usuario: User) -> Optional[Dict]:

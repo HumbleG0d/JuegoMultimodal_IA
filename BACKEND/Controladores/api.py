@@ -334,6 +334,18 @@ def list_quizzes(token_info):
     return jsonify({"quizzes": quizzes}), 200
 
 
+@app.route("/api/teacher/dashboard/narratives", methods=["GET"])
+@token_required
+def list_narratives(token_info):
+    """Endpoint para listar todos los quizzes creados por el profesor"""
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+    teacher_id = token_info["user_id"]
+    auth_service = AuthService(Database())
+    quizzes = auth_service.get_all_narratives(teacher_id)
+    return jsonify({"quizzes": quizzes}), 200
+
+
 @app.route("/api/estudiante/dashboard/quizzes", methods=["GET"])
 @token_required
 def list_quizzes_estudiante(token_info):
@@ -344,6 +356,18 @@ def list_quizzes_estudiante(token_info):
     auth_service = AuthService(Database())
     quizzes = auth_service.get_all_quizzes_estudiante(estudiante_id)
     return jsonify({"quizzes": quizzes}), 200
+
+@app.route("/api/estudiante/dashboard/narrativas", methods=["GET"])
+@token_required
+def list_narrative_estudiante(token_info):
+    """Endpoint para listar todos los quizzes que se le han asignado a los estudiantes"""
+    if token_info["user_type"] != "estudiante":
+        return jsonify({"message": "Access denied! Estudiante only."}), 403
+    estudiante_id = token_info["user_id"]
+    auth_service = AuthService(Database())
+    quizzes = auth_service.get_all_narratives_estudiante(estudiante_id)
+    return jsonify({"quizzes": quizzes}), 200
+
 
 @app.route("/api/estudiante/dashboard/quizzes/save", methods=["POST"])
 @token_required

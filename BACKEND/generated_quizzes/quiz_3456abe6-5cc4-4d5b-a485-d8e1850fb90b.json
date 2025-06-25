@@ -1,0 +1,207 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T12:08:56.218831",
+  "original_prompt": "historia de los incas",
+  "title": "Narrativa Interactiva: La Aventura del Inca",
+  "topic": "Historia de los Incas",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio Inca",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y las cosechas son muy escasas. La gente está preocupada por la falta de comida.",
+      "pregunta": "¿Qué debemos hacer para solucionar el problema de la falta de comida?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administración de recursos",
+        "Gastar recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administración de recursos",
+          "consecuencia": "La comida dura más tiempo y la gente puede comer hasta que llegue la próxima cosecha",
+          "es_correcta": true,
+          "explicacion_educativa": "La administración de recursos es importante para asegurarnos de que tengamos suficiente comida y agua para todos",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar recursos rápidamente",
+          "consecuencia": "La comida se acaba rápidamente y la gente se queda sin nada para comer",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar recursos rápidamente puede llevar a la escasez y el hambre",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de Caminos",
+      "narrativa": "El Imperio Inca necesita construir caminos para facilitar el transporte de mercancías y personas. Sin embargo, la construcción de caminos es un proceso largo y costoso.",
+      "pregunta": "¿Debemos construir caminos o enfocarnos en otras prioridades?",
+      "concepto_educativo": "Infraestructura y planificación",
+      "opciones": [
+        "Construir caminos",
+        "Enfocarnos en otras prioridades"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construir caminos",
+          "consecuencia": "Los caminos facilitan el transporte y el comercio, lo que beneficia al Imperio Inca",
+          "es_correcta": true,
+          "explicacion_educativa": "La construcción de caminos es importante para el desarrollo y el crecimiento del Imperio Inca",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Enfocarnos en otras prioridades",
+          "consecuencia": "El transporte y el comercio se vuelven más difíciles, lo que perjudica al Imperio Inca",
+          "es_correcta": false,
+          "explicacion_educativa": "La falta de infraestructura puede limitar el crecimiento y el desarrollo del Imperio Inca",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Elección del Lugar para la Ciudad",
+      "narrativa": "El Imperio Inca necesita elegir un lugar para construir una nueva ciudad. Hay varios lugares posibles, pero cada uno tiene sus ventajas y desventajas.",
+      "pregunta": "¿Dónde debemos construir la nueva ciudad?",
+      "concepto_educativo": "Geografía y planificación urbana",
+      "opciones": [
+        "En un valle fértil",
+        "En una montaña estratégica",
+        "En una costa con acceso al mar"
+      ],
+      "decisiones": [
+        {
+          "opcion": "En un valle fértil",
+          "consecuencia": "La ciudad puede crecer y prosperar gracias a la fertilidad del suelo",
+          "es_correcta": true,
+          "explicacion_educativa": "La ubicación de una ciudad en un valle fértil puede proporcionar recursos naturales y facilitar la agricultura",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "En una montaña estratégica",
+          "consecuencia": "La ciudad puede ser más segura y estratégica, pero puede ser más difícil de construir y mantener",
+          "es_correcta": false,
+          "explicacion_educativa": "La ubicación de una ciudad en una montaña estratégica puede proporcionar ventajas defensivas, pero también puede ser más desafiante en términos de construcción y mantenimiento",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "En una costa con acceso al mar",
+          "consecuencia": "La ciudad puede beneficiarse del comercio marítimo, pero puede ser más vulnerable a los ataques enemigos",
+          "es_correcta": false,
+          "explicacion_educativa": "La ubicación de una ciudad en una costa con acceso al mar puede proporcionar oportunidades comerciales, pero también puede ser más riesgosa en términos de seguridad",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Celebración del Inti Raymi",
+      "narrativa": "El Imperio Inca está preparando la celebración del Inti Raymi, un festival importante para honrar al dios sol. Sin embargo, hay preocupaciones sobre la seguridad y la organización del evento.",
+      "pregunta": "¿Cómo debemos celebrar el Inti Raymi?",
+      "concepto_educativo": "Cultura y tradiciones",
+      "opciones": [
+        "Con una gran procesión y espectáculo",
+        "Con una ceremonia más pequeña y privada"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Con una gran procesión y espectáculo",
+          "consecuencia": "La celebración es un éxito y la gente se divierte, pero también hay preocupaciones sobre la seguridad",
+          "es_correcta": true,
+          "explicacion_educativa": "La celebración del Inti Raymi es una oportunidad para mostrar la riqueza cultural del Imperio Inca y fortalecer la comunidad",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Con una ceremonia más pequeña y privada",
+          "consecuencia": "La celebración es más tranquila y segura, pero puede no ser tan emocionante para la gente",
+          "es_correcta": false,
+          "explicacion_educativa": "La celebración del Inti Raymi es importante para la cultura inca, pero también es importante considerar la seguridad y la organización del evento",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Expansión del Imperio Inca",
+      "narrativa": "El Imperio Inca está considerando expandirse hacia nuevas regiones. Sin embargo, hay riesgos y desafíos asociados con la expansión.",
+      "pregunta": "¿Debemos expandir el Imperio Inca?",
+      "concepto_educativo": "Geopolítica y estrategia",
+      "opciones": [
+        "Sí, expandir el Imperio Inca",
+        "No, enfocarnos en consolidar nuestro territorio actual"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Sí, expandir el Imperio Inca",
+          "consecuencia": "El Imperio Inca se expande y se vuelve más poderoso, pero también hay riesgos de conflictos y rebeliones",
+          "es_correcta": true,
+          "explicacion_educativa": "La expansión del Imperio Inca puede proporcionar nuevas oportunidades y recursos, pero también requiere una planificación y estrategia cuidadosas",
+          "proxima_escena": 7
+        },
+        {
+          "opcion": "No, enfocarnos en consolidar nuestro territorio actual",
+          "consecuencia": "El Imperio Inca se enfoca en consolidar su territorio actual y se vuelve más estable, pero puede perder oportunidades de expansión",
+          "es_correcta": false,
+          "explicacion_educativa": "La consolidación del territorio actual es importante para la estabilidad y la seguridad del Imperio Inca, pero también es importante considerar las oportunidades de expansión y crecimiento",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Derrota del Imperio Inca",
+      "narrativa": "El Imperio Inca ha sido derrotado por los españoles y está a punto de caer. La gente está desesperada y busca una solución.",
+      "pregunta": "¿Qué debemos hacer ahora?",
+      "concepto_educativo": "Historia y consecuencias",
+      "opciones": [
+        "Luchar contra los españoles",
+        "Rendirse y aceptar la derrota"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Luchar contra los españoles",
+          "consecuencia": "El Imperio Inca lucha con valor, pero es derrotado y muchos de sus líderes son asesinados",
+          "es_correcta": false,
+          "explicacion_educativa": "La derrota del Imperio Inca es un hecho histórico que marcó el fin de una era y el comienzo de una nueva",
+          "proxima_escena": 7
+        },
+        {
+          "opcion": "Rendirse y aceptar la derrota",
+          "consecuencia": "El Imperio Inca se rinde y acepta la derrota, lo que permite a sus líderes y pueblo sobrevivir y comenzar a reconstruir",
+          "es_correcta": true,
+          "explicacion_educativa": "La rendición y la aceptación de la derrota pueden ser difíciles, pero también pueden ser una oportunidad para aprender y crecer",
+          "proxima_escena": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "El Legado del Imperio Inca",
+      "narrativa": "El Imperio Inca ha caído, pero su legado vive en la cultura, la arquitectura y la historia de los pueblos que lo sucedieron.",
+      "pregunta": "¿Qué podemos aprender del Imperio Inca?",
+      "concepto_educativo": "Historia y legado",
+      "opciones": [
+        "La importancia de la planificación y la estrategia",
+        "La riqueza cultural y la diversidad"
+      ],
+      "decisiones": [
+        {
+          "opcion": "La importancia de la planificación y la estrategia",
+          "consecuencia": "Podemos aprender de los errores y aciertos del Imperio Inca y aplicarlos a nuestros propios desafíos",
+          "es_correcta": true,
+          "explicacion_educativa": "La planificación y la estrategia son fundamentales para el éxito y la supervivencia de cualquier civilización",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "La riqueza cultural y la diversidad",
+          "consecuencia": "Podemos apreciar y aprender de la riqueza cultural y la diversidad del Imperio Inca y aplicarla a nuestra propia vida",
+          "es_correcta": true,
+          "explicacion_educativa": "La riqueza cultural y la diversidad son fundamentales para la riqueza y la complejidad de cualquier civilización",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

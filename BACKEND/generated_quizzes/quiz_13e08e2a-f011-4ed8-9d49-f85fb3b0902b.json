@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T12:07:19.991049",
+  "original_prompt": "COLORES",
+  "title": "Quizz divertido de colores",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿De qué color es el cielo?",
+      "options": [
+        "Rojo",
+        "Azul",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "Muy bien, el cielo es azul. ¡Eres un artista del color!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es azul"
+    },
+    {
+      "question": "¿Qué color tiene una manzana?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "Excelente, las manzanas son rojas. ¡Tienes un gran conocimiento de colores!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es rojo"
+    },
+    {
+      "question": "¿De qué color es el pasto?",
+      "options": [
+        "Rojo",
+        "Azul",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 2,
+      "explanation": "Genial, el pasto es verde. ¡Eres un experto en colores!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es verde"
+    },
+    {
+      "question": "¿Qué color tiene el sol?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 3,
+      "explanation": "Muy bien, el sol es amarillo. ¡Tienes una gran visión de colores!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es amarillo"
+    },
+    {
+      "question": "¿De qué color es una rosa?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "Excelente, las rosas son rojas. ¡Eres un maestro de colores!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es rojo"
+    }
+  ]
+}
