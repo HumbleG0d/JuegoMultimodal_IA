@@ -5,7 +5,7 @@ from contextlib import contextmanager
 from groq import Groq
 import json
 
-GROQ_API_KEY = "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"  # Configura tu API key de Groq
+GROQ_API_KEY = ""  # Configura tu API key de Groq
 QUIZ_STORAGE_PATH = "generated_quizzes"
 groq_client = Groq(api_key=GROQ_API_KEY)
 DATABASE_PATH = "quiz_database.db"
@@ -23,7 +23,7 @@ def call_groq_api(system_prompt, user_prompt):
             ],
             model="llama-3.3-70b-versatile",  # Modelo recomendado para tareas educativas
             temperature=0.7,
-            max_tokens=2000,
+            max_tokens=30000,
             top_p=1,
             stream=False
         )
