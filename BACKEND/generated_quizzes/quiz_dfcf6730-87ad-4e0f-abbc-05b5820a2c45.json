@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:26:33.642862",
+  "original_prompt": "COLORES",
+  "title": "Quizz de Colores Divertidos",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿De qué color es el cielo en un día soleado?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Muy bien! El cielo es azul cuando brilla el sol. Sigue aprendiendo sobre los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Azul"
+    },
+    {
+      "question": "¿Qué color tiene una manzana?",
+      "options": [
+        "Roja",
+        "Azul",
+        "Verde",
+        "Amarilla"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Excelente! Muchas manzanas son rojas. Sigues siendo un experto en colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Roja"
+    },
+    {
+      "question": "¿De qué color es la hierba?",
+      "options": [
+        "Verde",
+        "Azul",
+        "Rojo",
+        "Amarillo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Genial! La hierba es verde. Estás aprendiendo mucho sobre los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Verde"
+    },
+    {
+      "question": "¿Qué color tiene el sol?",
+      "options": [
+        "Amarillo",
+        "Rojo",
+        "Azul",
+        "Verde"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Muy bien! El sol es amarillo y nos hace calor. Sigue explorando los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Amarillo"
+    },
+    {
+      "question": "¿De qué color es una fresa?",
+      "options": [
+        "Roja",
+        "Azul",
+        "Verde",
+        "Amarilla"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Perfecto! Las fresas son rojas y deliciosas. Estás haciendo un gran trabajo con los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Roja"
+    }
+  ]
+}

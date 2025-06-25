@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:36:42.287058",
+  "original_prompt": "COLORES",
+  "title": "Quizz de Colores Divertidos",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "Vamos a pintar un hermoso cielo, ¿De qué color es el cielo en un día soleado?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 0,
+      "explanation": "Excelente trabajo, el cielo es azul en un día soleado. Sigue explorando los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Azul"
+    },
+    {
+      "question": "Tenemos un hermoso jardín lleno de flores, ¿De qué color son las rosas?",
+      "options": [
+        "Rojas",
+        "Azules",
+        "Verdes",
+        "Amarillas"
+      ],
+      "correct_answer": 0,
+      "explanation": "Muy bien, las rosas son rojas y son muy bonitas. Sigue aprendiendo sobre los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Rojas"
+    },
+    {
+      "question": "Vamos a dibujar un hermoso sol, ¿De qué color es el sol?",
+      "options": [
+        "Amarillo",
+        "Rojo",
+        "Azul",
+        "Verde"
+      ],
+      "correct_answer": 0,
+      "explanation": "Genial, el sol es amarillo y nos da calor. Sigue explorando los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Amarillo"
+    },
+    {
+      "question": "Tenemos un hermoso árbol en el jardín, ¿De qué color son las hojas?",
+      "options": [
+        "Verdes",
+        "Rojas",
+        "Azules",
+        "Amarillas"
+      ],
+      "correct_answer": 0,
+      "explanation": "Excelente, las hojas son verdes y nos dan oxígeno. Sigue aprendiendo sobre los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Verdes"
+    },
+    {
+      "question": "Vamos a pintar un hermoso atardecer, ¿De qué color es el cielo en el atardecer?",
+      "options": [
+        "Naranja",
+        "Rojo",
+        "Azul",
+        "Verde"
+      ],
+      "correct_answer": 0,
+      "explanation": "Muy bien, el cielo es naranja en el atardecer y es muy bonito. Sigue explorando los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Naranja"
+    }
+  ]
+}

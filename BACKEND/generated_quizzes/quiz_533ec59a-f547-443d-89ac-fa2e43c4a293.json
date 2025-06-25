@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:35:15.038782",
+  "original_prompt": "COLORES",
+  "title": "Quizz de Colores",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "Estoy mirando un cielo despejado en un día soleado, ¿De qué color es el cielo?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Excelente! El cielo es azul en un día soleado. Sigamos explorando los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Azul"
+    },
+    {
+      "question": "Tengo una manzana roja y deliciosa, ¿De qué color es la manzana?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Genial! La manzana es roja. Estás aprendiendo mucho sobre los colores",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Rojo"
+    },
+    {
+      "question": "Mi amigo tiene un lápiz amarillo, ¿De qué color es el lápiz?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 3,
+      "explanation": "¡Muy bien! El lápiz es amarillo. Estás haciendo un gran trabajo",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Amarillo"
+    },
+    {
+      "question": "La hierba en el parque es muy verde, ¿De qué color es la hierba?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Excelente! La hierba es verde. Sigues adelante",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Verde"
+    },
+    {
+      "question": "El fuego en la chimenea es anaranjado y rojizo, pero si tuviera que elegir un color, ¿De qué color es el fuego?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Bien hecho! Aunque el fuego tiene muchos colores, el rojo es uno de los más visibles. Has completado el quiz",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Rojo"
+    }
+  ]
+}

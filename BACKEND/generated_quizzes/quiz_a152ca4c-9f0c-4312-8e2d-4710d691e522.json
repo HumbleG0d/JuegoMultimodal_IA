@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:28:40.818430",
+  "original_prompt": "COLORES",
+  "title": "Quizz de Colores Divertidos",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿De qué color es el cielo en un día soleado?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Muy bien! El cielo es azul cuando brilla el sol. Sigue adelante",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es azul"
+    },
+    {
+      "question": "¿Qué color tiene una manzana?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Excelente! Muchas manzanas son rojas. Estás haciendo un gran trabajo",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es rojo"
+    },
+    {
+      "question": "¿De qué color es la hierba?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! La hierba es verde y es donde juegan los conejos. Sigue así",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es verde"
+    },
+    {
+      "question": "¿Qué color tiene el sol?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 3,
+      "explanation": "¡Muy bien! El sol es amarillo y nos calienta. Estás cerca del final",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es amarillo"
+    },
+    {
+      "question": "¿De qué color es una rosa?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Excelente! Las rosas son rojas y son muy bonitas. Has completado el quizz",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es rojo"
+    }
+  ]
+}

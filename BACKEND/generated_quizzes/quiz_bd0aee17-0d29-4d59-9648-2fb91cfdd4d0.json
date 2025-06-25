@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:27:48.798175",
+  "original_prompt": "COLORES",
+  "title": "Quizz de Colores Divertidos",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿De qué color es el cielo en un día soleado?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Genial! El cielo es azul cuando brilla el sol. Sigue explorando los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Azul"
+    },
+    {
+      "question": "¿Qué color tiene una manzana?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Las manzanas suelen ser rojas, aunque también pueden ser verdes o amarillas. Estás aprendiendo sobre los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Rojo"
+    },
+    {
+      "question": "¿De qué color es la hierba?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Exacto! La hierba es verde. Estás haciendo un gran trabajo con los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Verde"
+    },
+    {
+      "question": "¿Qué color tiene el sol?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Amarillo",
+        "Verde"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Bien hecho! El sol es amarillo y nos da calor. Sigue aprendiendo sobre los colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Amarillo"
+    },
+    {
+      "question": "¿De qué color es una rosa?",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Las rosas son rojas, aunque también pueden ser de otros colores. Estás cerca de ser un experto en colores.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Rojo"
+    }
+  ]
+}

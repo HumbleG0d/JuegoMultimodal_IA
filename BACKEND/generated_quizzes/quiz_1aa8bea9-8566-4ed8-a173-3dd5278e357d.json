@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:37:11.996761",
+  "original_prompt": "historia",
+  "title": "Quizz divertido de historia para niños",
+  "topic": "Historia",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "Cuando vamos a la escuela, vemos un retrato de un hombre muy importante, ¿Quién es?",
+      "options": [
+        "Un maestro",
+        "Un rey",
+        "Un presidente",
+        "Un superhéroe"
+      ],
+      "correct_answer": 2,
+      "explanation": "Excelente intento! La respuesta correcta es un presidente, porque es una persona muy importante que ayuda a nuestro país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es un presidente"
+    },
+    {
+      "question": "Hace mucho tiempo, la gente se desplazaba en vehículos muy especiales, ¿Qué tipo de vehículo era?",
+      "options": [
+        "Un coche",
+        "Un caballo",
+        "Un avión",
+        "Un barco"
+      ],
+      "correct_answer": 1,
+      "explanation": "Muy bien! La respuesta correcta es un caballo, porque la gente utilizaba caballos para desplazarse hace mucho tiempo.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es un caballo"
+    },
+    {
+      "question": "Mi abuela me contó que cuando era pequeña, no había televisores, ¿Qué hacía la gente para entretenerse?",
+      "options": [
+        "Jugaban con sus amigos",
+        "Leían libros",
+        "Escuchaban la radio",
+        "Todos los anteriores"
+      ],
+      "correct_answer": 3,
+      "explanation": "Genial! La respuesta correcta es todos los anteriores, porque la gente se entretenía de muchas maneras diferentes.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es todos los anteriores"
+    },
+    {
+      "question": "En la escuela, aprendemos sobre personas que hicieron cosas muy importantes, ¿Qué tipo de personas son?",
+      "options": [
+        "Héroes",
+        "Científicos",
+        "Artistos",
+        "Todos los anteriores"
+      ],
+      "correct_answer": 3,
+      "explanation": "Excelente trabajo! La respuesta correcta es todos los anteriores, porque hay muchas personas que han hecho cosas importantes en diferentes áreas.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es todos los anteriores"
+    },
+    {
+      "question": "Mi familia y yo vamos a un lugar especial para recordar a nuestros antepasados, ¿Dónde vamos?",
+      "options": [
+        "Al parque",
+        "Al museo",
+        "Al cementerio",
+        "A la playa"
+      ],
+      "correct_answer": 2,
+      "explanation": "Muy bien! La respuesta correcta es al museo o al cementerio, porque son lugares donde se recuerda y se aprende sobre la historia.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es al museo o al cementerio"
+    }
+  ]
+}

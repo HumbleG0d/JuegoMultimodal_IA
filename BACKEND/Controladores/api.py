@@ -170,6 +170,7 @@ def generate_quiz(token_info):
         - Conceptos básicos y concretos
         - Relacionados con su entorno cotidiano
         - Preguntas divertidas y atractivas
+        -No hagas preguntas donde la respuesta este dentro de este
 
         Basándote en el tema proporcionado, genera un quiz de exactamente 5 preguntas de opción múltiple.
 
@@ -181,7 +182,7 @@ def generate_quiz(token_info):
             "age_group": "{age_group}",
             "questions": [
                 {{
-                    "question": "Pregunta simple y clara aquí",
+                    "question": "Antes de la pregunta, poner un contexto pequeño para niños,Pregunta clara aquí",
                     "options": ["Opción A", "Opción B", "Opción C", "Opción D"],
                     "correct_answer": 0,
                     "explanation": "Explicación simple y positiva para niños"
@@ -190,16 +191,16 @@ def generate_quiz(token_info):
             ]
         }}
 
-        Ejemplo de buenas preguntas para niños:
-        - "¿Qué animal hace 'miau'?"
-        - "¿De qué color es el sol?"
-        - "¿Cuántas patas tiene un perro?"
-        - "¿Qué comes en el desayuno?"
 
         - Las opciones deben ser simples y familiares para los niños
         - El índice de correct_answer corresponde a la posición en el array options (0-3)
         - Las explicaciones deben ser positivas y alentadoras
-        
+        Ejemplo de buenas preguntas para niños:
+        - "Regresamos a casa y estamos buscando a nuestra mascota, y siempre nos recibe con un fuerte MIAU¿Qué animal es?"
+        - "Es un dia claro y muy hermoso, ideal para salir a pasear con amigos., ¿De que color son las nubes?"
+        - "Mi perrito se llama manchas, lo tengo desde hace muchos años, ¿Cuántas patas tiene mi mascota?"
+        - "Tenemos clases a las 7 am y tenemos que apurarnos para desayunar,¿Qué comes en el desayuno?"
+
         """
 
         # Llamada a la API de Groq

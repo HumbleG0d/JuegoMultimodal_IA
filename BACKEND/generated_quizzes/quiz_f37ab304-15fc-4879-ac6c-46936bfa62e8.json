@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T13:28:17.560501",
+  "original_prompt": "COLORES",
+  "title": "Quizz de colores divertidos",
+  "topic": "Colores",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "El cielo es de qué color?",
+      "options": [
+        "Rojo",
+        "Azul",
+        "Verde",
+        "Amarillo"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! El cielo es azul. ¡Sigues adelante!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Azul"
+    },
+    {
+      "question": "La fruta que es roja se llama",
+      "options": [
+        "Manzana",
+        "Plátano",
+        "Naranja",
+        "Fresa"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Exacto! La manzana es roja. ¡Sigue así!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Manzana"
+    },
+    {
+      "question": "El color del sol es",
+      "options": [
+        "Azul",
+        "Rojo",
+        "Amarillo",
+        "Verde"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! El sol es amarillo. ¡Tú sabes mucho sobre colores!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Amarillo"
+    },
+    {
+      "question": "El color de la hierba es",
+      "options": [
+        "Rojo",
+        "Azul",
+        "Verde",
+        "Gris"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Correcto! La hierba es verde. ¡Estás cerca de terminar!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Verde"
+    },
+    {
+      "question": "El color de una naranja es",
+      "options": [
+        "Roja",
+        "Azul",
+        "Amarilla",
+        "Verde"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! La naranja es amarilla. ¡Has terminado el quizz!",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Amarilla"
+    }
+  ]
+}
