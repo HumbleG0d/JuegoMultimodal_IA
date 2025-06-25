@@ -212,10 +212,6 @@ const Dashboard: React.FC = () => {
     }
   };
 
-  const generateNarrativa = async () => {
-
-  }
-
   const saveExam = () => {
     console.log('Saving exam:', { title: examTitle, questions: generatedQuestions });
   };
@@ -317,16 +313,7 @@ const Dashboard: React.FC = () => {
                   <Send size={20} />
                   {isLoading ?'Generando ..' : 'Generar Quiz'}
               </Button>
-              
-              <Button
-                  onClick={generateQuestions}
-                  variant="primary"
-                  className="flex items-center gap-2 bg-gradient-to-r from-purple-700 to-pink-500 hover:from-purple-600 hover:to-pink-400"
-                  disabled={isLoading || !prompt.description}
-                >
-                  <Send size={20} />
-                  {isLoading ?'Generando ..' : 'Generar Narritava'}
-                </Button>
+             
               </div>
             </div>
 
