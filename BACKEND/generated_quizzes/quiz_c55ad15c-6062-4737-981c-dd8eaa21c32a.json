@@ -1,0 +1,172 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T07:57:38.261519",
+  "original_prompt": "historia del peru",
+  "title": "El Viaje del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y la cantidad de cosechas es muy escasa. El pueblo está preocupado por la falta de comida.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "El pueblo tiene comida suficiente para un tiempo, y podemos buscar soluciones a largo plazo",
+          "es_correcta": true,
+          "explicacion_educativa": "La administración de recursos es importante para asegurarnos de que todos tengan lo que necesitan",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "El pueblo se queda sin comida y sufre de hambre",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y el sufrimiento",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Búsqueda de Soluciones",
+      "narrativa": "Después de administrar bien los recursos, el pueblo tiene comida suficiente por un tiempo. Ahora, debemos buscar soluciones a largo plazo para la sequía.",
+      "pregunta": "¿Qué debemos hacer para encontrar una solución a la sequía?",
+      "concepto_educativo": "Investigación y exploración",
+      "opciones": [
+        "Enviar a los exploradores a buscar nuevas fuentes de agua",
+        "Quedarnos en el pueblo y esperar a que la sequía pase"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Enviar a los exploradores a buscar nuevas fuentes de agua",
+          "consecuencia": "Los exploradores encuentran una nueva fuente de agua y el pueblo puede tener un suministro constante de agua",
+          "es_correcta": true,
+          "explicacion_educativa": "La investigación y la exploración pueden llevar a nuevas soluciones y oportunidades",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Quedarnos en el pueblo y esperar a que la sequía pase",
+          "consecuencia": "La sequía continúa y el pueblo sufre cada vez más",
+          "es_correcta": false,
+          "explicacion_educativa": "No tomar acción puede llevar a más problemas y sufrimiento",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Construcción de un Sistema de Riego",
+      "narrativa": "Los exploradores han encontrado una nueva fuente de agua, pero necesitamos una forma de llevar el agua al pueblo.",
+      "pregunta": "¿Qué debemos hacer para llevar el agua al pueblo?",
+      "concepto_educativo": "Ingeniería y tecnología",
+      "opciones": [
+        "Construir un sistema de riego con canales y acueductos",
+        "Intentar llevar el agua en recipientes"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construir un sistema de riego con canales y acueductos",
+          "consecuencia": "El pueblo tiene un suministro constante de agua y la agricultura puede prosperar",
+          "es_correcta": true,
+          "explicacion_educativa": "La ingeniería y la tecnología pueden ayudarnos a resolver problemas complejos",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Intentar llevar el agua en recipientes",
+          "consecuencia": "El agua se derrama y el pueblo no tiene suficiente para beber y regar",
+          "es_correcta": false,
+          "explicacion_educativa": "No utilizar las herramientas y tecnologías adecuadas puede llevar a la ineficiencia y el fracaso",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Celebración del Éxito",
+      "narrativa": "El sistema de riego ha sido un éxito y el pueblo tiene un suministro constante de agua. La agricultura está prosperando y el pueblo es feliz.",
+      "pregunta": "¿Qué debemos hacer para celebrar nuestro éxito?",
+      "concepto_educativo": "Agradecimiento y celebración",
+      "opciones": [
+        "Organizar una gran celebración para agradecer a los dioses y a nuestros ancestros",
+        "No hacer nada y seguir trabajando"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Organizar una gran celebración para agradecer a los dioses y a nuestros ancestros",
+          "consecuencia": "El pueblo se une y celebra su éxito, y se sienten agradecidos por la bendición de los dioses",
+          "es_correcta": true,
+          "explicacion_educativa": "La gratitud y la celebración pueden unir a la comunidad y traer alegría",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No hacer nada y seguir trabajando",
+          "consecuencia": "El pueblo se siente desmotivado y no aprecia el éxito que han logrado",
+          "es_correcta": false,
+          "explicacion_educativa": "No tomar el tiempo para celebrar y agradecer puede llevar a la desmotivación y la insatisfacción",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Continuación del Progreso",
+      "narrativa": "La celebración ha sido un éxito y el pueblo se siente agradecido y motivado. Ahora, debemos seguir trabajando para mantener y mejorar nuestro progreso.",
+      "pregunta": "¿Qué debemos hacer para seguir progresando?",
+      "concepto_educativo": "Perseverancia y mejora continua",
+      "opciones": [
+        "Seguir trabajando y buscando formas de mejorar",
+        "Dejar de trabajar y disfrutar del éxito"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Seguir trabajando y buscando formas de mejorar",
+          "consecuencia": "El pueblo sigue progresando y mejorando, y se convierte en un ejemplo para otros",
+          "es_correcta": true,
+          "explicacion_educativa": "La perseverancia y la mejora continua pueden llevar a un progreso y éxito sostenidos",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Dejar de trabajar y disfrutar del éxito",
+          "consecuencia": "El pueblo se estanca y pierde el progreso que ha logrado",
+          "es_correcta": false,
+          "explicacion_educativa": "Dejar de trabajar y no buscar formas de mejorar puede llevar a la estagnación y el fracaso",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Lección Aprendida",
+      "narrativa": "El pueblo ha sufrido debido a las malas decisiones. Ahora, debemos reflexionar sobre lo que hemos aprendido.",
+      "pregunta": "¿Qué hemos aprendido de nuestras experiencias?",
+      "concepto_educativo": "Reflexión y aprendizaje",
+      "opciones": [
+        "Hemos aprendido que la administración de recursos, la investigación y la ingeniería son importantes",
+        "No hemos aprendido nada y debemos seguir como antes"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Hemos aprendido que la administración de recursos, la investigación y la ingeniería son importantes",
+          "consecuencia": "El pueblo puede aplicar lo que ha aprendido para mejorar su situación y evitar futuros problemas",
+          "es_correcta": true,
+          "explicacion_educativa": "La reflexión y el aprendizaje pueden ayudarnos a crecer y mejorar",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "No hemos aprendido nada y debemos seguir como antes",
+          "consecuencia": "El pueblo sigue sufriendo y no puede mejorar su situación",
+          "es_correcta": false,
+          "explicacion_educativa": "No reflexionar y no aprender de las experiencias puede llevar a la repetición de errores y el sufrimiento",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

@@ -71,10 +71,10 @@ def generate_narrative_game(token_info):
         Por ejemplo:
         "Supongamos que el tema elegido es la historia del Peru, y eres el inca que debe tomar decisiones importantes:
         Por ejemplo la siguiente situacion: Ha habido una epoca de sequia, por lo que la cantidad de cosechas son muy escasas,
-        que debemos hacer. Y tienes 3 opciones, administrar bien los recursos(comida,etc) actuales para que el tiempo de duracion de estos
-        bienes sea lo maximo posibles, otra opcion seria gastar estos recursos rapidamente, y la otra opcion seria no alimentar a tu poblacion para
-        ahorrar recursos.  Cada uno de estas opciones nos guiara hacia escenarios diferentes, donde estos escenarios tendran un final triste si fiue una mala eleccion
-        o seguira si la eleccion fue la correcta
+        que debemos hacer. Y tienes 2 opciones, administrar bien los recursos(comida,etc) actuales para que el tiempo de duracion de estos
+        bienes sea lo maximo posibles, otra opcion seria gastar estos recursos rapidamenteç.  Cada uno de estas opciones nos guiara hacia escenarios diferentes, donde estos escenarios tendran un final triste si 
+        fue una mala eleccion
+        o seguira si la eleccion fue la correcta. Si la eleccion no es correcta se traslada a una escena final.
         "
     
         Responde ÚNICAMENTE en formato "JSON" con la siguiente estructura:
@@ -104,12 +104,7 @@ def generate_narrative_game(token_info):
               ],
         }}
         
-        Y deben existir escenas finales
-                      "escenafinal": [
-                {{
-                  "id": 1,
-                  "titulo": "Título de la escena",
-                  "narrativa": "Descripción de la situación"}}
+        NUNCA COMENTES EL FORMATO JSON
                   
         """
 

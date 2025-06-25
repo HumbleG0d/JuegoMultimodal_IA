@@ -1,0 +1,202 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T07:44:12.582982",
+  "original_prompt": "historia del peru",
+  "title": "Aventuras en el Imperio Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca y la cantidad de cosechas es muy escasa. El pueblo está preocupado por la falta de comida.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente",
+        "No alimentar a la población"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "Podemos hacer que los recursos duren más tiempo y alimentar a la población de manera justa",
+          "es_correcta": true,
+          "explicacion_educativa": "Es importante administrar bien los recursos para que todos tengan lo que necesitan",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "Los recursos se acabarán pronto y la población sufrirá",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y el sufrimiento",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "No alimentar a la población",
+          "consecuencia": "La población sufrirá de hambre y enfermedades",
+          "es_correcta": false,
+          "explicacion_educativa": "Es importante alimentar a la población para mantener su salud y bienestar",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La cosecha de maíz",
+      "narrativa": "Después de administrar bien los recursos, hemos podido cultivar una pequeña cosecha de maíz. Pero ahora debemos decidir cómo distribuirla",
+      "pregunta": "¿Cómo debemos distribuir la cosecha de maíz?",
+      "concepto_educativo": "Justicia y equidad",
+      "opciones": [
+        "Distribuir la cosecha de manera justa entre todos",
+        "Dar la mayor parte de la cosecha a los líderes",
+        "Vender la cosecha a los mercaderes"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Distribuir la cosecha de manera justa entre todos",
+          "consecuencia": "La población estará contenta y agradecida",
+          "es_correcta": true,
+          "explicacion_educativa": "Es importante distribuir los recursos de manera justa para que todos tengan lo que necesitan",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Dar la mayor parte de la cosecha a los líderes",
+          "consecuencia": "La población se sentirá injustamente tratada y puede haber disturbios",
+          "es_correcta": false,
+          "explicacion_educativa": "Dar preferencia a los líderes puede llevar a la desigualdad y la injusticia",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Vender la cosecha a los mercaderes",
+          "consecuencia": "La población no tendrá acceso a la cosecha y puede sufrir",
+          "es_correcta": false,
+          "explicacion_educativa": "Vender la cosecha a los mercaderes puede llevar a la explotación y la escasez",
+          "proxima_escena": 7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La hambruna",
+      "narrativa": "Después de gastar los recursos rápidamente, la población está sufriendo de hambre y enfermedades. Debemos encontrar una solución",
+      "pregunta": "¿Qué debemos hacer para ayudar a la población?",
+      "concepto_educativo": "Planificación y previsión",
+      "opciones": [
+        "Buscar ayuda en otros pueblos",
+        "Intentar cultivar nuevas cosechas",
+        "Racionar los recursos restantes"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar ayuda en otros pueblos",
+          "consecuencia": "Podemos obtener ayuda y recursos de otros pueblos",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar ayuda en otros pueblos puede ser una solución temporal",
+          "proxima_escena": 8
+        },
+        {
+          "opcion": "Intentar cultivar nuevas cosechas",
+          "consecuencia": "Puede ser difícil cultivar nuevas cosechas sin recursos suficientes",
+          "es_correcta": false,
+          "explicacion_educativa": "Intentar cultivar nuevas cosechas sin recursos suficientes puede llevar al fracaso",
+          "proxima_escena": 9
+        },
+        {
+          "opcion": "Racionar los recursos restantes",
+          "consecuencia": "La población seguirá sufriendo de hambre y enfermedades",
+          "es_correcta": false,
+          "explicacion_educativa": "Racionar los recursos restantes puede no ser suficiente para ayudar a la población",
+          "proxima_escena": 10
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La desesperación",
+      "narrativa": "Después de no alimentar a la población, la situación es desesperada. La población está sufriendo y puede haber disturbios",
+      "pregunta": "¿Qué debemos hacer para ayudar a la población?",
+      "concepto_educativo": "Empatía y compasión",
+      "opciones": [
+        " Intentar encontrar una solución",
+        "Ignorar la situación",
+        "Reprimir a la población"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Intentar encontrar una solución",
+          "consecuencia": "Podemos encontrar una solución y ayudar a la población",
+          "es_correcta": true,
+          "explicacion_educativa": "Intentar encontrar una solución puede llevar a la resolución del problema",
+          "proxima_escena": 11
+        },
+        {
+          "opcion": "Ignorar la situación",
+          "consecuencia": "La situación empeorará y la población sufrirá más",
+          "es_correcta": false,
+          "explicacion_educativa": "Ignorar la situación puede llevar a la desesperación y la frustración",
+          "proxima_escena": 12
+        },
+        {
+          "opcion": "Reprimir a la población",
+          "consecuencia": "La población se sentirá oprimida y puede haber disturbios",
+          "es_correcta": false,
+          "explicacion_educativa": "Reprimir a la población puede llevar a la violencia y la opresión",
+          "proxima_escena": 13
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La celebración",
+      "narrativa": "Después de distribuir la cosecha de manera justa, la población está contenta y agradecida. Es un momento para celebrar",
+      "pregunta": "¿Qué debemos hacer para celebrar?",
+      "concepto_educativo": "Gratitud y alegría",
+      "opciones": [
+        "Organizar una fiesta",
+        "Dar gracias a los dioses",
+        "Compartir la cosecha con otros pueblos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Organizar una fiesta",
+          "consecuencia": "La población se divertirá y se sentirá unida",
+          "es_correcta": true,
+          "explicacion_educativa": "Organizar una fiesta puede ser una forma de celebrar y compartir la alegría",
+          "proxima_escena": "escenafinal1"
+        },
+        {
+          "opcion": "Dar gracias a los dioses",
+          "consecuencia": "La población se sentirá agradecida y conectada con la naturaleza",
+          "es_correcta": true,
+          "explicacion_educativa": "Dar gracias a los dioses puede ser una forma de expresar gratitud y respeto",
+          "proxima_escena": "escenafinal2"
+        },
+        {
+          "opcion": "Compartir la cosecha con otros pueblos",
+          "consecuencia": "La población se sentirá generosa y conectada con otros pueblos",
+          "es_correcta": true,
+          "explicacion_educativa": "Compartir la cosecha con otros pueblos puede ser una forma de mostrar solidaridad y amistad",
+          "proxima_escena": "escenafinal3"
+        }
+      ]
+    }
+  ],
+  "escenafinal": [
+    {
+      "id": 1,
+      "titulo": "La fiesta",
+      "narrativa": "La población se ha reunido para celebrar la cosecha y la justicia. La fiesta es un éxito y la población se siente unida y feliz"
+    },
+    {
+      "id": 2,
+      "titulo": "La gratitud",
+      "narrativa": "La población ha dado gracias a los dioses por la cosecha y la justicia. La gratitud y la conexión con la naturaleza son palpables"
+    },
+    {
+      "id": 3,
+      "titulo": "La solidaridad",
+      "narrativa": "La población ha compartido la cosecha con otros pueblos y ha mostrado solidaridad y amistad. La conexión entre los pueblos es fuerte y la población se siente orgullosa"
+    }
+  ]
+}

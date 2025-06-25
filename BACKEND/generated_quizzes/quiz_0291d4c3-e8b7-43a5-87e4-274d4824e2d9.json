@@ -1,0 +1,150 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T08:11:34.856200",
+  "original_prompt": "matematicas",
+  "title": "Aventuras Matemáticas en el Jardín Mágico",
+  "topic": "Matemáticas",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Cuenta de las Flores",
+      "narrativa": "En el Jardín Mágico, hay 5 flores rojas y 3 flores azules. ¿Cuántas flores hay en total?",
+      "pregunta": "¿Cuántas flores hay en total?",
+      "concepto_educativo": "Suma básica",
+      "opciones": [
+        "5",
+        "8",
+        "10"
+      ],
+      "decisiones": [
+        {
+          "opcion": "5",
+          "consecuencia": "No has contado todas las flores. Vuelve a intentarlo.",
+          "es_correcta": false,
+          "explicacion_educativa": "Debes sumar las flores rojas y azules para obtener el total.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "8",
+          "consecuencia": "¡Excelente! Hay 8 flores en total. Puedes avanzar.",
+          "es_correcta": true,
+          "explicacion_educativa": "La suma de 5 flores rojas y 3 flores azules es 8.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "10",
+          "consecuencia": "No has contado correctamente. Vuelve a intentarlo.",
+          "es_correcta": false,
+          "explicacion_educativa": "La suma de 5 flores rojas y 3 flores azules no es 10.",
+          "proxima_escena": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Forma de las Hojas",
+      "narrativa": "En el Jardín Mágico, hay hojas de diferentes formas. Algunas son circulares, otras son rectangulares y algunas son triangulares. ¿Cuántas esquinas tiene un triángulo?",
+      "pregunta": "¿Cuántas esquinas tiene un triángulo?",
+      "concepto_educativo": "Formas geométricas",
+      "opciones": [
+        "2",
+        "3",
+        "4"
+      ],
+      "decisiones": [
+        {
+          "opcion": "2",
+          "consecuencia": "No es correcto. Un triángulo tiene más esquinas que eso.",
+          "es_correcta": false,
+          "explicacion_educativa": "Un triángulo tiene 3 esquinas.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "3",
+          "consecuencia": "¡Excelente! Un triángulo tiene 3 esquinas. Puedes avanzar.",
+          "es_correcta": true,
+          "explicacion_educativa": "La definición de un triángulo es un polígono con 3 esquinas.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "4",
+          "consecuencia": "No es correcto. Un triángulo no tiene tantas esquinas.",
+          "es_correcta": false,
+          "explicacion_educativa": "Un triángulo tiene 3 esquinas, no 4.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Medida de la Sombra",
+      "narrativa": "En el Jardín Mágico, el sol brilla fuerte. Una sombra mide 5 centímetros. Si se mueve 2 centímetros hacia la izquierda, ¿cuánto mide la sombra ahora?",
+      "pregunta": "¿Cuánto mide la sombra ahora?",
+      "concepto_educativo": "Medición y comparación",
+      "opciones": [
+        "3",
+        "5",
+        "7"
+      ],
+      "decisiones": [
+        {
+          "opcion": "3",
+          "consecuencia": "No es correcto. La sombra no se ha acortado.",
+          "es_correcta": false,
+          "explicacion_educativa": "La sombra se ha movido, pero su longitud sigue siendo la misma.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "5",
+          "consecuencia": "¡Excelente! La sombra sigue midiendo 5 centímetros. Puedes avanzar.",
+          "es_correcta": true,
+          "explicacion_educativa": "La longitud de la sombra no cambia al moverla.",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "7",
+          "consecuencia": "No es correcto. La sombra no se ha alargado.",
+          "es_correcta": false,
+          "explicacion_educativa": "La longitud de la sombra sigue siendo la misma.",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Cuenta de los Pájaros",
+      "narrativa": "En el Jardín Mágico, hay 2 pájaros cantando en un árbol. Luego, llegan 4 pájaros más. ¿Cuántos pájaros hay en total ahora?",
+      "pregunta": "¿Cuántos pájaros hay en total ahora?",
+      "concepto_educativo": "Suma básica",
+      "opciones": [
+        "2",
+        "4",
+        "6"
+      ],
+      "decisiones": [
+        {
+          "opcion": "2",
+          "consecuencia": "No has contado los pájaros que llegaron.",
+          "es_correcta": false,
+          "explicacion_educativa": "Debes sumar los pájaros que ya estaban con los que llegaron.",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "4",
+          "consecuencia": "No has contado los pájaros que ya estaban.",
+          "es_correcta": false,
+          "explicacion_educativa": "Debes sumar los pájaros que ya estaban con los que llegaron.",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "6",
+          "consecuencia": "¡Excelente! Hay 6 pájaros en total ahora. Felicidades, has completado el juego.",
+          "es_correcta": true,
+          "explicacion_educativa": "La suma de 2 pájaros que ya estaban y 4 que llegaron es 6.",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

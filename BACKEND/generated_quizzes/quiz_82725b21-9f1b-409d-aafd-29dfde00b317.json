@@ -1,0 +1,148 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T07:51:44.371068",
+  "original_prompt": "historia del peru",
+  "title": "El Viaje del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y las cosechas están escaseando. Como Inca, debes tomar una decisión importante para ayudar a tu pueblo.",
+      "pregunta": "¿Qué debemos hacer con los recursos que nos quedan?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "Podremos durar más tiempo con los recursos que tenemos",
+          "es_correcta": true,
+          "explicacion_educativa": "Es importante administrar bien los recursos para que duren más tiempo y ayuden a más personas",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "Los recursos se agotarán rápidamente y el pueblo sufrirá",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y el sufrimiento del pueblo",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de la Carretera",
+      "narrativa": "Como Inca, has decidido administrar bien los recursos y ahora debes decidir cómo utilizarlos para ayudar a tu pueblo. Una de las opciones es construir una carretera para facilitar el transporte de alimentos y mercancías.",
+      "pregunta": "¿Debemos construir la carretera?",
+      "concepto_educativo": "Importancia de la infraestructura",
+      "opciones": [
+        "Construir la carretera",
+        "No construir la carretera"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construir la carretera",
+          "consecuencia": "La carretera facilitará el transporte de alimentos y mercancías, ayudando a tu pueblo",
+          "es_correcta": true,
+          "explicacion_educativa": "La construcción de la carretera es importante para facilitar el transporte y ayudar a la economía del Imperio",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "No construir la carretera",
+          "consecuencia": "El transporte de alimentos y mercancías será más difícil, afectando a tu pueblo",
+          "es_correcta": false,
+          "explicacion_educativa": "No construir la carretera puede dificultar el transporte y afectar negativamente a la economía del Imperio",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Elección del Líder",
+      "narrativa": "Como Inca, has decidido construir la carretera y ahora debes elegir a un líder para que se encargue de la construcción.",
+      "pregunta": "¿A quién debemos elegir como líder?",
+      "concepto_educativo": "Importancia del liderazgo",
+      "opciones": [
+        "Elegir a un líder experimentado",
+        "Elegir a un líder inexperto"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Elegir a un líder experimentado",
+          "consecuencia": "El líder experimentado podrá liderar la construcción de la carretera de manera efectiva",
+          "es_correcta": true,
+          "explicacion_educativa": "Elegir a un líder experimentado es importante para asegurarse de que la construcción se realice de manera efectiva",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Elegir a un líder inexperto",
+          "consecuencia": "El líder inexperto puede cometer errores y dificultar la construcción de la carretera",
+          "es_correcta": false,
+          "explicacion_educativa": "Elegir a un líder inexperto puede llevar a errores y dificultades en la construcción",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Celebración del Éxito",
+      "narrativa": "La carretera ha sido construida con éxito y el pueblo está contento. Como Inca, debes decidir cómo celebrar este logro.",
+      "pregunta": "¿Cómo debemos celebrar el éxito de la construcción de la carretera?",
+      "concepto_educativo": "Importancia de la celebración y el agradecimiento",
+      "opciones": [
+        "Celebrar con una gran fiesta",
+        "No celebrar y seguir trabajando"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Celebrar con una gran fiesta",
+          "consecuencia": "La fiesta será una oportunidad para que el pueblo se divierta y se sienta agradecido por el logro",
+          "es_correcta": true,
+          "explicacion_educativa": "Celebrar los logros es importante para motivar y agradecer al pueblo por su esfuerzo",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No celebrar y seguir trabajando",
+          "consecuencia": "El pueblo puede sentirse desmotivado y no apreciado por su esfuerzo",
+          "es_correcta": false,
+          "explicacion_educativa": "No celebrar los logros puede llevar a la desmotivación y la falta de aprecio por el esfuerzo del pueblo",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "El Final Feliz",
+      "narrativa": "La fiesta ha sido un éxito y el pueblo está contento. Como Inca, has tomado decisiones sabias y has ayudado a tu pueblo a prosperar.",
+      "pregunta": "",
+      "concepto_educativo": "Importancia de la sabiduría y la liderazgo",
+      "opciones": [],
+      "decisiones": []
+    },
+    {
+      "id": 6,
+      "titulo": "El Final Triste",
+      "narrativa": "Las decisiones que has tomado han llevado a la escasez y el sufrimiento del pueblo. Como Inca, has fallado en tu deber de liderar y proteger a tu pueblo.",
+      "pregunta": "",
+      "concepto_educativo": "Importancia de la responsabilidad y la liderazgo",
+      "opciones": [],
+      "decisiones": []
+    }
+  ],
+  "escenafinal": [
+    {
+      "id": 1,
+      "titulo": "El Final Feliz",
+      "narrativa": "La fiesta ha sido un éxito y el pueblo está contento. Como Inca, has tomado decisiones sabias y has ayudado a tu pueblo a prosperar."
+    },
+    {
+      "id": 2,
+      "titulo": "El Final Triste",
+      "narrativa": "Las decisiones que has tomado han llevado a la escasez y el sufrimiento del pueblo. Como Inca, has fallado en tu deber de liderar y proteger a tu pueblo."
+    }
+  ]
+}

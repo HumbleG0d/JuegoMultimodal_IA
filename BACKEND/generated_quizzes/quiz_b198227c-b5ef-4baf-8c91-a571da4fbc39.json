@@ -1,0 +1,232 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T07:42:52.393735",
+  "original_prompt": "historia del peru",
+  "title": "La Aventura del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio Inca",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y la cantidad de cosechas es muy escasa. El Inca debe tomar una decisión importante para salvar a su pueblo.",
+      "pregunta": "¿Qué debemos hacer para salvar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos y toma de decisiones",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente",
+        "No alimentar a la población"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "El pueblo tiene suficiente comida y agua para sobrevivir",
+          "es_correcta": true,
+          "explicacion_educativa": "La administración de recursos es importante para asegurar la supervivencia del pueblo",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "El pueblo se queda sin comida y agua, y muchos mueren de hambre",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y la muerte",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No alimentar a la población",
+          "consecuencia": "El pueblo se rebela contra el Inca y lo derroca",
+          "es_correcta": false,
+          "explicacion_educativa": "No alimentar a la población puede llevar a la rebelión y la pérdida del poder",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de los Caminos",
+      "narrativa": "El Inca ha decidido administrar bien los recursos, y ahora necesita construir caminos para conectar las diferentes partes del imperio.",
+      "pregunta": "¿Qué tipo de caminos debemos construir?",
+      "concepto_educativo": "Infraestructura y comunicación",
+      "opciones": [
+        "Caminos de piedra",
+        "Caminos de tierra",
+        "No construir caminos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Caminos de piedra",
+          "consecuencia": "Los caminos son seguros y duraderos, y facilitan el comercio y la comunicación",
+          "es_correcta": true,
+          "explicacion_educativa": "Los caminos de piedra son importantes para el desarrollo del imperio",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Caminos de tierra",
+          "consecuencia": "Los caminos son inseguros y se deterioran rápidamente, lo que obstaculiza el comercio y la comunicación",
+          "es_correcta": false,
+          "explicacion_educativa": "Los caminos de tierra no son adecuados para el desarrollo del imperio",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No construir caminos",
+          "consecuencia": "El imperio se aisló y no puede comerciar ni comunicarse con otras regiones",
+          "es_correcta": false,
+          "explicacion_educativa": "No construir caminos puede llevar al aislamiento y la decadencia del imperio",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Cultura y la Religión",
+      "narrativa": "El Inca ha decidido construir caminos de piedra, y ahora necesita promover la cultura y la religión en el imperio.",
+      "pregunta": "¿Qué tipo de rituales y tradiciones debemos promover?",
+      "concepto_educativo": "Cultura y religión",
+      "opciones": [
+        "Rituales y tradiciones incas",
+        "Rituales y tradiciones de otras culturas",
+        "No promover rituales ni tradiciones"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Rituales y tradiciones incas",
+          "consecuencia": "La cultura y la religión incas se fortalecen, y el pueblo se siente unido y orgulloso",
+          "es_correcta": true,
+          "explicacion_educativa": "La promoción de la cultura y la religión incas es importante para la identidad del imperio",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Rituales y tradiciones de otras culturas",
+          "consecuencia": "La cultura y la religión incas se debilitan, y el pueblo se siente confundido y desunido",
+          "es_correcta": false,
+          "explicacion_educativa": "La promoción de rituales y tradiciones de otras culturas puede llevar a la confusión y la desunión",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No promover rituales ni tradiciones",
+          "consecuencia": "La cultura y la religión incas se pierden, y el pueblo se siente vacío y sin identidad",
+          "es_correcta": false,
+          "explicacion_educativa": "No promover rituales ni tradiciones puede llevar a la pérdida de la identidad del imperio",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Victoria del Inca",
+      "narrativa": "El Inca ha tomado decisiones sabias y ha promovido la cultura y la religión incas. El imperio prospera y se convierte en una gran potencia.",
+      "pregunta": "¿Qué debemos hacer para celebrar nuestra victoria?",
+      "concepto_educativo": "Celebración y reflexión",
+      "opciones": [
+        "Celebrar con rituales y fiestas",
+        "Reflexionar sobre nuestros logros y planificar el futuro",
+        "No celebrar ni reflexionar"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Celebrar con rituales y fiestas",
+          "consecuencia": "El pueblo se siente alegre y unido, y la victoria se celebra con alegría",
+          "es_correcta": true,
+          "explicacion_educativa": "La celebración es importante para el bienestar y la motivación del pueblo",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "Reflexionar sobre nuestros logros y planificar el futuro",
+          "consecuencia": "El Inca y su pueblo reflexionan sobre sus logros y planifican el futuro, lo que lleva a una mayor prosperidad y éxito",
+          "es_correcta": true,
+          "explicacion_educativa": "La reflexión y la planificación son importantes para el crecimiento y el desarrollo del imperio",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "No celebrar ni reflexionar",
+          "consecuencia": "El pueblo se siente desanimado y sin motivación, y la victoria se pierde en la nada",
+          "es_correcta": false,
+          "explicacion_educativa": "No celebrar ni reflexionar puede llevar a la desanimación y la falta de motivación",
+          "proxima_escena": "escenafinal"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Derrota del Inca",
+      "narrativa": "El Inca ha tomado decisiones erróneas y ha llevado al imperio a la ruina. El pueblo sufre y se siente desunido.",
+      "pregunta": "¿Qué debemos hacer para recuperarnos de nuestra derrota?",
+      "concepto_educativo": "Aprendizaje de los errores y recuperación",
+      "opciones": [
+        "Aprender de nuestros errores y planificar el futuro",
+        "No aprender de nuestros errores y repetirlos",
+        "Rendirse y abandonar el imperio"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Aprender de nuestros errores y planificar el futuro",
+          "consecuencia": "El Inca y su pueblo aprenden de sus errores y planifican el futuro, lo que lleva a una mayor prosperidad y éxito",
+          "es_correcta": true,
+          "explicacion_educativa": "Aprender de los errores es importante para el crecimiento y el desarrollo del imperio",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "No aprender de nuestros errores y repetirlos",
+          "consecuencia": "El imperio sigue en la ruina y el pueblo sufre cada vez más",
+          "es_correcta": false,
+          "explicacion_educativa": "No aprender de los errores puede llevar a la repetición de los mismos y a la decadencia del imperio",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "Rendirse y abandonar el imperio",
+          "consecuencia": "El imperio se derrumba y el pueblo se dispersa",
+          "es_correcta": false,
+          "explicacion_educativa": "Rendirse y abandonar el imperio puede llevar a la pérdida de la identidad y la cultura",
+          "proxima_escena": "escenafinal"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Caída del Imperio",
+      "narrativa": "El Inca ha tomado decisiones erróneas y ha llevado al imperio a la ruina. El pueblo se ha rebelado y el Inca ha sido derrocado.",
+      "pregunta": "¿Qué debemos hacer para reflexionar sobre nuestra caída?",
+      "concepto_educativo": "Reflexión y aprendizaje de los errores",
+      "opciones": [
+        "Reflexionar sobre nuestros errores y aprender de ellos",
+        "No reflexionar y no aprender de nuestros errores",
+        "Buscar culpables y castigarlos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Reflexionar sobre nuestros errores y aprender de ellos",
+          "consecuencia": "El pueblo aprende de sus errores y puede planificar un futuro mejor",
+          "es_correcta": true,
+          "explicacion_educativa": "La reflexión y el aprendizaje de los errores son importantes para el crecimiento y el desarrollo",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "No reflexionar y no aprender de nuestros errores",
+          "consecuencia": "El pueblo no aprende de sus errores y sigue cometiendo los mismos",
+          "es_correcta": false,
+          "explicacion_educativa": "No reflexionar y no aprender de los errores puede llevar a la repetición de los mismos y a la decadencia",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "Buscar culpables y castigarlos",
+          "consecuencia": "El pueblo se enfoca en buscar culpables y castigarlos, en lugar de reflexionar y aprender de sus errores",
+          "es_correcta": false,
+          "explicacion_educativa": "Buscar culpables y castigarlos puede llevar a la división y la desunión",
+          "proxima_escena": "escenafinal"
+        }
+      ]
+    }
+  ],
+  "escenafinal": [
+    {
+      "id": 1,
+      "titulo": "La Lección Aprendida",
+      "narrativa": "El Inca y su pueblo han aprendido de sus errores y han reflexionado sobre sus decisiones. Han comprendido la importancia de la administración de recursos, la infraestructura, la cultura y la religión, y han planificado un futuro mejor."
+    },
+    {
+      "id": 2,
+      "titulo": "La Derrota y la Caída",
+      "narrativa": "El Inca y su pueblo no han aprendido de sus errores y han seguido cometiendo los mismos. Han sufrido la derrota y la caída del imperio, y han perdido su identidad y cultura."
+    }
+  ]
+}

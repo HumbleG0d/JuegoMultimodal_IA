@@ -1,0 +1,172 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T10:58:37.218371",
+  "original_prompt": "historia del peru",
+  "title": "El Viaje del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca y las cosechas son muy escasas. El Inca debe tomar una decisión importante para asegurar la supervivencia de su pueblo.",
+      "pregunta": "¿Qué debemos hacer para enfrentar la sequía?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "El pueblo puede sobrevivir durante más tiempo con los recursos disponibles",
+          "es_correcta": true,
+          "explicacion_educativa": "La administración de recursos es importante para asegurar la supervivencia en tiempos de escasez",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "El pueblo puede quedarse sin recursos y sufrir de hambre",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y el sufrimiento",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de la Carretera",
+      "narrativa": "El Inca ha decidido construir una carretera para unir las diferentes regiones del Imperio y facilitar el comercio y la comunicación.",
+      "pregunta": "¿Qué materiales debemos utilizar para construir la carretera?",
+      "concepto_educativo": "Uso de recursos naturales",
+      "opciones": [
+        "Piedra y tierra",
+        "Madera y palos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Piedra y tierra",
+          "consecuencia": "La carretera puede ser más resistente y duradera",
+          "es_correcta": true,
+          "explicacion_educativa": "La piedra y la tierra son materiales naturales resistentes y duraderos",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Madera y palos",
+          "consecuencia": "La carretera puede ser más propensa a daños y desgaste",
+          "es_correcta": false,
+          "explicacion_educativa": "La madera y los palos pueden ser más propensos a daños y desgaste",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Agricultura en el Imperio",
+      "narrativa": "El Inca debe decidir qué tipo de cultivos sembrar en las diferentes regiones del Imperio para asegurar la alimentación de su pueblo.",
+      "pregunta": "¿Qué tipo de cultivos debemos sembrar en la región de la costa?",
+      "concepto_educativo": "Agricultura y clima",
+      "opciones": [
+        "Maíz y frijoles",
+        "Arroz y trigo"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Maíz y frijoles",
+          "consecuencia": "Estos cultivos son adecuados para la región de la costa y pueden prosperar",
+          "es_correcta": true,
+          "explicacion_educativa": "El maíz y los frijoles son cultivos que se adaptan bien a la región de la costa",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Arroz y trigo",
+          "consecuencia": "Estos cultivos pueden no prosperar en la región de la costa y pueden ser afectados por la salinidad del suelo",
+          "es_correcta": false,
+          "explicacion_educativa": "El arroz y el trigo pueden no ser los cultivos más adecuados para la región de la costa",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Relación con los Pueblos Vecinos",
+      "narrativa": "El Inca debe decidir cómo relacionarse con los pueblos vecinos y asegurar la paz y la estabilidad en la región.",
+      "pregunta": "¿Qué debemos hacer para asegurar la paz con los pueblos vecinos?",
+      "concepto_educativo": "Relaciones internacionales y diplomacia",
+      "opciones": [
+        "Establecer acuerdos comerciales y de paz",
+        "Atacar y conquistar a los pueblos vecinos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Establecer acuerdos comerciales y de paz",
+          "consecuencia": "La paz y la estabilidad pueden ser aseguradas y el Imperio puede prosperar",
+          "es_correcta": true,
+          "explicacion_educativa": "La diplomacia y los acuerdos comerciales pueden ser efectivos para asegurar la paz",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Atacar y conquistar a los pueblos vecinos",
+          "consecuencia": "La guerra y la inestabilidad pueden afectar al Imperio y a la región",
+          "es_correcta": false,
+          "explicacion_educativa": "La conquista y la guerra pueden tener consecuencias negativas para el Imperio y la región",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "El Imperio Inca en Paz",
+      "narrativa": "El Inca ha tomado decisiones sabias y el Imperio está en paz y prosperidad.",
+      "pregunta": "¿Qué debemos hacer para mantener la paz y la prosperidad en el Imperio?",
+      "concepto_educativo": "Mantenimiento de la paz y la prosperidad",
+      "opciones": [
+        "Seguir tomando decisiones sabias y justas",
+        "Dejar que el Imperio se gestione solo"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Seguir tomando decisiones sabias y justas",
+          "consecuencia": "La paz y la prosperidad pueden ser mantenidas y el Imperio puede seguir prosperando",
+          "es_correcta": true,
+          "explicacion_educativa": "La toma de decisiones sabias y justas es importante para mantener la paz y la prosperidad",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Dejar que el Imperio se gestione solo",
+          "consecuencia": "La falta de liderazgo y gestión puede afectar al Imperio y llevar a la decadencia",
+          "es_correcta": false,
+          "explicacion_educativa": "La falta de liderazgo y gestión puede tener consecuencias negativas para el Imperio",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "El Fin del Imperio",
+      "narrativa": "El Inca ha tomado decisiones incorrectas y el Imperio ha sido afectado por la sequía, la guerra y la decadencia.",
+      "pregunta": "¿Qué podemos hacer para evitar que el Imperio sea destruido?",
+      "concepto_educativo": "Consecuencias de las decisiones incorrectas",
+      "opciones": [
+        "Tomar decisiones sabias y justas",
+        "Seguir cometiendo errores"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Tomar decisiones sabias y justas",
+          "consecuencia": "El Imperio puede ser salvado y restaurado",
+          "es_correcta": true,
+          "explicacion_educativa": "La toma de decisiones sabias y justas es importante para salvar y restaurar el Imperio",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Seguir cometiendo errores",
+          "consecuencia": "El Imperio puede ser destruido y perderse para siempre",
+          "es_correcta": false,
+          "explicacion_educativa": "La continuación de decisiones incorrectas puede llevar a la destrucción del Imperio",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

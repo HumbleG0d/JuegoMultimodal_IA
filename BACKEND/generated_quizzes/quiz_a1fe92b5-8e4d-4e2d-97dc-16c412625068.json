@@ -1,0 +1,238 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T07:47:03.988014",
+  "original_prompt": "historia del peru",
+  "title": "El Viaje del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y las cosechas son muy escasas. La gente está preocupada por la falta de comida.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestra gente?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "La comida durará más tiempo y la gente estará más segura",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando administramos bien nuestros recursos, podemos asegurarnos de que duren más tiempo y que todos tengan lo que necesitan",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "La comida se acabará pronto y la gente estará en peligro",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando gastamos nuestros recursos rápidamente, podemos quedarnos sin nada y poner en peligro a nuestra gente",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de la Carretera",
+      "narrativa": "La sequía ha dañado las carreteras y es difícil transportar la comida a los pueblos. Necesitamos reparar la carretera para que los caminos sean seguros de nuevo.",
+      "pregunta": "¿Cómo podemos reparar la carretera?",
+      "concepto_educativo": "Trabajo en equipo",
+      "opciones": [
+        "Hacer que los soldados trabajen solos",
+        "Hacer que la comunidad trabaje juntos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Hacer que la comunidad trabaje juntos",
+          "consecuencia": "La carretera se reparará más rápido y la comunidad estará más unida",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando trabajamos juntos, podemos lograr más y hacer que las cosas sean más fáciles para todos",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Hacer que los soldados trabajen solos",
+          "consecuencia": "La carretera se reparará más lentamente y los soldados estarán cansados",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando trabajamos solos, podemos cansarnos y no lograr lo que queremos",
+          "proxima_escena": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Hambruna en el Imperio",
+      "narrativa": "La comida se ha acabado y la gente está muriendo de hambre. La situación es desesperada.",
+      "pregunta": "¿Qué podemos hacer para salvar a nuestra gente?",
+      "concepto_educativo": "Importancia de la planificación",
+      "opciones": [
+        "Buscar ayuda en otros pueblos",
+        "Quedarse en el imperio y esperar a que las cosas mejoren"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar ayuda en otros pueblos",
+          "consecuencia": "Podemos encontrar comida y ayuda para nuestra gente",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando planificamos y buscamos ayuda, podemos encontrar soluciones a nuestros problemas",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Quedarse en el imperio y esperar a que las cosas mejoren",
+          "consecuencia": "La situación empeorará y más gente morirá",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando no planificamos y no buscamos ayuda, podemos empeorar nuestra situación",
+          "proxima_escena": 7
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Celebración de la Cosecha",
+      "narrativa": "La carretera se ha reparado y la comida está llegando a los pueblos. La gente está alegre y agradecida.",
+      "pregunta": "¿Cómo podemos celebrar la cosecha?",
+      "concepto_educativo": "Importancia de la gratitud",
+      "opciones": [
+        "Celebrar con una gran fiesta",
+        "No celebrar y seguir trabajando"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Celebrar con una gran fiesta",
+          "consecuencia": "La gente estará alegre y agradecida, y la comunidad estará más unida",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando celebramos y damos gracias, podemos fortalecer nuestra comunidad y hacer que las cosas sean más felices",
+          "proxima_escena": 8
+        },
+        {
+          "opcion": "No celebrar y seguir trabajando",
+          "consecuencia": "La gente estará triste y desanimada",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando no celebramos y no damos gracias, podemos hacer que las cosas sean más tristes y desanimadas",
+          "proxima_escena": 9
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Derrota del Imperio",
+      "narrativa": "La carretera no se ha reparado y la comida no ha llegado a los pueblos. El imperio está en ruinas.",
+      "pregunta": "¿Qué podemos hacer para salvar el imperio?",
+      "concepto_educativo": "Importancia de la planificación y el trabajo en equipo",
+      "opciones": [
+        "Rendirse y abandonar el imperio",
+        "Seguir luchando y trabajando juntos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Rendirse y abandonar el imperio",
+          "consecuencia": "El imperio se derrumbará y la gente sufrirá",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando nos rendimos y abandonamos, podemos hacer que las cosas empeoren y sufrir las consecuencias",
+          "proxima_escena": 10
+        },
+        {
+          "opcion": "Seguir luchando y trabajando juntos",
+          "consecuencia": "Podemos salvar el imperio y hacer que las cosas mejoren",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando seguimos luchando y trabajando juntos, podemos superar los obstáculos y hacer que las cosas mejoren",
+          "proxima_escena": 11
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Ayuda de los Vecinos",
+      "narrativa": "Los pueblos vecinos han enviado ayuda y comida al imperio. La gente está agradecida y esperanzada.",
+      "pregunta": "¿Cómo podemos agradecer a nuestros vecinos?",
+      "concepto_educativo": "Importancia de la gratitud y la amistad",
+      "opciones": [
+        "Enviar un mensaje de agradecimiento",
+        "No hacer nada y seguir adelante"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Enviar un mensaje de agradecimiento",
+          "consecuencia": "Nuestros vecinos estarán felices y nuestra amistad se fortalecerá",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando agradecemos y reconocemos la ayuda de los demás, podemos fortalecer nuestras relaciones y hacer que las cosas sean más felices",
+          "proxima_escena": 12
+        },
+        {
+          "opcion": "No hacer nada y seguir adelante",
+          "consecuencia": "Nuestros vecinos se sentirán ignorados y nuestra amistad se debilitará",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando no agradecemos y no reconocemos la ayuda de los demás, podemos debilitar nuestras relaciones y hacer que las cosas sean más tristes",
+          "proxima_escena": 13
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "La Muerte del Imperio",
+      "narrativa": "El imperio ha muerto y la gente ha sido esclavizada. La historia del imperio ha llegado a su fin.",
+      "pregunta": "¿Qué podemos hacer para recordar el imperio?",
+      "concepto_educativo": "Importancia de la memoria y la historia",
+      "opciones": [
+        "Escribir un libro sobre la historia del imperio",
+        "No hacer nada y olvidar el imperio"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Escribir un libro sobre la historia del imperio",
+          "consecuencia": "La historia del imperio se recordará y se aprenderá de sus errores",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando recordamos y escribimos sobre nuestra historia, podemos aprender de nuestros errores y hacer que las cosas sean mejores en el futuro",
+          "proxima_escena": 14
+        },
+        {
+          "opcion": "No hacer nada y olvidar el imperio",
+          "consecuencia": "La historia del imperio se olvidará y se perderá para siempre",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando no recordamos y no escribimos sobre nuestra historia, podemos olvidar nuestros errores y no aprender de ellos",
+          "proxima_escena": 15
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "La Victoria del Imperio",
+      "narrativa": "El imperio ha sido salvado y la gente está celebrando. La historia del imperio ha llegado a su fin.",
+      "pregunta": "¿Qué podemos hacer para celebrar la victoria?",
+      "concepto_educativo": "Importancia de la celebración y la gratitud",
+      "opciones": [
+        "Celebrar con una gran fiesta",
+        "No celebrar y seguir adelante"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Celebrar con una gran fiesta",
+          "consecuencia": "La gente estará alegre y agradecida, y la comunidad estará más unida",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando celebramos y damos gracias, podemos fortalecer nuestra comunidad y hacer que las cosas sean más felices",
+          "proxima_escena": 16
+        },
+        {
+          "opcion": "No celebrar y seguir adelante",
+          "consecuencia": "La gente estará triste y desanimada",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando no celebramos y no damos gracias, podemos hacer que las cosas sean más tristes y desanimadas",
+          "proxima_escena": 17
+        }
+      ]
+    }
+  ],
+  "escenafinal": [
+    {
+      "id": 1,
+      "titulo": "La Historia del Imperio",
+      "narrativa": "La historia del imperio ha llegado a su fin. La gente ha aprendido de sus errores y ha crecido. El imperio ha sido salvado y la comunidad está más unida que nunca."
+    },
+    {
+      "id": 2,
+      "titulo": "La Muerte del Imperio",
+      "narrativa": "La historia del imperio ha llegado a su fin. El imperio ha muerto y la gente ha sido esclavizada. La memoria del imperio se ha perdido para siempre."
+    }
+  ]
+}

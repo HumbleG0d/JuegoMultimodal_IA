@@ -1,0 +1,265 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-25T07:56:04.178808",
+  "original_prompt": "historia del peru",
+  "title": "El Viaje del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca y la cantidad de cosechas es muy escasa. El pueblo está preocupado por la falta de comida.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "Podremos hacer que los recursos duren más tiempo y el pueblo tendrá comida para un poco más de tiempo",
+          "es_correcta": true,
+          "explicacion_educativa": "Es importante administrar bien los recursos para que duren más tiempo y podamos ayudar a más personas",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "Los recursos se acabarán pronto y el pueblo sufrirá más",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente no es una buena idea, ya que se acabarán pronto y no podremos ayudar a nuestro pueblo",
+          "proxima_escena": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Construcción de Caminos",
+      "narrativa": "El Imperio Inca necesita construir caminos para facilitar el transporte de comida y otros recursos. Pero hay dos opciones para construir los caminos: con piedras o con madera.",
+      "pregunta": "¿Qué material debemos usar para construir los caminos?",
+      "concepto_educativo": "Ingeniería y arquitectura",
+      "opciones": [
+        "Piedras",
+        "Madera"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Piedras",
+          "consecuencia": "Los caminos serán más resistentes y durarán más tiempo",
+          "es_correcta": true,
+          "explicacion_educativa": "Las piedras son más resistentes que la madera y son ideales para construir caminos que durarán mucho tiempo",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Madera",
+          "consecuencia": "Los caminos serán más propensos a daños y no durarán mucho tiempo",
+          "es_correcta": false,
+          "explicacion_educativa": "La madera no es el material más adecuado para construir caminos, ya que es más propensa a daños y no durará mucho tiempo",
+          "proxima_escena": 7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Agricultura en el Imperio",
+      "narrativa": "El Imperio Inca necesita aumentar la producción de alimentos para alimentar a su pueblo. Hay dos opciones para hacerlo: cultivar en las llanuras o en las montañas.",
+      "pregunta": "¿Dónde debemos cultivar para aumentar la producción de alimentos?",
+      "concepto_educativo": "Agricultura y geografía",
+      "opciones": [
+        "Llanuras",
+        "Montañas"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Llanuras",
+          "consecuencia": "La producción de alimentos aumentará significativamente",
+          "es_correcta": true,
+          "explicacion_educativa": "Las llanuras son ideales para cultivar, ya que tienen un clima más estable y el suelo es más fértil",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Montañas",
+          "consecuencia": "La producción de alimentos no aumentará significativamente",
+          "es_correcta": false,
+          "explicacion_educativa": "Las montañas no son ideales para cultivar, ya que el clima es más extremo y el suelo es más pobre",
+          "proxima_escena": 8
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Comunicación en el Imperio",
+      "narrativa": "El Imperio Inca necesita mejorar la comunicación entre sus ciudadanos. Hay dos opciones para hacerlo: mediante el uso de mensajeros o mediante el uso de señales de humo.",
+      "pregunta": "¿Cómo debemos mejorar la comunicación en el Imperio?",
+      "concepto_educativo": "Comunicación y tecnología",
+      "opciones": [
+        "Mensajeros",
+        "Señales de humo"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Mensajeros",
+          "consecuencia": "La comunicación será más rápida y eficiente",
+          "es_correcta": true,
+          "explicacion_educativa": "Los mensajeros son una forma rápida y eficiente de comunicarse, ya que pueden llevar mensajes de un lugar a otro de manera rápida",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Señales de humo",
+          "consecuencia": "La comunicación no será tan rápida ni eficiente",
+          "es_correcta": false,
+          "explicacion_educativa": "Las señales de humo no son una forma tan rápida ni eficiente de comunicarse, ya que dependen del clima y la visibilidad",
+          "proxima_escena": 9
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Celebración del Imperio",
+      "narrativa": "El Imperio Inca ha logrado superar muchos desafíos y ahora es hora de celebrar. Hay dos opciones para celebrar: con una gran fiesta o con una ceremonia religiosa.",
+      "pregunta": "¿Cómo debemos celebrar los logros del Imperio?",
+      "concepto_educativo": "Cultura y tradición",
+      "opciones": [
+        "Gran fiesta",
+        "Ceremonia religiosa"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Gran fiesta",
+          "consecuencia": "La celebración será divertida y alegre",
+          "es_correcta": true,
+          "explicacion_educativa": "Una gran fiesta es una forma divertida y alegre de celebrar los logros del Imperio",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Ceremonia religiosa",
+          "consecuencia": "La celebración será más seria y respetuosa",
+          "es_correcta": true,
+          "explicacion_educativa": "Una ceremonia religiosa es una forma más seria y respetuosa de celebrar los logros del Imperio",
+          "proxima_escena": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "La Hambruna en el Imperio",
+      "narrativa": "El Imperio Inca está sufriendo una gran hambruna debido a la mala administración de los recursos. El pueblo está sufriendo y no hay suficiente comida para todos.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Buscar ayuda exterior",
+        "Intentar encontrar soluciones internas"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar ayuda exterior",
+          "consecuencia": "Podremos obtener ayuda y recursos de otros imperios",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar ayuda exterior puede ser una forma de obtener recursos y ayuda para superar la hambruna",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Intentar encontrar soluciones internas",
+          "consecuencia": "No podremos encontrar soluciones efectivas para superar la hambruna",
+          "es_correcta": false,
+          "explicacion_educativa": "Intentar encontrar soluciones internas no es suficiente para superar la hambruna, ya que el Imperio Inca necesita ayuda exterior",
+          "proxima_escena": null
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "La Destrucción de los Caminos",
+      "narrativa": "Los caminos del Imperio Inca han sido destruidos debido a la mala construcción. El transporte de comida y recursos es muy difícil y el pueblo está sufriendo.",
+      "pregunta": "¿Qué debemos hacer para reconstruir los caminos?",
+      "concepto_educativo": "Ingeniería y arquitectura",
+      "opciones": [
+        "Reconstruir con piedras",
+        "Reconstruir con madera"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Reconstruir con piedras",
+          "consecuencia": "Los caminos serán más resistentes y durarán más tiempo",
+          "es_correcta": true,
+          "explicacion_educativa": "Reconstruir con piedras es la mejor opción, ya que son más resistentes y durarán más tiempo",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Reconstruir con madera",
+          "consecuencia": "Los caminos no serán tan resistentes y no durarán mucho tiempo",
+          "es_correcta": false,
+          "explicacion_educativa": "Reconstruir con madera no es la mejor opción, ya que no es tan resistente y no durará mucho tiempo",
+          "proxima_escena": null
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "La Falta de Alimentos en las Montañas",
+      "narrativa": "El Imperio Inca ha intentado cultivar en las montañas, pero la producción de alimentos ha sido muy pobre. El pueblo está sufriendo y no hay suficiente comida para todos.",
+      "pregunta": "¿Qué debemos hacer para aumentar la producción de alimentos?",
+      "concepto_educativo": "Agricultura y geografía",
+      "opciones": [
+        "Cultivar en las llanuras",
+        "Intentar encontrar soluciones en las montañas"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Cultivar en las llanuras",
+          "consecuencia": "La producción de alimentos aumentará significativamente",
+          "es_correcta": true,
+          "explicacion_educativa": "Cultivar en las llanuras es la mejor opción, ya que es más fértil y el clima es más estable",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Intentar encontrar soluciones en las montañas",
+          "consecuencia": "No podremos encontrar soluciones efectivas para aumentar la producción de alimentos",
+          "es_correcta": false,
+          "explicacion_educativa": "Intentar encontrar soluciones en las montañas no es suficiente, ya que el clima y el suelo no son adecuados para cultivar",
+          "proxima_escena": null
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "La Comunicación Ineficiente",
+      "narrativa": "El Imperio Inca ha intentado comunicarse mediante señales de humo, pero la comunicación ha sido muy ineficiente. El pueblo está sufriendo y no hay una forma efectiva de comunicarse.",
+      "pregunta": "¿Qué debemos hacer para mejorar la comunicación?",
+      "concepto_educativo": "Comunicación y tecnología",
+      "opciones": [
+        "Usar mensajeros",
+        "Intentar encontrar soluciones con las señales de humo"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Usar mensajeros",
+          "consecuencia": "La comunicación será más rápida y eficiente",
+          "es_correcta": true,
+          "explicacion_educativa": "Usar mensajeros es la mejor opción, ya que es una forma más rápida y eficiente de comunicarse",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Intentar encontrar soluciones con las señales de humo",
+          "consecuencia": "No podremos encontrar soluciones efectivas para mejorar la comunicación",
+          "es_correcta": false,
+          "explicacion_educativa": "Intentar encontrar soluciones con las señales de humo no es suficiente, ya que no es una forma tan eficiente de comunicarse",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ],
+  "escenafinal": [
+    {
+      "id_final": 1,
+      "titulo": "La Victoria del Imperio",
+      "narrativa": "El Imperio Inca ha logrado superar todos los desafíos y ha alcanzado la victoria. El pueblo está feliz y la producción de alimentos es abundante."
+    },
+    {
+      "id_final": 2,
+      "titulo": "La Derrota del Imperio",
+      "narrativa": "El Imperio Inca no ha podido superar los desafíos y ha sido derrotado. El pueblo está sufriendo y la producción de alimentos es escasa."
+    }
+  ]
+}
