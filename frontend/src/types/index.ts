@@ -180,3 +180,33 @@ export interface ChatBootMessage{
   text: string,
   time: string,
 }
+
+export interface Profile{
+  user_name: string,
+  user_type: string,
+  exp: number,
+}
+
+
+export interface StaticsQuiz{
+  id: number,
+  puntaje: number,
+  quiz_id: string
+}
+
+export interface StaticResponse{
+  estudiante_id: number,
+  id: number,
+  puntaje: number,
+  quiz_id: string
+}
+
+export interface ReportStaticStudents{
+  estudiante_id: number,
+  quizzes: ResultQuiz[]
+}
+
+export interface ResultQuiz{
+  puntaje: number,
+  quiz_id: string
+}
