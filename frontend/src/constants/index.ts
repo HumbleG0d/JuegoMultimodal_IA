@@ -112,11 +112,11 @@ export const FAQ_ITEMS = [
 
 export const SIDEBAR_ITEMS_TEACHER = [
   { id: "quizzes", label: "Quizzes", icon: "BookOpen" },
-  { id: "students", label: "Students", icon: "Users" },
-  { id: "analytics", label: "Analytics", icon: "BarChart3" },
+  { id: "students", label: "Estudiantes", icon: "Users" },
+  { id: "analytics", label: "Estadisticas", icon: "BarChart3" },
 ]
 
 export const SIDEBAR_ITEMS_STUDENT = [
   { id: "quizzes", label: "Quizzes", icon: "BookOpen" },
-  { id: "analytics", label: "Analytics", icon: "BarChart3" },
+  { id: "analytics", label: "Estadistica", icon: "BarChart3" },
 ]
