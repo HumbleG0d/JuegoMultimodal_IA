@@ -89,8 +89,8 @@ class Database:
                         quiz_id UUID NOT NULL,
                         estudiante_id INTEGER NOT NULL,
                         puntaje Integer NOT NULL,
-                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
-                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id)            
+                        FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id) ON DELETE CASCADE,
+                        FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE            
                     ) 
                 ''')
                 conn.commit()
