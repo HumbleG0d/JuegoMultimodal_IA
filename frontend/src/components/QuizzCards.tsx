@@ -19,9 +19,8 @@ const QuizzCards: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedStudents, setSelectedStudents] = useState<Students[]>([]);
   const [selectedQuizId, setSelectedQuizId] = useState<string | null>(null); // Track selected quiz
-
+  const [totalStudents, setTotalStudents] = useState<number>(0); // Track total students
   const navigate = useNavigate();
-  
   const getQuizzes = async () => { 
     try {
       const token = localStorage.getItem('token');
@@ -56,10 +55,11 @@ const QuizzCards: React.FC = () => {
           month: 'long',
           day: 'numeric',
         }),
-        thumbnail: 'https://m.media-amazon.com/images/M/MV5BZjA0MDgyYmItNzkzMC00OTM2LThlYzktMWMxZWU3ZGNkNDI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+        thumbnail: 'https://naturcanin.com/wp-content/uploads/2024/07/gatos-pueden-comer-zanahoria.jpg',
         students: 0, // Por implementar
         accuracy: Math.floor(Math.random() * 100), // Por implementar
       }));
+      setTotalStudents(cards.length);
       setDashQuiz(cards);
     } catch (error) {
       console.error('Error fetching quizzes:', error);
@@ -118,6 +118,25 @@ const QuizzCards: React.FC = () => {
     closeSearchPopup();
   };
 
+
+  const handleDeleteQuiz = async (quizId: string) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/teacher/delete/${quizId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          } 
+        }
+      )
+       if (!response.ok) {
+        throw new Error('Failed to assign quiz to student');
+      }
+    } catch (error) {
+      console.error('Error deleting quiz:', error);
+    }
+  }
+
   useEffect(() => {
     getQuizzes();
   }, []);
@@ -134,7 +153,7 @@ const QuizzCards: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-white/70 text-sm">Total Quizzes</p>
-              <p className="text-2xl font-bold text-white">24</p>
+              <p className="text-2xl font-bold text-white">{totalStudents}</p>
             </div>
             <div className="p-3 bg-emerald-500/20 rounded-lg">
               <BookOpen className="w-6 h-6 text-emerald-400" />
@@ -145,7 +164,7 @@ const QuizzCards: React.FC = () => {
         <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-white/70 text-sm">Participaciones</p>
+              <p className="text-white/70 text-sm">Participaciones</p> {/* LA SUMA DE LOS ESTUDIANTES */}
               <p className="text-2xl font-bold text-white">1,247</p>
             </div>
             <div className="p-3 bg-blue-500/20 rounded-lg">
@@ -158,7 +177,7 @@ const QuizzCards: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-white/70 text-sm">Precisión Promedio</p>
-              <p className="text-2xl font-bold text-white">86%</p>
+              <p className="text-2xl font-bold text-white">86%</p> {/* SUMA DE LAS PRECICIONES ENTRE LA CANTIDAD DE QUIZES */}
             </div>
             <div className="p-3 bg-purple-500/20 rounded-lg">
               <Trophy className="w-6 h-6 text-purple-400" />
@@ -194,7 +213,7 @@ const QuizzCards: React.FC = () => {
                   <span>{quiz.students} estudiantes</span>
                 </div>
                 <div className="text-sm text-white/70">
-                  {quiz.accuracy}% precisión
+                  {quiz.accuracy}% precisión {/* ESTA INFO SERA EL PROMEDIO LAS PRESISCIONES DE LOS ESTUDIANSTES */}
                 </div>
               </div>
               <div className="flex space-x-2">
@@ -211,9 +230,10 @@ const QuizzCards: React.FC = () => {
                 >
                   <UserRoundPlus className="w-4 h-4" />
                 </Button>
-                <button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/30 transition-colors">
+                <Button className="p-2 bg-white/10 rounded-lg border border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/30 transition-colors"
+                onClick={() => handleDeleteQuiz(quiz.id)}>
                   <Trash2 className="w-4 h-4" />
-                </button>
+                </Button>
                 </div>
             </div>
           </div>
