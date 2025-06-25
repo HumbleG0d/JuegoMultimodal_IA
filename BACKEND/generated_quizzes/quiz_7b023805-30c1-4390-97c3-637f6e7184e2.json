@@ -1,0 +1,115 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:32:51.420957",
+  "original_prompt": "one piece",
+  "title": "La Aventura de Luffy en la Isla de los Colores",
+  "topic": "Colores y formas",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Isla de los Colores",
+      "narrativa": "Luffy y su tripulación llegan a una isla llena de colores y formas geométricas. De repente, el sombrero de Luffy se vuela y cae en un lago de agua azul.",
+      "pregunta": "¿Qué color debería ser el nuevo sombrero de Luffy?",
+      "concepto_educativo": "Reconocimiento de colores",
+      "opciones": [
+        "Rojo",
+        "Azul",
+        "Amarillo"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Rojo",
+          "consecuencia": "El sombrero rojo no combina con el entorno azul de la isla",
+          "es_correcta": false,
+          "explicacion_educativa": "El rojo no es el color más adecuado para este entorno, ya que no se combina bien con el azul",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Azul",
+          "consecuencia": "El sombrero azul combina perfectamente con el entorno de la isla",
+          "es_correcta": true,
+          "explicacion_educativa": "El azul es el color más adecuado para este entorno, ya que se combina bien con el agua azul del lago",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Amarillo",
+          "consecuencia": "El sombrero amarillo es muy llamativo, pero no combina bien con el entorno azul",
+          "es_correcta": false,
+          "explicacion_educativa": "El amarillo es un color muy llamativo, pero no es el más adecuado para este entorno, ya que no se combina bien con el azul",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Jardín de Formas",
+      "narrativa": "Luffy y su tripulación llegan a un jardín lleno de formas geométricas. De repente, un cuadrado se cae de su base y necesita ser recolocado.",
+      "pregunta": "¿Qué forma debería ser la base para sostener el cuadrado?",
+      "concepto_educativo": "Reconocimiento de formas geométricas",
+      "opciones": [
+        "Círculo",
+        "Triángulo",
+        "Cuadrado"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Círculo",
+          "consecuencia": "El círculo no es estable para sostener el cuadrado",
+          "es_correcta": false,
+          "explicacion_educativa": "El círculo no es una forma estable para sostener el cuadrado, ya que no tiene aristas rectas",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Triángulo",
+          "consecuencia": "El triángulo es inestable y no puede sostener el cuadrado",
+          "es_correcta": false,
+          "explicacion_educativa": "El triángulo es inestable y no puede sostener el cuadrado, ya que no tiene una base ancha",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Cuadrado",
+          "consecuencia": "El cuadrado es la base perfecta para sostener el cuadrado",
+          "es_correcta": true,
+          "explicacion_educativa": "El cuadrado es la base perfecta para sostener el cuadrado, ya que tiene aristas rectas y una base ancha",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "El Tesoro de la Isla",
+      "narrativa": "Luffy y su tripulación llegan al tesoro de la isla, pero para abrir la caja necesitan resolver un rompecabezas de colores y formas.",
+      "pregunta": "¿Qué secuencia de colores y formas deberían seguir para abrir la caja?",
+      "concepto_educativo": "Secuencia de colores y formas",
+      "opciones": [
+        "Rojo, azul, cuadrado",
+        "Azul, amarillo, triángulo",
+        "Amarillo, rojo, círculo"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Rojo, azul, cuadrado",
+          "consecuencia": "La secuencia es incorrecta y no abre la caja",
+          "es_correcta": false,
+          "explicacion_educativa": "La secuencia de colores y formas es incorrecta, ya que no sigue un patrón lógico",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Azul, amarillo, triángulo",
+          "consecuencia": "La secuencia es incorrecta y no abre la caja",
+          "es_correcta": false,
+          "explicacion_educativa": "La secuencia de colores y formas es incorrecta, ya que no sigue un patrón lógico",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Amarillo, rojo, círculo",
+          "consecuencia": "La secuencia es correcta y abre la caja",
+          "es_correcta": true,
+          "explicacion_educativa": "La secuencia de colores y formas es correcta, ya que sigue un patrón lógico y combina colores y formas de manera coherente",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

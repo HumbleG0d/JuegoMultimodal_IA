@@ -1,0 +1,197 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T19:29:22.588348",
+  "original_prompt": "historia del peru",
+  "title": "Aventuras en el Imperio Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía en el Imperio",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca, y las cosechas son muy escasas. El pueblo está hambriento y necesita tu ayuda.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos actuales",
+        "Gastar los recursos rápidamente",
+        "No alimentar a la población"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos actuales",
+          "consecuencia": "La comida durará más tiempo y el pueblo estará satisfecho",
+          "es_correcta": true,
+          "explicacion_educativa": "Cuando administramos bien los recursos, podemos hacer que duren más tiempo y ayudar a más personas",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "La comida se acabará pronto y el pueblo estará hambriento de nuevo",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando gastamos los recursos rápidamente, no pensamos en el futuro y podemos causar problemas",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "No alimentar a la población",
+          "consecuencia": "El pueblo estará muy hambriento y enfermo, y puede haber problemas graves",
+          "es_correcta": false,
+          "explicacion_educativa": "No alimentar a la población es una decisión muy mala, ya que todos necesitan comer para vivir",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Fiesta de la Cosecha",
+      "narrativa": "La sequía ha terminado y las cosechas están creciendo de nuevo. El pueblo está feliz y quiere celebrar",
+      "pregunta": "¿Qué debemos hacer para celebrar la fiesta de la cosecha?",
+      "concepto_educativo": "Agradecimiento y celebración",
+      "opciones": [
+        "Hacer una gran fiesta con música y baile",
+        "Dar gracias a los dioses por la cosecha",
+        "No hacer nada y seguir trabajando"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Hacer una gran fiesta con música y baile",
+          "consecuencia": "El pueblo estará feliz y unido, y la fiesta será un éxito",
+          "es_correcta": true,
+          "explicacion_educativa": "Celebrar los logros y las bendiciones es importante para la comunidad",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Dar gracias a los dioses por la cosecha",
+          "consecuencia": "Los dioses estarán satisfechos y el pueblo estará en paz",
+          "es_correcta": true,
+          "explicacion_educativa": "Dar gracias a los dioses es una forma de mostrar respeto y agradecimiento",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "No hacer nada y seguir trabajando",
+          "consecuencia": "El pueblo estará triste y no habrá celebración",
+          "es_correcta": false,
+          "explicacion_educativa": "No celebrar los logros y las bendiciones puede hacer que la comunidad se sienta triste y desunida",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Hambruna",
+      "narrativa": "La comida se ha acabado y el pueblo está hambriento de nuevo. La situación es grave",
+      "pregunta": "¿Qué debemos hacer para ayudar al pueblo?",
+      "concepto_educativo": "Planificación y preparación",
+      "opciones": [
+        "Buscar comida en otros lugares",
+        "Pedir ayuda a los vecinos",
+        "No hacer nada y esperar a que las cosas mejoren"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar comida en otros lugares",
+          "consecuencia": "Encontraremos comida y el pueblo estará satisfecho",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar soluciones y no rendirse es importante en tiempos de necesidad",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Pedir ayuda a los vecinos",
+          "consecuencia": "Los vecinos nos ayudarán y el pueblo estará agradecido",
+          "es_correcta": true,
+          "explicacion_educativa": "Pedir ayuda cuando se necesita es una forma de mostrar humildad y gratitud",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "No hacer nada y esperar a que las cosas mejoren",
+          "consecuencia": "La situación empeorará y el pueblo sufrirá",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada en tiempos de necesidad puede causar problemas graves",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Desesperación",
+      "narrativa": "La situación es desesperada y el pueblo está sufriendo. No hay comida, no hay esperanza",
+      "pregunta": "¿Qué debemos hacer para ayudar al pueblo?",
+      "concepto_educativo": "Perseverancia y liderazgo",
+      "opciones": [
+        "Seguir luchando y buscar soluciones",
+        "Rendirse y aceptar la derrota",
+        "No hacer nada y esperar a que las cosas mejoren"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Seguir luchando y buscar soluciones",
+          "consecuencia": "Encontraremos una solución y el pueblo estará a salvo",
+          "es_correcta": true,
+          "explicacion_educativa": "La perseverancia y el liderazgo son importantes en tiempos de crisis",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Rendirse y aceptar la derrota",
+          "consecuencia": "La situación empeorará y el pueblo sufrirá",
+          "es_correcta": false,
+          "explicacion_educativa": "Rendirse en tiempos de necesidad puede causar problemas graves",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "No hacer nada y esperar a que las cosas mejoren",
+          "consecuencia": "La situación empeorará y el pueblo sufrirá",
+          "es_correcta": false,
+          "explicacion_educativa": "No hacer nada en tiempos de necesidad puede causar problemas graves",
+          "proxima_escena": "escenafinal"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "La Victoria",
+      "narrativa": "La situación ha mejorado y el pueblo está a salvo. La sequía ha terminado y las cosechas están creciendo de nuevo",
+      "pregunta": "¿Qué debemos hacer para celebrar la victoria?",
+      "concepto_educativo": "Agradecimiento y celebración",
+      "opciones": [
+        "Hacer una gran fiesta con música y baile",
+        "Dar gracias a los dioses por la cosecha",
+        "No hacer nada y seguir trabajando"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Hacer una gran fiesta con música y baile",
+          "consecuencia": "El pueblo estará feliz y unido, y la fiesta será un éxito",
+          "es_correcta": true,
+          "explicacion_educativa": "Celebrar los logros y las bendiciones es importante para la comunidad",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "Dar gracias a los dioses por la cosecha",
+          "consecuencia": "Los dioses estarán satisfechos y el pueblo estará en paz",
+          "es_correcta": true,
+          "explicacion_educativa": "Dar gracias a los dioses es una forma de mostrar respeto y agradecimiento",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "No hacer nada y seguir trabajando",
+          "consecuencia": "El pueblo estará triste y no habrá celebración",
+          "es_correcta": false,
+          "explicacion_educativa": "No celebrar los logros y las bendiciones puede hacer que la comunidad se sienta triste y desunida",
+          "proxima_escena": "escenafinal"
+        }
+      ]
+    }
+  ],
+  "escenafinal": [
+    {
+      "id": 1,
+      "titulo": "La Derrota",
+      "narrativa": "La situación ha empeorado y el pueblo ha sufrido. La sequía ha sido demasiado fuerte y las cosechas han sido destruidas. El pueblo ha sido derrotado y la civilización ha sido destruida."
+    },
+    {
+      "id": 2,
+      "titulo": "La Victoria",
+      "narrativa": "La situación ha mejorado y el pueblo está a salvo. La sequía ha terminado y las cosechas están creciendo de nuevo. El pueblo ha sido salvado y la civilización ha sido preservada. La historia del Imperio Inca continuará."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T16:29:55.062939",
+  "original_prompt": "presidentes del peru",
+  "title": "Aprende sobre los presidentes del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién es el presidente del Perú en este momento?",
+      "options": [
+        "Alan García",
+        "Martín Vizcarra",
+        "Dina Boluarte",
+        "No lo sé"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Excelente esfuerzo! La presidenta actual es Dina Boluarte. Sigamos aprendiendo.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Dina Boluarte"
+    },
+    {
+      "question": "¿Cuál es el trabajo del presidente del Perú?",
+      "options": [
+        "Enseñar en la escuela",
+        "Ayudar a la gente",
+        "Conducir un auto",
+        "Jugar fútbol"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! El presidente ayuda a la gente y toma decisiones importantes para el país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Ayudar a la gente"
+    },
+    {
+      "question": "¿Dónde vive el presidente del Perú?",
+      "options": [
+        "En la escuela",
+        "En la casa de mi amigo",
+        "En el palacio de gobierno",
+        "En el parque"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Genial! El presidente vive en el palacio de gobierno, un lugar muy importante.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es En el palacio de gobierno"
+    },
+    {
+      "question": "¿Qué hace el presidente para ayudar a la gente?",
+      "options": [
+        "Construir carreteras",
+        "Enseñar matemáticas",
+        "Jugar con los niños",
+        "Todo lo anterior"
+      ],
+      "correct_answer": 3,
+      "explanation": "¡Excelente! El presidente hace muchas cosas, como construir carreteras y ayudar a que la gente tenga acceso a la educación.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Todo lo anterior"
+    },
+    {
+      "question": "¿Por qué es importante votar por el presidente?",
+      "options": [
+        "Para elegir a mi amigo",
+        "Para elegir a alguien que ayude al país",
+        "Para ir al parque",
+        "Para comer helado"
+      ],
+      "correct_answer": 1,
+      "explanation": "¡Muy bien! Votar es importante para elegir a alguien que ayude al país y a la gente.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Para elegir a alguien que ayude al país"
+    }
+  ]
+}

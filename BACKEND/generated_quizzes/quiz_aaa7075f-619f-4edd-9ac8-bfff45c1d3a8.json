@@ -1,0 +1,70 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T16:30:08.341866",
+  "original_prompt": "presidentes del peru",
+  "title": "¿Quién fue el primer presidente del Perú?",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "questions": [
+    {
+      "question": "¿Quién fue el primer presidente del Perú?",
+      "options": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "José de la Riva Agüero",
+        "Juan Luna"
+      ],
+      "correct_answer": 2,
+      "explanation": "¡Muy bien! José de la Riva Agüero fue el primer presidente del Perú. Sigamos aprendiendo sobre la historia de nuestro país.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es José de la Riva Agüero"
+    },
+    {
+      "question": "¿Cuál es el nombre del presidente que ayudó a liberar al Perú de los españoles?",
+      "options": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "Andrés de Santa Cruz",
+        "Ramón Castilla"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Excelente! José de San Martín fue un héroe que ayudó a liberar al Perú de los españoles. Estamos orgullosos de nuestra historia.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es José de San Martín"
+    },
+    {
+      "question": "¿Quién fue un presidente que mejoró las carreteras y los puentes en el Perú?",
+      "options": [
+        "Ramón Castilla",
+        "Andrés de Santa Cruz",
+        "José de la Riva Agüero",
+        "Manuel Pardo"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Muy bien! Ramón Castilla fue un presidente que trabajó para mejorar las carreteras y los puentes en el Perú. Gracias por recordar su legado.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Ramón Castilla"
+    },
+    {
+      "question": "¿Cuál es el nombre del presidente que fue un gran líder y mejoró la educación en el Perú?",
+      "options": [
+        "Manuel Pardo",
+        "Andrés de Santa Cruz",
+        "Ramón Castilla",
+        "José de la Riva Agüero"
+      ],
+      "correct_answer": 0,
+      "explanation": "¡Excelente! Manuel Pardo fue un presidente que se preocupó por la educación y trabajó para mejorarla en el Perú. Sigamos valorando la importancia de la educación.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Manuel Pardo"
+    },
+    {
+      "question": "¿Quién es un presidente que trabajó para proteger el medio ambiente en el Perú?",
+      "options": [
+        "Alan García",
+        "Alberto Fujimori",
+        "Ollanta Humala",
+        "Pedro Pablo Kuczynski"
+      ],
+      "correct_answer": 3,
+      "explanation": "¡Muy bien! Pedro Pablo Kuczynski fue un presidente que se preocupó por el medio ambiente y trabajó para protegerlo en el Perú. Sigamos cuidando nuestro planeta.",
+      "incorrect": "Respuesta incorrecta, la respuesta correcta es Pedro Pablo Kuczynski"
+    }
+  ]
+}

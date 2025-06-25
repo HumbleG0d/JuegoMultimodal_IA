@@ -1,0 +1,115 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:03:20.334369",
+  "original_prompt": "presidentes del peru",
+  "title": "Aventuras en la Historia del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Elección del Primer Presidente",
+      "narrativa": "Es el año 1821 y el Perú acaba de declarar su independencia. Los ciudadanos deben elegir a su primer presidente. Hay tres candidatos: José de San Martín, Simón Bolívar y José de la Riva-Agüero.",
+      "pregunta": "¿Quién debería ser el primer presidente del Perú?",
+      "concepto_educativo": "Conocer los primeros líderes del Perú y su papel en la independencia",
+      "opciones": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "José de la Riva-Agüero"
+      ],
+      "decisiones": [
+        {
+          "opcion": "José de San Martín",
+          "consecuencia": "San Martín es elegido y lidera el país hacia una nueva era de libertad.",
+          "es_correcta": true,
+          "explicacion_educativa": "San Martín fue un líder clave en la independencia del Perú y su elección como primer presidente fue un paso importante para el país.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Simón Bolívar",
+          "consecuencia": "Aunque Bolívar fue un héroe de la independencia, su elección como presidente del Perú no es la más adecuada en este momento.",
+          "es_correcta": false,
+          "explicacion_educativa": "Bolívar jugó un papel importante en la independencia de varios países sudamericanos, pero en este momento, el Perú necesita un líder que se enfoque en sus propias necesidades.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "José de la Riva-Agüero",
+          "consecuencia": "La Riva-Agüero es un político experimentado, pero no tiene el apoyo de la mayoría de los ciudadanos.",
+          "es_correcta": false,
+          "explicacion_educativa": "Aunque La Riva-Agüero tenía experiencia política, no era el candidato más popular entre los ciudadanos, lo que podría llevar a inestabilidad en el gobierno.",
+          "proxima_escena": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Desafío de la Unidad Nacional",
+      "narrativa": "Después de la elección de San Martín, el país enfrenta desafíos para mantener la unidad nacional. Hay diferentes grupos con intereses contrapuestos.",
+      "pregunta": "¿Cómo debería San Martín manejar estos desafíos?",
+      "concepto_educativo": "Entender la importancia de la unidad nacional y cómo los líderes pueden abordar los desafíos",
+      "opciones": [
+        "Mediante la fuerza",
+        "A través del diálogo y la negociación",
+        "Ignorando los problemas"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Mediante la fuerza",
+          "consecuencia": "El uso de la fuerza podría llevar a más conflictos y divisiones en el país.",
+          "es_correcta": false,
+          "explicacion_educativa": "La fuerza puede parecer una solución rápida, pero puede generar más problemas a largo plazo y dañar la relación entre los diferentes grupos.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "A través del diálogo y la negociación",
+          "consecuencia": "San Martín logra unir a los diferentes grupos a través del diálogo y la negociación, fortaleciendo la unidad nacional.",
+          "es_correcta": true,
+          "explicacion_educativa": "El diálogo y la negociación son herramientas poderosas para resolver conflictos y encontrar soluciones que beneficien a todos, promoviendo la unidad y la estabilidad.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Ignorando los problemas",
+          "consecuencia": "Ignorar los desafíos podría llevar a que los problemas se agraven y se vuelvan más difíciles de resolver.",
+          "es_correcta": false,
+          "explicacion_educativa": "Ignorar los problemas no los hace desaparecer y puede llevar a consecuencias negativas a largo plazo, como la división y el conflicto.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "El Legado de los Presidentes",
+      "narrativa": "Con el tiempo, el Perú ha tenido muchos presidentes, cada uno dejando su legado. Es importante recordar y aprender de sus experiencias.",
+      "pregunta": "¿Por qué es importante recordar el legado de los presidentes del Perú?",
+      "concepto_educativo": "Comprender la importancia de la historia y el legado de los líderes en la formación de un país",
+      "opciones": [
+        "Para criticar sus decisiones",
+        "Para aprender de sus errores y aciertos",
+        "Para ignorar el pasado"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Para criticar sus decisiones",
+          "consecuencia": "Criticar sin entender el contexto y las circunstancias puede no ser justo y no aporta mucho a la comprensión de la historia.",
+          "es_correcta": false,
+          "explicacion_educativa": "Criticar sin comprender el contexto histórico y las decisiones tomadas en su momento puede ser injusto y no contribuye a una comprensión profunda de la historia.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Para aprender de sus errores y aciertos",
+          "consecuencia": "Aprender del legado de los presidentes puede ayudar a tomar decisiones informadas y a construir un futuro mejor.",
+          "es_correcta": true,
+          "explicacion_educativa": "Estudiar el legado de los presidentes permite aprender de sus experiencias, tanto positivas como negativas, y aplicar esas lecciones para mejorar el futuro del país.",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Para ignorar el pasado",
+          "consecuencia": "Ignorar el pasado puede llevar a repetir errores y perder la oportunidad de aprender de las experiencias pasadas.",
+          "es_correcta": false,
+          "explicacion_educativa": "Ignorar la historia y el legado de los líderes pasados puede resultar en la repetición de errores y la pérdida de valiosas lecciones que podrían guiar hacia un futuro más próspero.",
+          "proxima_escena": 3
+        }
+      ]
+    }
+  ]
+}

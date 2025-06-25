@@ -1,0 +1,115 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:29:48.473323",
+  "original_prompt": "one piece",
+  "title": "Aventuras en el Mar: Un Viaje con One Piece",
+  "topic": "Amistad y Cooperación",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Búsqueda del Tesoro",
+      "narrativa": "Monkey D. Luffy y su tripulación están en busca de un tesoro escondido en una isla desconocida. Al llegar a la isla, se encuentran con un río que deben cruzar para llegar al tesoro.",
+      "pregunta": "¿Cómo crees que Luffy y su tripulación deben cruzar el río?",
+      "concepto_educativo": "Trabajo en equipo y resolución de problemas",
+      "opciones": [
+        "Construir un puente",
+        "Nadar a través del río",
+        "Buscar un bote"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construir un puente",
+          "consecuencia": "Luffy y su tripulación trabajan juntos para construir un puente, lo que les permite cruzar el río de manera segura.",
+          "es_correcta": true,
+          "explicacion_educativa": "Construir un puente es la opción más segura y cooperaiva, ya que requiere que todos trabajen juntos para lograr el objetivo.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Nadar a través del río",
+          "consecuencia": "Luffy y su tripulación se mojan y se cansan al intentar nadar a través del río, lo que les hace perder tiempo y energía.",
+          "es_correcta": false,
+          "explicacion_educativa": "Nadar a través del río no es la opción más segura, ya que puede ser peligroso y agotador.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Buscar un bote",
+          "consecuencia": "Luffy y su tripulación encuentran un bote, pero no tienen remos para remar, lo que les hace perder tiempo y energía.",
+          "es_correcta": false,
+          "explicacion_educativa": "Buscar un bote no es la opción más efectiva, ya que requiere encontrar remos o otra forma de propulsionar el bote.",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Tesoro Está Cerrado",
+      "narrativa": "Luffy y su tripulación llegan al tesoro, pero se encuentran con que está cerrado con un candado.",
+      "pregunta": "¿Cómo crees que Luffy y su tripulación deben abrir el candado?",
+      "concepto_educativo": "Resolución de problemas y pensamiento crítico",
+      "opciones": [
+        "Usar la fuerza para romper el candado",
+        "Buscar una llave",
+        "Usar un objeto para abrir el candado"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Usar la fuerza para romper el candado",
+          "consecuencia": "Luffy y su tripulación intentan romper el candado, pero no lo logran y se lastiman.",
+          "es_correcta": false,
+          "explicacion_educativa": "Usar la fuerza para romper el candado no es la opción más efectiva, ya que puede causar daños y lastimaduras.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Buscar una llave",
+          "consecuencia": "Luffy y su tripulación buscan una llave y la encuentran, lo que les permite abrir el candado y obtener el tesoro.",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar una llave es la opción más efectiva, ya que es la forma más segura y fácil de abrir el candado.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Usar un objeto para abrir el candado",
+          "consecuencia": "Luffy y su tripulación usan un objeto para abrir el candado, pero no lo logran y se rinden.",
+          "es_correcta": false,
+          "explicacion_educativa": "Usar un objeto para abrir el candado no es la opción más efectiva, ya que puede no funcionar y hacer que se rindan.",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Tormenta Está Llegando",
+      "narrativa": "Luffy y su tripulación están en la isla cuando una tormenta se acerca, lo que les hace tener que buscar refugio.",
+      "pregunta": "¿Cómo crees que Luffy y su tripulación deben buscar refugio?",
+      "concepto_educativo": "Seguridad y preparación",
+      "opciones": [
+        "Buscar un refugio natural",
+        "Construir un refugio",
+        "Buscar un lugar alto"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar un refugio natural",
+          "consecuencia": "Luffy y su tripulación encuentran una cueva y se refugian allí, lo que les permite estar a salvo durante la tormenta.",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar un refugio natural es la opción más segura, ya que es la forma más efectiva de protegerse de la tormenta.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Construir un refugio",
+          "consecuencia": "Luffy y su tripulación intentan construir un refugio, pero no lo logran a tiempo y se mojan durante la tormenta.",
+          "es_correcta": false,
+          "explicacion_educativa": "Construir un refugio no es la opción más efectiva, ya que puede no estar listo a tiempo y no proteger durante la tormenta.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Buscar un lugar alto",
+          "consecuencia": "Luffy y su tripulación suben a un lugar alto, pero se lastiman al caer durante la tormenta.",
+          "es_correcta": false,
+          "explicacion_educativa": "Buscar un lugar alto no es la opción más segura, ya que puede ser peligroso y causar lastimaduras.",
+          "proxima_escena": 2
+        }
+      ]
+    }
+  ]
+}

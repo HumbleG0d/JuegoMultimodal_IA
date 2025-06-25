@@ -1,0 +1,90 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T16:40:04.788074",
+  "original_prompt": "presidentes del peru",
+  "title": "Aventuras en la Historia del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Elección del Primer Presidente",
+      "narrativa": "Es el año 1821 y el Perú acaba de declarar su independencia de España. Los ciudadanos deben elegir a su primer presidente.",
+      "personajes": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "Citizens peruanos"
+      ],
+      "concepto_educativo": "Introducción a la independencia del Perú y la elección de líderes",
+      "decisiones": [
+        {
+          "opcion": "Elegir a José de San Martín como presidente",
+          "consecuencia": "San Martín se convierte en el primer presidente del Perú, pero pronto se da cuenta de que necesita la ayuda de Simón Bolívar para consolidar la independencia.",
+          "es_correcta": true,
+          "explicacion_educativa": "José de San Martín fue un líder importante en la lucha por la independencia del Perú y jugó un papel clave en la historia del país.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Elegir a Simón Bolívar como presidente",
+          "consecuencia": "Aunque Bolívar fue un líder importante, en este momento histórico, San Martín es la opción más adecuada para el Perú.",
+          "es_correcta": false,
+          "explicacion_educativa": "Simón Bolívar fue un líder clave en la independencia de varios países en América del Sur, pero en este contexto, la elección de San Martín es más precisa históricamente.",
+          "proxima_escena": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Lucha por la Unidad",
+      "narrativa": "Después de la elección de San Martín, el Perú enfrenta desafíos para unificar al país. Los ciudadanos deben decidir cómo apoyar a su líder.",
+      "personajes": [
+        "José de San Martín",
+        "Simón Bolívar",
+        "Citizens peruanos"
+      ],
+      "concepto_educativo": "Importancia de la unidad y el apoyo a los líderes en tiempos de cambio",
+      "decisiones": [
+        {
+          "opcion": "Apoyar a San Martín en su lucha por la unidad",
+          "consecuencia": "Con el apoyo de los ciudadanos, San Martín logra consolidar la independencia y sentar las bases para un Perú unificado.",
+          "es_correcta": true,
+          "explicacion_educativa": "El apoyo a los líderes en momentos de cambio es crucial para el éxito de un país.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "No apoyar a San Martín",
+          "consecuencia": "Sin el apoyo de los ciudadanos, la tarea de San Martín se vuelve más difícil, lo que puede llevar a divisiones y conflictos.",
+          "es_correcta": false,
+          "explicacion_educativa": "La falta de apoyo a los líderes puede llevar a la desunión y obstaculizar el progreso del país.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "El Legado de los Presidentes",
+      "narrativa": "A lo largo de la historia del Perú, ha habido muchos presidentes que han deixado su huella en el país. Los ciudadanos deben reflexionar sobre lo que han aprendido.",
+      "personajes": [
+        "Citizens peruanos",
+        "Estudiantes"
+      ],
+      "concepto_educativo": "Reflexión sobre la importancia de los líderes y su impacto en la historia del Perú",
+      "decisiones": [
+        {
+          "opcion": "Recordar y honrar a los presidentes que han contribuido positivamente al país",
+          "consecuencia": "Los ciudadanos y los estudiantes aprenden a valorar y respetar a sus líderes y su contribución a la historia del Perú.",
+          "es_correcta": true,
+          "explicacion_educativa": "Es importante recordar y honrar a aquellos que han trabajado por el bien del país, ya que esto fomenta el orgullo nacional y la apreciación por la historia.",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "No recordar ni honrar a los presidentes",
+          "consecuencia": "La falta de aprecio por la historia y los líderes puede llevar a la desvalorización de la identidad nacional y la pérdida de la conexión con el pasado.",
+          "es_correcta": false,
+          "explicacion_educativa": "Es crucial reconocer y aprender de la historia para construir un futuro mejor y más informado.",
+          "proxima_escena": 3
+        }
+      ]
+    }
+  ]
+}

@@ -42,6 +42,112 @@ def token_required(f):
     return decorated
 
 
+@app.route("/api/teacher/dashboard/chat/generate-narrative-game", methods=["POST"])
+@token_required
+def generate_narrative_game(token_info):
+    """Endpoint para generar quiz usando Groq IA generativa"""
+    if token_info["user_type"] != "profesor":
+        return jsonify({"message": "Access denied! Teacher only."}), 403
+
+    try:
+        data = request.get_json()
+        user_prompt = data.get("prompt", "")
+        age_group = data.get("age_group", "3-5 años")  # Nuevo parámetro para edad
+
+        if not user_prompt:
+            return jsonify({"error": "Prompt is required"}), 400
+
+        # Configurar el prompt del sistema especializado para educación inicial
+        system_prompt = f"""Actúa como un diseñador de juegos educativos experto. Genera un juego narrativo interactivo para alumnos de la siguiente edad: ({age_group}).
+
+         **Estructura Narrativa:**
+        - Crea una historia de escenas interconectadas
+        - Cada escena debe presentar un dilema o decisión relacionada con el tema
+        - El protagonista debe enfrentar situaciones que requieran aplicar conocimientos del tema
+        - Incluye consecuencias educativas para cada decisión
+        - Cada decision abre un camino a una nueva escena , siendo cada escena diferente.
+        -Las decisiones abren un arbol de decisiones. 
+        -Generame todas las escenas que necesite el ejemplo
+        Por ejemplo:
+        "Supongamos que el tema elegido es la historia del Peru, y eres el inca que debe tomar decisiones importantes:
+        Por ejemplo la siguiente situacion: Ha habido una epoca de sequia, por lo que la cantidad de cosechas son muy escasas,
+        que debemos hacer. Y tienes 3 opciones, administrar bien los recursos(comida,etc) actuales para que el tiempo de duracion de estos
+        bienes sea lo maximo posibles, otra opcion seria gastar estos recursos rapidamente, y la otra opcion seria no alimentar a tu poblacion para
+        ahorrar recursos.  Cada uno de estas opciones nos guiara hacia escenarios diferentes, donde estos escenarios tendran un final triste si fiue una mala eleccion
+        o seguira si la eleccion fue la correcta
+        "
+    
+        Responde ÚNICAMENTE en formato "JSON" con la siguiente estructura:
+        No respondas comentando el formato JSON
+        {{
+            "title": "Título atractivo del quiz para niños",
+            "topic": "Tema principal",
+            "age_group": "{age_group}",
+              "escenas": [
+                {{
+                  "id": 1,
+                  "titulo": "Título de la escena",
+                  "narrativa": "Descripción de la situación",
+                  "pregunta": Pregunta sobre la situacion
+                  "concepto_educativo": "Concepto que se enseña en esta escena",
+                  "opciones": [OPCION A, OPCION B]
+                  "decisiones": [
+                    {{
+                      "opcion": "Texto de la opción(OPCION A,OPCION B)",
+                      "consecuencia": "Qué pasa si elige esta opción",
+                      "es_correcta": true/false,
+                      "explicacion_educativa": "Por qué esta decisión es correcta/incorrecta",
+                      "proxima_escena": 2
+                    }}
+                  ]
+                }}
+              ],
+        }}
+        
+        Y deben existir escenas finales
+                      "escenafinal": [
+                {{
+                  "id": 1,
+                  "titulo": "Título de la escena",
+                  "narrativa": "Descripción de la situación"}}
+                  
+        """
+
+        # Llamada a la API de Groq
+        quiz_response = call_groq_api(system_prompt, user_prompt)
+
+        if not quiz_response:
+            return jsonify({"error": "Failed to generate quiz"}), 500
+
+        # Generar ID único para el quiz
+        quiz_id = str(uuid.uuid4())
+        timestamp = datetime.now().isoformat()
+
+        # Estructura completa del quiz
+        quiz_data = {
+            "created_by": token_info["user_id"],
+            "created_at": timestamp,
+            "original_prompt": user_prompt,
+            **quiz_response  # Agregar todos los campos de quiz_response
+        }
+
+        # Guardar quiz en archivo
+        filename = f"quiz_{quiz_id}.json"
+        filepath = os.path.join(QUIZ_STORAGE_PATH, filename)
+
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(quiz_data, f, ensure_ascii=False, indent=2)
+        return jsonify({
+            "success": True,
+            "filename": filename,
+            "quiz_data": quiz_data,
+            "message": "Quiz generated and saved successfully!"
+        })
+
+    except Exception as e:
+        return jsonify({"error": f"Internal server error: {str(e)}"}), 500
+
+
 @app.route("/api/teacher/dashboard/chat/generate-quiz", methods=["POST"])
 @token_required
 def generate_quiz(token_info):
@@ -267,13 +373,21 @@ def stadistics(token_info):
 @token_required
 def stadistics_of_students(token_info):
     if token_info["user_type"] != "profesor":
-        return jsonify({"message":"Acces Denied, you are not a teacher"})
-    data=request.get_json()
-    student_id=data.get("alumno_id")
-    auth_service=AuthService(Database())
-    estadistica=auth_service.get_stadistics_student(student_id)
-    return jsonify({"Estadisticas del alumno": estadistica})
+        return jsonify({"message": "Access Denied, you are not a teacher"}), 403
 
+    auth_service = AuthService(Database())
+    alumnos = auth_service.get_all_students_id()
+
+    estadisticas = []
+    for alumno in alumnos:
+        student_id = alumno["id"]
+        data = auth_service.get_stadistics_student(student_id)
+        estadisticas.append({
+            "estudiante_id": student_id,
+            "quizzes": data
+        })
+
+    return jsonify({"estadisticas_estudiantes": estadisticas})
 
 @app.route("/api/teacher/dashboard/asignar", methods=["POST"])
 @token_required

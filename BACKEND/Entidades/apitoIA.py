@@ -23,7 +23,7 @@ def call_groq_api(system_prompt, user_prompt):
             ],
             model="llama-3.3-70b-versatile",  # Modelo recomendado para tareas educativas
             temperature=0.7,
-            max_tokens=2000,
+            max_tokens=30000,
             top_p=1,
             stream=False
         )

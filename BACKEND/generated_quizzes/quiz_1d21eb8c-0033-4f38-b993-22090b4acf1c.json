@@ -1,0 +1,162 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:47:15.557801",
+  "original_prompt": "historia del peru",
+  "title": "La Aventura del Inca",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Sequía",
+      "narrativa": "Ha habido una época de sequía en el Imperio Inca y la cantidad de cosechas es muy escasa. El pueblo está hambriento y necesita comida.",
+      "pregunta": "¿Qué debemos hacer para ayudar a nuestro pueblo?",
+      "concepto_educativo": "Administración de recursos",
+      "opciones": [
+        "Administrar bien los recursos",
+        "Gastar los recursos rápidamente",
+        "No alimentar a la población"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Administrar bien los recursos",
+          "consecuencia": "Podemos hacer que los recursos duren más tiempo y alimentar a la población de manera justa.",
+          "es_correcta": true,
+          "explicacion_educativa": "La administración de recursos es importante para asegurarnos de que todos tengan lo que necesitan.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Gastar los recursos rápidamente",
+          "consecuencia": "Los recursos se acabarán pronto y la población sufrirá de hambre.",
+          "es_correcta": false,
+          "explicacion_educativa": "Gastar los recursos rápidamente puede llevar a la escasez y el sufrimiento.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "No alimentar a la población",
+          "consecuencia": "La población sufrirá de hambre y enfermedades.",
+          "es_correcta": false,
+          "explicacion_educativa": "Es importante cuidar y alimentar a la población para mantener su salud y bienestar.",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Cosecha",
+      "narrativa": "Después de administrar bien los recursos, la cosecha ha sido exitosa y hay suficiente comida para la población.",
+      "pregunta": "¿Qué debemos hacer con la cosecha?",
+      "concepto_educativo": "Distribución de recursos",
+      "opciones": [
+        "Distribuir la comida de manera justa",
+        "Guardar la comida para más adelante",
+        "Vender la comida a otros pueblos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Distribuir la comida de manera justa",
+          "consecuencia": "La población estará agradecida y satisfecha.",
+          "es_correcta": true,
+          "explicacion_educativa": "La distribución justa de recursos es importante para mantener la armonía y la felicidad en la comunidad.",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Guardar la comida para más adelante",
+          "consecuencia": "La población puede sentirse descontenta y puede haber problemas de distribución.",
+          "es_correcta": false,
+          "explicacion_educativa": "Guardar la comida para más adelante puede llevar a problemas de distribución y descontento en la población.",
+          "proxima_escena": 6
+        },
+        {
+          "opcion": "Vender la comida a otros pueblos",
+          "consecuencia": "La población puede sentirse explotada y puede haber problemas de relación con otros pueblos.",
+          "es_correcta": false,
+          "explicacion_educativa": "Vender la comida a otros pueblos puede llevar a problemas de relación y explotación.",
+          "proxima_escena": 7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Escasez",
+      "narrativa": "Después de gastar los recursos rápidamente, la población sufre de hambre y escasez.",
+      "pregunta": "¿Qué debemos hacer para solucionar la escasez?",
+      "concepto_educativo": "Planificación y previsión",
+      "opciones": [
+        "Buscar ayuda en otros pueblos",
+        "Planificar para el futuro",
+        "Seguir gastando los recursos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar ayuda en otros pueblos",
+          "consecuencia": "La población puede recibir ayuda y la escasez puede disminuir.",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar ayuda en otros pueblos puede ser una solución para la escasez.",
+          "proxima_escena": 8
+        },
+        {
+          "opcion": "Planificar para el futuro",
+          "consecuencia": "La población puede planificar y prepararse para el futuro.",
+          "es_correcta": true,
+          "explicacion_educativa": "Planificar para el futuro es importante para evitar la escasez y mantener la estabilidad.",
+          "proxima_escena": 9
+        },
+        {
+          "opcion": "Seguir gastando los recursos",
+          "consecuencia": "La escasez puede empeorar y la población puede sufrir más.",
+          "es_correcta": false,
+          "explicacion_educativa": "Seguir gastando los recursos puede empeorar la escasez y llevar a más sufrimiento.",
+          "proxima_escena": 10
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "La Hambruna",
+      "narrativa": "Después de no alimentar a la población, la hambruna ha azotado al pueblo y la gente sufre.",
+      "pregunta": "¿Qué debemos hacer para solucionar la hambruna?",
+      "concepto_educativo": "Cuidado y responsabilidad",
+      "opciones": [
+        "Buscar ayuda en otros pueblos",
+        "Producir más comida",
+        "Seguir sin alimentar a la población"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar ayuda en otros pueblos",
+          "consecuencia": "La población puede recibir ayuda y la hambruna puede disminuir.",
+          "es_correcta": true,
+          "explicacion_educativa": "Buscar ayuda en otros pueblos puede ser una solución para la hambruna.",
+          "proxima_escena": 11
+        },
+        {
+          "opcion": "Producir más comida",
+          "consecuencia": "La población puede producir más comida y la hambruna puede disminuir.",
+          "es_correcta": true,
+          "explicacion_educativa": "Producir más comida es importante para mantener la salud y la felicidad de la población.",
+          "proxima_escena": 12
+        },
+        {
+          "opcion": "Seguir sin alimentar a la población",
+          "consecuencia": "La hambruna puede empeorar y la población puede sufrir más.",
+          "es_correcta": false,
+          "explicacion_educativa": "Seguir sin alimentar a la población puede empeorar la hambruna y llevar a más sufrimiento.",
+          "proxima_escena": 13
+        }
+      ]
+    }
+  ],
+  "escenafinal": [
+    {
+      "id": 1,
+      "titulo": "La Victoria",
+      "narrativa": "Después de tomar decisiones sabias y cuidar a la población, el Imperio Inca ha prosperado y la gente es feliz."
+    },
+    {
+      "id": 2,
+      "titulo": "La Derrota",
+      "narrativa": "Después de tomar decisiones erróneas y no cuidar a la población, el Imperio Inca ha caído y la gente sufre."
+    }
+  ]
+}

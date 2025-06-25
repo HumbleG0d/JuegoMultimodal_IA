@@ -1,0 +1,115 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:19:59.978839",
+  "original_prompt": "one piece",
+  "title": "Aventuras en el Mar de One Piece",
+  "topic": "Amistad y Cooperación",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Búsqueda del Tesoro",
+      "narrativa": "Monkey D. Luffy y su tripulación están en busca del tesoro legendario. Llegan a una isla desierta y encuentran un mapa que les llevará al tesoro, pero necesitan cruzar un río para llegar allí.",
+      "pregunta": "¿Qué debemos hacer para cruzar el río?",
+      "concepto_educativo": "Resolución de problemas y trabajo en equipo",
+      "opciones": [
+        "Construir un barco",
+        "Buscar un puente",
+        "Nadar a través del río"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Construir un barco",
+          "consecuencia": "La tripulación trabaja juntos para construir un barco y cruzar el río de manera segura.",
+          "es_correcta": true,
+          "explicacion_educativa": "La construcción de un barco requiere trabajo en equipo y resolución de problemas, lo que es esencial para lograr objetivos comunes.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Buscar un puente",
+          "consecuencia": "La tripulación no encuentra un puente y pierde tiempo valioso en la búsqueda.",
+          "es_correcta": false,
+          "explicacion_educativa": "Aunque buscar un puente puede parecer una buena idea, no siempre es la solución más efectiva. Es importante considerar otras opciones y trabajar juntos para encontrar la mejor solución.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Nadar a través del río",
+          "consecuencia": "La tripulación se moja y se cansa al intentar nadar a través del río, lo que los deja exhaustos y sin energía para continuar la búsqueda del tesoro.",
+          "es_correcta": false,
+          "explicacion_educativa": "Nadar a través del río puede ser peligroso y agotador. Es importante considerar la seguridad y el bienestar de la tripulación al tomar decisiones.",
+          "proxima_escena": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Tesoro Encontrado",
+      "narrativa": "La tripulación de Luffy ha cruzado el río y ha encontrado el tesoro. Sin embargo, se dan cuenta de que el tesoro no es solo oro y joyas, sino que también hay una nota que dice que el verdadero tesoro es la amistad y la cooperación.",
+      "pregunta": "¿Qué debemos hacer con el tesoro?",
+      "concepto_educativo": "Valoración de la amistad y la cooperación",
+      "opciones": [
+        "Dividir el tesoro entre nosotros",
+        "Compartir el tesoro con otros",
+        "Esconder el tesoro para nosotros mismos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Compartir el tesoro con otros",
+          "consecuencia": "La tripulación decide compartir el tesoro con otros y se convierte en un ejemplo de amistad y cooperación para todos.",
+          "es_correcta": true,
+          "explicacion_educativa": "Compartir el tesoro con otros muestra que la amistad y la cooperación son más valiosas que el oro y las joyas.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Dividir el tesoro entre nosotros",
+          "consecuencia": "La tripulación se pelea por el tesoro y se divide, lo que muestra que la codicia y la competencia pueden destruir la amistad.",
+          "es_correcta": false,
+          "explicacion_educativa": "Dividir el tesoro entre nosotros puede parecer una buena idea, pero puede llevar a la codicia y la competencia, lo que puede dañar la amistad.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Esconder el tesoro para nosotros mismos",
+          "consecuencia": "La tripulación decide esconder el tesoro para ellos mismos, pero se dan cuenta de que la verdadera riqueza es la amistad y la cooperación, no el oro y las joyas.",
+          "es_correcta": false,
+          "explicacion_educativa": "Esconder el tesoro para nosotros mismos puede parecer una buena idea, pero puede llevar a la soledad y la pérdida de la amistad.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Celebración",
+      "narrativa": "La tripulación de Luffy ha decidido compartir el tesoro con otros y se ha convertido en un ejemplo de amistad y cooperación. Ahora es el momento de celebrar su victoria.",
+      "pregunta": "¿Cómo debemos celebrar nuestra victoria?",
+      "concepto_educativo": "Importancia de la celebración y el agradecimiento",
+      "opciones": [
+        "Tener una gran fiesta",
+        "Compartir historias de nuestra aventura",
+        "Agradecer a nuestros amigos y familiares"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Agradecer a nuestros amigos y familiares",
+          "consecuencia": "La tripulación agradece a sus amigos y familiares por su apoyo y se siente agradecida por la amistad y la cooperación que han compartido.",
+          "es_correcta": true,
+          "explicacion_educativa": "Agradecer a nuestros amigos y familiares muestra que valoramos su apoyo y su amistad, lo que es esencial para mantener relaciones saludables.",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Tener una gran fiesta",
+          "consecuencia": "La tripulación tiene una gran fiesta, pero se olvida de agradecer a sus amigos y familiares, lo que puede llevar a la ingratitud y la soledad.",
+          "es_correcta": false,
+          "explicacion_educativa": "Tener una gran fiesta puede ser divertido, pero es importante recordar agradecer a aquellos que han apoyado y ayudado en la aventura.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Compartir historias de nuestra aventura",
+          "consecuencia": "La tripulación comparte historias de su aventura, pero se enfoca más en la emoción y el drama que en la amistad y la cooperación que han compartido.",
+          "es_correcta": false,
+          "explicacion_educativa": "Compartir historias de nuestra aventura puede ser divertido, pero es importante recordar el valor de la amistad y la cooperación que ha hecho posible la victoria.",
+          "proxima_escena": 1
+        }
+      ]
+    }
+  ]
+}

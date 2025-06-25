@@ -1,0 +1,124 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:39:16.417387",
+  "original_prompt": "historia del peru",
+  "title": "Aventuras en la Historia del Perú",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Tierra de los Incas",
+      "narrativa": "Eres un joven explorador que ha viajado en el tiempo a la época de los incas. Estás en la ciudad de Cuzco, rodeado de montañas y valles. De repente, escuchas que el emperador inca necesita ayuda para decidir qué hacer con la cosecha de maíz.",
+      "pregunta": "¿Qué crees que el emperador inca debería hacer con la cosecha de maíz?",
+      "concepto_educativo": "La importancia de la agricultura en la época inca",
+      "opciones": [
+        "Regalarla a los dioses",
+        "Compartirla con todo el pueblo",
+        "Venderla a los mercaderes"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Regalarla a los dioses",
+          "consecuencia": "Los dioses están contentos, pero el pueblo tiene hambre. El emperador inca debe encontrar otra solución.",
+          "es_correcta": false,
+          "explicacion_educativa": "En la época inca, la religión era importante, pero también lo era la supervivencia del pueblo. El emperador inca debía encontrar un equilibrio entre ambas cosas.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Compartirla con todo el pueblo",
+          "consecuencia": "El pueblo está feliz y agradecido. La cosecha de maíz es suficiente para todos.",
+          "es_correcta": true,
+          "explicacion_educativa": "La compartición de recursos era fundamental en la sociedad inca. De esta manera, todos tenían lo suficiente para vivir.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Venderla a los mercaderes",
+          "consecuencia": "Los mercaderes están contentos, pero el pueblo se queda sin comida. El emperador inca debe encontrar otra manera de alimentar a su pueblo.",
+          "es_correcta": false,
+          "explicacion_educativa": "En la época inca, el trueque y el comercio eran importantes, pero no a costa de la supervivencia del pueblo.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "La Llegada de los Españoles",
+      "narrativa": "Han pasado muchos años y los españoles han llegado al Perú. El emperador inca debe decidir qué hacer con estos extraños.",
+      "pregunta": "¿Qué crees que el emperador inca debería hacer con los españoles?",
+      "concepto_educativo": "La conquista española del Perú",
+      "opciones": [
+        "Recibirlos con amabilidad",
+        "Prepararse para la batalla",
+        "Ignorarlos"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Recibirlos con amabilidad",
+          "consecuencia": "Los españoles parecen amigables, pero pronto se revelan como conquistadores. El emperador inca debe prepararse para la batalla.",
+          "es_correcta": false,
+          "explicacion_educativa": "La conquista española del Perú fue un proceso complejo y sangriento. La amabilidad no fue suficiente para detener a los conquistadores.",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Prepararse para la batalla",
+          "consecuencia": "El emperador inca se prepara para la batalla, pero los españoles tienen armas y tácticas superiores. La batalla es intensa.",
+          "es_correcta": true,
+          "explicacion_educativa": "La resistencia inca fue valiente, pero no suficiente para detener a los españoles. La conquista del Perú fue un proceso largo y sangriento.",
+          "proxima_escena": 5
+        },
+        {
+          "opcion": "Ignorarlos",
+          "consecuencia": "Los españoles se sienten ofendidos y deciden atacar. El emperador inca debe prepararse para la batalla.",
+          "es_correcta": false,
+          "explicacion_educativa": "La ignorancia no es una opción en la política y la historia. La conquista española del Perú fue un proceso que cambió la historia del país.",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Fundación de Lima",
+      "narrativa": "Han pasado muchos años y el Perú es ahora una colonia española. El virrey español debe decidir dónde fundar la nueva capital.",
+      "pregunta": "¿Qué crees que el virrey español debería hacer?",
+      "concepto_educativo": "La fundación de Lima",
+      "opciones": [
+        "Fundar la ciudad en la costa",
+        "Fundar la ciudad en la sierra",
+        "Fundar la ciudad en la selva"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Fundar la ciudad en la costa",
+          "consecuencia": "La ciudad de Lima es fundada en la costa y se convierte en un importante centro comercial y cultural.",
+          "es_correcta": true,
+          "explicacion_educativa": "La costa del Perú era un lugar estratégico para el comercio y la comunicación con España. La fundación de Lima en la costa fue una decisión acertada.",
+          "proxima_escena": "escenafinal"
+        },
+        {
+          "opcion": "Fundar la ciudad en la sierra",
+          "consecuencia": "La ciudad es fundada en la sierra, pero la falta de acceso al mar y la dificultad del terreno hacen que sea un lugar inhóspito.",
+          "es_correcta": false,
+          "explicacion_educativa": "La sierra del Perú es un lugar hermoso, pero no es el lugar más adecuado para fundar una ciudad. La costa es más accesible y ofrece más oportunidades para el comercio y la comunicación.",
+          "proxima_escena": 4
+        },
+        {
+          "opcion": "Fundar la ciudad en la selva",
+          "consecuencia": "La ciudad es fundada en la selva, pero la falta de acceso y la dificultad del terreno hacen que sea un lugar inhóspito.",
+          "es_correcta": false,
+          "explicacion_educativa": "La selva del Perú es un lugar hermoso, pero no es el lugar más adecuado para fundar una ciudad. La costa es más accesible y ofrece más oportunidades para el comercio y la comunicación.",
+          "proxima_escena": 4
+        }
+      ]
+    },
+    {
+      "escenafinal": [
+        {
+          "id": 1,
+          "titulo": "La Historia del Perú",
+          "narrativa": "Has llegado al final de la aventura. La historia del Perú es rica y compleja, y ha sido moldeada por la interacción de muchas culturas y eventos. Esperamos que hayas disfrutado de esta aventura y que hayas aprendido algo nuevo sobre la historia del Perú."
+        }
+      ]
+    }
+  ]
+}

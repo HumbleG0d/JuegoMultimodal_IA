@@ -1,0 +1,115 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:05:25.486822",
+  "original_prompt": "one piece",
+  "title": "Aventuras de Monkey D. Luffy: La Búsqueda del Tesoro",
+  "topic": "Amistad y Trabajo en Equipo",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Isla del Tesoro",
+      "narrativa": "Monkey D. Luffy y su tripulación llegan a una isla donde se esconde un gran tesoro. Sin embargo, para encontrarlo, necesitan trabajar juntos y ayudarse mutuamente.",
+      "pregunta": "¿Qué debería hacer Luffy para encontrar el tesoro?",
+      "concepto_educativo": "Importancia del trabajo en equipo",
+      "opciones": [
+        "Buscar solo",
+        "Pedir ayuda a sus amigos",
+        "Regresar a casa"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar solo",
+          "consecuencia": "Luffy se pierde en la isla y no puede encontrar el tesoro",
+          "es_correcta": false,
+          "explicacion_educativa": "Cuando trabajamos solos, podemos cometer errores y no alcanzar nuestros objetivos. El trabajo en equipo nos permite aprender de los demás y alcanzar metas más grandes.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Pedir ayuda a sus amigos",
+          "consecuencia": "Luffy y su tripulación trabajan juntos y encuentran el tesoro",
+          "es_correcta": true,
+          "explicacion_educativa": "El trabajo en equipo nos permite aprovechar las habilidades y fortalezas de cada miembro del equipo, lo que nos permite alcanzar metas más grandes y complejas.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Regresar a casa",
+          "consecuencia": "Luffy y su tripulación regresan a casa sin encontrar el tesoro",
+          "es_correcta": false,
+          "explicacion_educativa": "No siempre es fácil encontrar lo que buscamos, pero si nos rendimos, nunca lo encontraremos. La perseverancia y el trabajo en equipo nos ayudan a superar obstáculos y alcanzar nuestros objetivos.",
+          "proxima_escena": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Río de la Isla",
+      "narrativa": "Luffy y su tripulación deben cruzar un río para llegar al tesoro. Sin embargo, no tienen un bote y deben encontrar una forma de cruzar.",
+      "pregunta": "¿Qué deberían hacer Luffy y su tripulación para cruzar el río?",
+      "concepto_educativo": "Resolución de problemas y creatividad",
+      "opciones": [
+        "Buscar un bote",
+        "Intentar nadar",
+        "Usar un tronco como bote"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Buscar un bote",
+          "consecuencia": "Luffy y su tripulación encuentran un bote y cruzan el río con facilidad",
+          "es_correcta": true,
+          "explicacion_educativa": "A veces, la solución a un problema es encontrar una herramienta o recurso que nos ayude. La creatividad y la resolución de problemas nos permiten encontrar soluciones innovadoras.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Intentar nadar",
+          "consecuencia": "Luffy y su tripulación se cansan y no pueden cruzar el río",
+          "es_correcta": false,
+          "explicacion_educativa": "No siempre es posible resolver un problema con solo nuestra fuerza o habilidad. A veces, necesitamos encontrar una solución más creativa o buscar ayuda.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Usar un tronco como bote",
+          "consecuencia": "Luffy y su tripulación usan un tronco como bote y cruzan el río con éxito",
+          "es_correcta": true,
+          "explicacion_educativa": "La creatividad y la resolución de problemas nos permiten encontrar soluciones innovadoras y efectivas. A veces, lo que parece imposible se puede lograr con un poco de imaginación.",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "El Tesoro",
+      "narrativa": "Luffy y su tripulación finalmente encuentran el tesoro, pero se dan cuenta de que no es oro o joyas, sino un cofre lleno de amigos y recuerdos.",
+      "pregunta": "¿Qué debería hacer Luffy con el tesoro?",
+      "concepto_educativo": "Valor de la amistad y los recuerdos",
+      "opciones": [
+        "Quedarse con el tesoro para sí mismo",
+        "Compartir el tesoro con sus amigos",
+        "Regresar el tesoro a su dueño"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Quedarse con el tesoro para sí mismo",
+          "consecuencia": "Luffy se siente solo y triste, y se da cuenta de que el tesoro no es tan valioso sin amigos para compartirlo",
+          "es_correcta": false,
+          "explicacion_educativa": "La amistad y los recuerdos son más valiosos que cualquier tesoro material. Compartir nuestros logros y experiencias con los demás nos hace más felices y fortalece nuestras relaciones.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "Compartir el tesoro con sus amigos",
+          "consecuencia": "Luffy y su tripulación celebran y se sienten felices y agradecidos por el tesoro y la amistad",
+          "es_correcta": true,
+          "explicacion_educativa": "Compartir nuestros logros y experiencias con los demás nos hace más felices y fortalece nuestras relaciones. La amistad y los recuerdos son los verdaderos tesoros de la vida.",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Regresar el tesoro a su dueño",
+          "consecuencia": "Luffy y su tripulación regresan el tesoro a su dueño y se sienten orgullosos de haber hecho lo correcto",
+          "es_correcta": true,
+          "explicacion_educativa": "Hacer lo correcto y ser honestos es importante, pero también es importante valorar la amistad y los recuerdos. En este caso, Luffy y su tripulación ya habían encontrado el verdadero tesoro, que era la amistad y los recuerdos.",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}

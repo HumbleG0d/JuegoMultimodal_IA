@@ -161,16 +161,16 @@ class AuthService:
                 estadistica=cursor.fetchone()
         return estadistica[0]
 
-    def get_stadistics_student(self,student_id):
+    def get_stadistics_student(self,student_id)-> List[Dict]:
         with self.db.get_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("""
-                SELECT id,quiz_id,estudiante_id,puntaje from estadisticas
+                SELECT quiz_id,puntaje from estadisticas 
                 WHERE estudiante_id=%s
                 """,(student_id,))
                 return cursor.fetchall()
 
-    def get_quiz(self,quiz_id):
+    def get_quiz(self,quiz_id)-> List[Dict]:
         with self.db.get_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("SELECT id,user_id,nombre,quiz_data,created_at FROM quizzes WHERE id= %s",
@@ -182,6 +182,13 @@ class AuthService:
         with self.db.get_connection() as conn:
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("SELECT id, nombre, email FROM estudiantes")
+                return cursor.fetchall()
+
+    def get_all_students_id(self) -> List[Dict]:
+        """Obtiene una lista de todos los estudiantes registrados."""
+        with self.db.get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute("SELECT id FROM estudiantes")
                 return cursor.fetchall()
 
 

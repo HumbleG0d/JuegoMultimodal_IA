@@ -1,0 +1,100 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T16:59:48.838827",
+  "original_prompt": "presidentes del peru",
+  "title": "Aventuras en la Historia del Perú",
+  "topic": "Presidentes del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La Elección del Primer Presidente",
+      "narrativa": "Es el año 1821 y el Perú acaba de declarar su independencia de España. Los líderes del país deben elegir a su primer presidente. Tú eres parte de este proceso histórico.",
+      "concepto_educativo": "La importancia de la independencia y la elección de líderes en la historia del Perú",
+      "opciones": "¿Quién debería ser el primer presidente del Perú? a) José de San Martín, b) Simón Bolívar, c) José de la Riva Agüero",
+      "decisiones": [
+        {
+          "opcion": "a) José de San Martín",
+          "consecuencia": "San Martín es elegido, pero pronto se da cuenta de que el cargo es muy difícil y decide renunciar.",
+          "es_correcta": true,
+          "explicacion_educativa": "José de San Martín fue uno de los líderes clave en la lucha por la independencia del Perú y es considerado el primer presidente del país.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "b) Simón Bolívar",
+          "consecuencia": "Bolívar es elegido, pero su enfoque en la unificación de América del Sur no es lo que el Perú necesita en ese momento.",
+          "es_correcta": false,
+          "explicacion_educativa": "Aunque Bolívar fue un importante líder en la lucha por la independencia, su visión no era la más adecuada para el Perú en ese momento específico.",
+          "proxima_escena": 1
+        },
+        {
+          "opcion": "c) José de la Riva Agüero",
+          "consecuencia": "Riva Agüero es elegido, pero su liderazgo es controversial y genera divisiones en el país.",
+          "es_correcta": false,
+          "explicacion_educativa": "Riva Agüero fue un político peruano que tuvo un papel importante, pero su liderazgo no fue el más unificador para el país en ese momento.",
+          "proxima_escena": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Desafío de la Unificación",
+      "narrativa": "Después de la renuncia de San Martín, el Perú se encuentra en una situación de inestabilidad. Los diferentes grupos y regiones del país necesitan un líder que los una.",
+      "concepto_educativo": "La importancia de la unificación y el liderazgo en momentos de crisis",
+      "opciones": "¿Quién debería liderar el esfuerzo de unificación? a) Simón Bolívar, b) Andrés de Santa Cruz, c) Luis José de Orbegoso",
+      "decisiones": [
+        {
+          "opcion": "a) Simón Bolívar",
+          "consecuencia": "Bolívar lidera el esfuerzo de unificación, pero su visión de una Gran Colombia no es compartida por todos.",
+          "es_correcta": false,
+          "explicacion_educativa": "Bolívar tenía una visión más amplia para América del Sur, pero no necesariamente era lo que el Perú necesitaba en ese momento.",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "b) Andrés de Santa Cruz",
+          "consecuencia": "Santa Cruz lidera con éxito el esfuerzo de unificación y se convierte en un importante líder del Perú.",
+          "es_correcta": true,
+          "explicacion_educativa": "Santa Cruz fue un político y militar que jugó un papel crucial en la unificación del Perú y se convirtió en presidente del país.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "c) Luis José de Orbegoso",
+          "consecuencia": "Orbegoso intenta liderar, pero enfrenta oposición y no logra unificar al país.",
+          "es_correcta": false,
+          "explicacion_educativa": "Orbegoso fue un político peruano que intentó liderar el país, pero no tuvo el éxito necesario para unificar a las diferentes facciones.",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La Consolidación de la Independencia",
+      "narrativa": "Después de años de lucha y liderazgos controvertidos, el Perú finalmente comienza a consolidar su independencia. Es importante establecer una base sólida para el futuro del país.",
+      "concepto_educativo": "La importancia de la consolidación de la independencia y el establecimiento de instituciones sólidas",
+      "opciones": "¿Qué debería ser la prioridad para consolidar la independencia? a) Establecer un gobierno estable, b) Fomentar el crecimiento económico, c) Fortalecer las relaciones internacionales",
+      "decisiones": [
+        {
+          "opcion": "a) Establecer un gobierno estable",
+          "consecuencia": "El país establece un gobierno sólido, lo que permite una transición pacífica del poder y una base para el crecimiento futuro.",
+          "es_correcta": true,
+          "explicacion_educativa": "Un gobierno estable es fundamental para cualquier país, ya que proporciona la base para el desarrollo económico, social y político.",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "b) Fomentar el crecimiento económico",
+          "consecuencia": "El enfoque en el crecimiento económico es importante, pero sin un gobierno estable, el país sigue siendo vulnerable a la inestabilidad.",
+          "es_correcta": false,
+          "explicacion_educativa": "El crecimiento económico es crucial, pero debe ir acompañado de instituciones políticas y sociales sólidas para ser sostenible.",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "c) Fortalecer las relaciones internacionales",
+          "consecuencia": "Las relaciones internacionales son importantes, pero sin una base sólida en el país, es difícil establecer alianzas y acuerdos efectivos.",
+          "es_correcta": false,
+          "explicacion_educativa": "Las relaciones internacionales son vitales para cualquier país, pero deben basarse en una situación interna estable y sólida.",
+          "proxima_escena": 3
+        }
+      ]
+    }
+  ]
+}

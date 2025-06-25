@@ -1,0 +1,115 @@
+{
+  "created_by": 1,
+  "created_at": "2025-06-24T17:33:49.009794",
+  "original_prompt": "historia del peru",
+  "title": "Aventuras en el Perú",
+  "topic": "Historia del Perú",
+  "age_group": "3-5 años",
+  "escenas": [
+    {
+      "id": 1,
+      "titulo": "La llegada a Machu Picchu",
+      "narrativa": "Eres un pequeño explorador que viaja al Perú para descubrir sus maravillas. Llegas a Machu Picchu, la ciudad Inca, y ves una gran cantidad de ruinas y edificios antiguos.",
+      "pregunta": "¿Qué crees que es lo más importante que debes hacer antes de explorar la ciudad?",
+      "concepto_educativo": "Importancia de la planificación y la preparación",
+      "opciones": [
+        "Explorar la ciudad de inmediato",
+        "Leer un mapa de la ciudad",
+        "Hablar con un guía local"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Explorar la ciudad de inmediato",
+          "consecuencia": "Te pierdes en la ciudad y no puedes encontrar el camino de regreso",
+          "es_correcta": false,
+          "explicacion_educativa": "No es una buena idea explorar un lugar desconocido sin planificar y prepararse antes",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "Leer un mapa de la ciudad",
+          "consecuencia": "Encuentras el camino hacia el Templo del Sol y puedes aprender sobre la historia de los Incas",
+          "es_correcta": true,
+          "explicacion_educativa": "La planificación y la preparación son fundamentales para tener una experiencia exitosa",
+          "proxima_escena": 2
+        },
+        {
+          "opcion": "Hablar con un guía local",
+          "consecuencia": "El guía te muestra los lugares más importantes de la ciudad y te cuenta historias sobre la cultura Inca",
+          "es_correcta": true,
+          "explicacion_educativa": "Hablar con un guía local puede ser muy útil para aprender sobre la historia y la cultura de un lugar",
+          "proxima_escena": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "El Templo del Sol",
+      "narrativa": "Llegas al Templo del Sol y ves una gran cantidad de símbolos y dibujos en las paredes. Un guía local te explica que estos símbolos representan la conexión de los Incas con el sol y la naturaleza.",
+      "pregunta": "¿Qué crees que es lo más importante que los Incas aprendieron del sol?",
+      "concepto_educativo": "Importancia de la conexión con la naturaleza",
+      "opciones": [
+        "La importancia de la religión",
+        "La importancia de la agricultura",
+        "La importancia de la conexión con la naturaleza"
+      ],
+      "decisiones": [
+        {
+          "opcion": "La importancia de la religión",
+          "consecuencia": "Aprendes sobre la religión de los Incas, pero no entiendes completamente la conexión con la naturaleza",
+          "es_correcta": false,
+          "explicacion_educativa": "La religión es importante, pero no es lo más importante que los Incas aprendieron del sol",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "La importancia de la agricultura",
+          "consecuencia": "Aprendes sobre la importancia de la agricultura en la sociedad Inca, pero no entiendes completamente la conexión con la naturaleza",
+          "es_correcta": false,
+          "explicacion_educativa": "La agricultura es importante, pero no es lo más importante que los Incas aprendieron del sol",
+          "proxima_escena": 3
+        },
+        {
+          "opcion": "La importancia de la conexión con la naturaleza",
+          "consecuencia": "Entiendes la importancia de la conexión con la naturaleza en la sociedad Inca y cómo esto les ayudó a desarrollar una sociedad sostenible",
+          "es_correcta": true,
+          "explicacion_educativa": "La conexión con la naturaleza es fundamental para entender la cultura y la sociedad Inca",
+          "proxima_escena": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "La fiesta de la cosecha",
+      "narrativa": "Es el día de la fiesta de la cosecha en Machu Picchu y todos los habitantes de la ciudad están celebrando. Hay música, danza y comida en abundancia.",
+      "pregunta": "¿Qué crees que es lo más importante que debes hacer durante la fiesta?",
+      "concepto_educativo": "Importancia de la comunidad y la celebración",
+      "opciones": [
+        "Bailar y divertirse",
+        "Comer mucho y beber",
+        "Agradecer a la comunidad y a la naturaleza"
+      ],
+      "decisiones": [
+        {
+          "opcion": "Bailar y divertirse",
+          "consecuencia": "Te diviertes mucho, pero no entiendes completamente el significado de la fiesta",
+          "es_correcta": false,
+          "explicacion_educativa": "La fiesta es importante, pero no solo se trata de divertirse",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Comer mucho y beber",
+          "consecuencia": "Te sientes mal y no puedes disfrutar de la fiesta",
+          "es_correcta": false,
+          "explicacion_educativa": "La moderación es importante, especialmente durante las celebraciones",
+          "proxima_escena": null
+        },
+        {
+          "opcion": "Agradecer a la comunidad y a la naturaleza",
+          "consecuencia": "Entiendes el significado de la fiesta y agradeces a la comunidad y a la naturaleza por la cosecha",
+          "es_correcta": true,
+          "explicacion_educativa": "La gratitud y el agradecimiento son fundamentales para entender el significado de la fiesta",
+          "proxima_escena": null
+        }
+      ]
+    }
+  ]
+}
