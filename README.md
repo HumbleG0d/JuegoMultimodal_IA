@@ -1,25 +1,6 @@
-# Quiz Learning Platform
+# Juego Educativo Generado mediante IA
 
 Una plataforma web completa para la gestión y realización de quizzes educativos, diseñada para facilitar el aprendizaje interactivo entre estudiantes y profesores.
-
-
-## Requistos
- - Node JS
- - Python
- - Docker
- 
-## Instalación
-- Clonar el repositorio
-- **Frontend**: Acceder a la carpeta frontend  y en la terminal colocar los siguientes comandos.
-    ```bash
-    npm install 
-    npm run dev
-    ``` 
--  **Backend**: Acceder a la carpeta backend y en la terminal colocar los siguientes comandos.
-    ```bash
-    docker-compose up --build -d 
-    ``` 
-    y ejecutar el script **api.py**
 
 ## 🎯 Características Principales
 
@@ -43,6 +24,21 @@ Una plataforma web completa para la gestión y realización de quizzes educativo
 - **PostgresSQL** como base de datos
 - **JWT** para autenticación
 - **bcryptjs** para encriptación de contraseñas
+
+
+## Instalación
+- Clonar el repositorio
+- **Frontend**: Acceder a la carpeta frontend  y en la terminal colocar los siguientes comandos.
+    ```bash
+    npm install 
+    npm run dev
+    ``` 
+-  **Backend**: Acceder a la carpeta backend y en la terminal colocar los siguientes comandos.
+    ```bash
+    docker-compose up --build -d 
+    ``` 
+    y ejecutar el script **api.py**
+
 
 ## 👥 Roles de Usuario
 
