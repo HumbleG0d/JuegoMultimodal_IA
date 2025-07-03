@@ -55,6 +55,8 @@ Una plataforma web completa para la gestión y realización de quizzes educativo
 - Ver resultados y calificaciones
 - Acceso a dashboard personalizado
 
+![Gif project](/assets/ProjectGif.gif)
+
 ## 🔧 Funcionalidades Técnicas
 
 ### Gestión de Estado
@@ -84,10 +86,5 @@ El proyecto está en desarrollo activo con las siguientes funcionalidades implem
 - ✅ Dashboard para profesores y estudiantes
 - ✅ Asignación de quizzes
 - ✅ Interfaz responsiva
-- 🔄 Sistema de calificaciones (en desarrollo)
+- ✅ Sistema de calificaciones (en desarrollo)
 - 🔄 Reportes avanzados (planeado)
-
-
-## 👨‍💻 Autor
-
-Desarrollado como proyecto educativo para el aprendizaje de tecnologías web modernas.
